@@ -276,35 +276,31 @@ OpenJDK 64-Bit Server VM (build 25.72-b15, mixed mode)
    了。
 * Algorithm
 * Git/Github
-** 设置姓名及邮箱地址
+** 《GitHub入门与实践》
+*** 设置姓名及邮箱地址
 $ git config --global user.name "John"
 $ git config --global user.email "hitzhzw3889@126.com"
-** 将color.ui设置为auto
+*** 将color.ui设置为auto
 $ git config --global color.ui auto
-** 在github上创建账户
+*** 在github上创建账户
 账号：zhzw3889
 密码：zhu@gitgub100
-** 设置SSH Key
+*** 设置SSH Key
 $ ssh -keygen -t rsa -C "hitzhzw3889@126.com"
 
 密码：563121
-** git init - To initialize repository
+*** git init - To initialize repository
 $ mkdir git-tutorial
 $ cd git-tutorial
 $ git init
-** git status - Check the status of the repository
+*** git status - Check the status of the repository
 $ git status
 | Command                              | Effect                                 |
 |--------------------------------------+----------------------------------------|
 | git add [filename]                   | To add files to the stage              |
 | git commit [-m "commit information"] | Save the historic records of the stage |
+** 《Pro Git》
 
-
-
-
-
-
-o
 * testTODO
 ** go
 
