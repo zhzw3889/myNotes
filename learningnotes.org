@@ -197,6 +197,25 @@ Tips:
 | C-x 4 f | Find file in other window            |
 | C-x 4 m | Mail in other window                 |
 
+** Email
+1. 设置邮箱地址:(setq user-mail-address "hitzhzw3889@126.com")
+2. 发送邮件C-x m
+* HTML5 & CSS3
+** 其他
+1. emacs中有html-mode，在此模式中的快捷键如下：
+| 快捷键    | 作用                        |
+|-----------+-----------------------------|
+| C-c C-t   | 调用模板                    |
+| C-c C-s   | 启用/停用html-autoview-mode |
+| C-c 1-6   | 插入h1-h6标题               |
+| C-c C-c i | 插入图像引入标记<img>       |
+|           |                             |
+
+** 《HTML5与CSS3基础教程（第8版）》
+*** 第1章 网页的构造块
+
+* JavaScript
+** 《JavaScript基础教程》
 * C 
 ** 《一站式学习C编程》
 *** 简单函数
