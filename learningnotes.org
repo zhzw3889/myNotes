@@ -1,0 +1,324 @@
+#+TITLE: 编程学习笔记
+* Linux
+** 实践小技巧
+窗口总是偶然变成无边框模式(即窗口的标题栏及最小化、最大化、关闭按钮总是消失),应
+该不是bug的问题，右击窗口发现有此选项，即用Alt+F3启动鼠标可用模式，下次再遇到
+此情况试试可行度。
+** $ ps axjf  #Check the process tree
+** Install software
+| Num | Software | Download Site                       |
+|-----+----------+-------------------------------------|
+|   1 | Eclipse  | http://software.opensuse.org/search |
+|   2 | smplayer | http://software.opensuse.org/search |
+|   3 | WPS      | 官网                                |
+** 《Unix & Linux大学教程》
+*** 第10章 命令语法
+1. 多个命令用;隔开
+2. 命令格式为：命令名称 -选项 参数，其中-后加单独字母选项，--后加单词选项，-r
+   与--reverse作用相同，注意通常选项必须位于参数之前
+3. -后的选项可以组合使用，并且与顺序无关，这是基本的Unix文化
+4. 两个重要命令：--help及--version 
+5. 命令的每个部分之间必须至少有一个空格或者制表符（Unix中文件名及命令名不能使
+   用空格）
+6. 7条规则（前5条是基本项）
+| 序号 | 规则                                                                 |
+|------+----------------------------------------------------------------------|
+|    1 | 方括号中的项是可选的                                                 |
+|    2 | 不在方括号中的项是必选项，必须作为命令的一部分输入                   |
+|    3 | 黑体字必须按原样准确键入                                             |
+|    4 | 斜体字必须用适当的值代替                                             |
+|    5 | 后面接省略号（...）的参数可以重复任意多次                            |
+|    6 | 如果一个单独的选项和一个参数组合在一起，那么该选项和参数必须同时使用 |
+|    7 | 由竖线字符分开的两个或多个项，表示可以从这个列表中选择一个项         |
+  
+*** 第11章 Shell
+1. 查看系统上安装了那些Shell： less /etc/shells
+2. 显示当前Shell名称： echo $SHELL
+3. 改变登陆shell： chsh [-s shell] [userid],其中userid是用户标识，shell是新登
+   录shell的路径名。改变登录shell时，修改的是/etc/passwd文件。
+*** 第12章 使用shell：变量和选项
+**** 交互式shell和非交互式shell
+1. shell既可以充当用户界面（交互式程序），也可以作为脚本解释器（非交互式程序）。
+2. 登录是默认启动交互式的，运行shell脚本时默认启动非交互式。
+**** 环境、进程和变量
+1. Unix shell中有2种不同类型的变量：shell变量和环境变量
+2. 变量只有4种不同类型的操作：创建变量、查看变量的值、修改变量的值以及销毁变量。
+3. shell变量几乎总是存储一种类型的数据，即字符串，也就是一串纯文本字符。
+4. 在子进程创建时，系统为子进程复制了父进程的环境。这意味着父进程可以访问的全
+   部环境变量，现在子进程也可以访问。
+**** 环境变量和shell变量
+1. 环境变量对所有进程可用，所以它们是全局变量。
+2. shell变量是创建它们的shell的局部变量。局部（shell）变量有两种方式使用：第一
+   种，它们可能用来存放对shell本身有意义的信息。第二种，shell变量在shell脚本中以
+   普通程序中局部变量的使用方式使用-作为临时存储容器。
+**** 显示环境变量：env、printenv
+1. 显示默认变量：env及printenv, 每次一屏显示：env | less
+2. 对输出进行排序：env | sort | less
+**** 显示shell变量：set
+**** 显示及使用变量的值：echo，print
+1. 显示TERM的值：echo ${TERM} 或者echo $TERM(如果没有歧义)
+2. 如果在变量NAME前加上美元符号$（如$TERM），即表示变量NAME的值
+3. 显示The terminal type is xterm：echo The terminal type is $TERM
+4. 为了防止shell解释"元字符"，需要将元字符包含在双引号中。如echo The
+   terminal type is <$TERM>不能正常运行，必须echo "The terminal type is
+   <$TERM>"，才能正常显示，因为<和>是元字符，表示"重定向"。
+**** Bourne Shell家族使用变量：export、unset
+1. 变量的值必须是字符串，创建变量的语法为：NAME=value，注意无空格
+2. 如果希望使用一个包含有空白符的值，则需要双引号，如WEEDLY="a cool cat"
+3. 每个新变量自动设置成shell变量，使用export命令将变量导出到环境中，如:export
+   HARLEY WEEDLY，则HARLEY和WEEDLY变量同时由shell变量变为"shell+环境"变量
+4. export命令允许同时设置变量并导出到环境中，语法为：export NAME[=value]，如
+   export PAGER=less，此方法推荐。
+5. export可以同时作用于多个变量，如:
+
+   export PAGER=less EDITOR=vi PATH="/usr/local/bin:/usr/bin:/bin"
+6. 删除(复位)变量，语法为：unset NAME...
+**** shell选项：set -o、set +o
+1. 设置一个选项：set -o option，如：set -o vi可以关闭emacs模式，启动vi模式
+2. 复位一个选项：set +o option
+**** 显示shell选项
+1. 显示shell选项的当前值
+| set -o | 容易阅读的方式显示，适合人类阅读                |
+| set +o | 紧缩的方式显示相同信息，适合用作shell脚本的数据 |
+
+*** 第13章 使用shell：命令和定制
+**** 元字符
+1. 引用元字符时将包含元字符的部分加双引号,如:echo "Let's go; Yes"
+**** 引用和转义
+1. 按字面意思解释字符（即引用字符）方法有3种：使用反斜线、使用一对单引号或者使
+   用一对双引号
+2. 使用反斜线引用单个字符，或者使用单引号引用一串字符
+3. 使用双引号引用一串字符，但是保留$(美元)，`(反引号)和\(反斜线)的特殊含义
+**** 强引用和弱引用
+1. 单引号为强引用，双引号为弱引用
+2. 反斜线是所有引用中最强的一个，甚至可以引用新行字符。
+3. 与反斜线不同，单引号和双引号不引用新行字符。
+**** shell内置命令：type
+1. 使用type查看某条命令是否内部命令
+**** 外部命令及搜索路径
+1. 程序都存储在文件中，而每个文件都位于目录之中。
+2. 搜索路径是包含外部命令的程序的目录列表，查看搜索路径：echo $PATH
+3. /bin、/usr/bin存放系统中所有用户使用的程序，其位于所有的Unix系统上，并在
+   Unix安装时自动设置。
+4. 当shell需要查找外部命令时，它在搜索路径中按指定的顺序逐个检查每个目录。
+5. 编写自己的脚本和程序，并将它们存放在自己的bin目录($HOME/bin)中，那么需要将
+   这个目录名称添加到搜索路径中。命令如下：export PATH="$PATH:$HOME/bin"，此命
+   令最后被搜索使用，如果希望被首先搜索则用：export PATH="$HOME/bin:$PATH"
+**** shell提示
+1. 修改shell提示需要修改名为PS1的环境变量。PS1意为"prompt for the shell,number
+   1"
+2. 使用变量替换：export PS1="${VARIABLE}$ "
+3. 注意，如果该变量在使用时是变化的就使用强引用''（单引号）来防止$字符被解释，直至需要它
+   们;否则，使用弱引用""（双引号），从而允许$字符被立即解释，以后维持此值不变。
+**** 命令替换
+1. 命令替换允许在一条命令中嵌入另一条命令。shell首先执行嵌入的命令，并且输出替
+   换该命令，然后shell再执行整个命令。
+2. 通过将一条命令封装在`（反引号）字符中，可以将它嵌入到另一条命令中。如：echo
+   "The time and date are `date`."
+3. 反引号字符只在命令替换中使用！
+**** 历史列表
+
+* Emacs
+** org-mode
+*** 正文换行
+   有两个方法：
+
+1、回车两次
+
+2、末尾加"\\"(引号内)
+*** 字体
+*粗体*  /斜体/  +删除线+   _下划线_   下标：H_2 O   上标：E=mc^2    等宽字体：=git=
+*** 表格
+'|'开头，TAB键对齐
+
+两行之间加'|-'，再按TAB键就会有这样的效果
+*** 标题
+**** 种类
+1. 无序列表以"-"、'+'或者'*'开头
+2. 有序列表以'1.'或者'1)'开头
+3. 描述列表用'::'
+**** 注意事项
++ 列表符号后面都要有空格
++ 同级别的列表缩进要相同
++ 如果想要加入同级别的列表，可以M+RET
++ 空两行折后列表结束，如果空一行执行M-RET，实际上还是输入同级项
+ 
+*** 插入代码
+1. <s, Tab
+2. 在光标后输入语言种类，如sh，java等
+*** "TODO" item
+1. Any headline starting with TODO become a TODO item.
+2. Important commands:
+| Command | Effect                                                                 |
+|---------+------------------------------------------------------------------------|
+| C-c C-t | Rotate the TODO state of the current item among: unmarked, TODO, DONE. |
+|         |                                                                        |
+
+** Switching Buffers
+1. C-x b 
+2. C-x b [filename/buffer name]
+3. C-x b [newname]    #When quiting Emacs, the editor won't ask you whether
+   or not you want to save it, so I can take it as a testing field.
+** Buffer List
+| Command         | Effect                                                   |
+|-----------------+----------------------------------------------------------|
+| C-x C-b         | Emacs displays a list of buffers.                        |
+| C-x o           | Move to the buffer list window.                          |
+| C-n/n/Space     | Move down a  line.                                       |
+| C-p/p/Backspace | Move up a line.                                          |
+| d or k/s/~/%    | Mark the buffer to be deleted/saved/unmodified/read-only |
+| q               | Quit buffer list.                                        |
+
+Tips:
++ Type the first few characters of the correct buffer name and press Tab,
+  emacs fills the rest of the name.
+** Deleting Buffers
+1. C-x k [buffer name] 
+2. M-x kill-some-buffers #Emacs offers to kill each and every buffer
+** Shell Mode
+| Command   | Effect                                                                         |
+|-----------+--------------------------------------------------------------------------------|
+| C-c C-c   | Interrupt a command                                                            |
+| M-p/n     | To retrieve the last/subsequent shell command                                  |
+| C-c C-o   | Delete output from the most recent command                                     |
+| C-c C-r/e | Reposition the first/last line of last command to the top/bottom of the window |
+| C-c C-p/n | To move to the previous/next output group                                      |
+** Windows
+| Command | Effect                               |
+|---------+--------------------------------------|
+| C-x 2/3 | Split window vertically/horizontally |
+| C-x o   | Move to an other window              |
+| C-x 0/1 | Delete this wondow/other window      |
+| C-x ^   | Enlarge window vertically            |
+| C-x {/} | Shrink/Enlarge window horizontally   |
+| C-x 4 b | Switch to buffer in other window     |
+| C-x 4 f | Find file in other window            |
+| C-x 4 m | Mail in other window                 |
+
+** Email
+1. 设置邮箱地址:(setq user-mail-address "hitzhzw3889@126.com")
+2. 发送邮件C-x m
+* HTML5/CSS3/JavaScript
+** 其他
+1. emacs中有html-mode，在此模式中的快捷键如下：
+| 快捷键    | 作用                        |
+|-----------+-----------------------------|
+| C-c C-t   | 调用模板                    |
+| C-c C-s   | 启用/停用html-autoview-mode |
+| C-c 1-6   | 插入h1-h6标题               |
+| C-c C-c i | 插入图像引入标记<img>       |
+|           |                             |
+
+** 《HTML5与CSS3基础教程（第8版）》
+*** 第1章 网页的构造块
+
+** 《JavaScript基础教程》
+* SQL/PHP
+** 《SQL必知必会》
+* C 
+** 《一站式学习C编程》
+*** 简单函数
+1. main函数只有两种声明形式：标准形式int main(int argc, char *argv[])及int
+   main(void)，其他写法都是错误的或不可移植的。
+2. 局部变量在每次函数调用时分配存储空间，在每次函数返回时释放存储空间。
+3. 全局变量在程序开始时分配存储空间，在程序结束时释放存储空间。
+4. 局部变量可以用类型相符的任意表达式来初始化，而全局变量只能用常量表达式来初
+   始化。
+5. 如果全局变量在定义时不初始化则初始值是0,如果局部变量在定义时不初始化则初始
+   值是不确定的。
+6. 在一个函数中可以声明另一个函数，但不能定义另一个函数，C语言不允许嵌套定义函
+   数。
+*** 分支语句
+1. 语句快（大括号内）中也可以定义局部变量。
+2. C语言规定，else总是和它上面最近的一个if配对。
+3. case后面跟的表达式必须是常量表达式，这个值和全局变量的初始值一样必须在编译
+   时计算出来。
+4. switch语句虽然可以被if...else...语句代替，但是，有时候编译器会对switch语句
+   做整体优化，使它比等价的if/else语句所生成的指令效率更高。
+*** 深入理解函数
+**** return语句
+1. 函数的返回值不是左值，或者说函数调用表达式不能做左值。
+2. 即便返回语句写成return x;，返回的也是变量x的值，而非变量x本身，因为变量x马
+   上就要被释放了。
+3. 正负号的优先级和逻辑非运算符相同，比加减的优先级要高。
+**** 增量式开发
+* Java
+** 《Head First Java》
+*** 类与对象
+**** 编写类
+#+BEGIN_SRC java
+class Dog {
+  int size;
+  String breed;
+  String name;
+
+  void bark() {
+    System.out.println("Ruff! Ruff!");
+  }
+}
+#+END_SRC
+**** 编写测试用的类
+#+BEGIN_SRC java
+class DogTestDrive {
+  public static void main (String[] args) {
+  //Dog测试码
+  }
+}
+#+END_SRC
+**** 在测试用的类中建立对象并存取对象的变量和方法
+#+BEGIN_SRC java
+class DogTestDrive {
+  public static void main (String[] args) 
+{
+    Dog d = new Dog(); //建立Dog对象
+    d.size = 40;       //存取该对象的变量
+    d.bark();          //调用它的方法
+  }
+}
+#+END_SRC
+
+** 《Java从入门到精通》
+1. 基本数据类型、变量与常量、基本运算符、流程控制等与C语言大体相似，可以参照C
+   语法相关知识。
+** JDEE配置
+*** Collection of Emacs Development Environment Tools(CEDET)
+*** Installing the Elisp Library
+*** Installing the JDEE
+** Linux下Java编程及调试（不用JDEE）
+1. 查看jdk版本$java -version，输出如下：
+openjdk version "1.8.0_72"\\
+OpenJDK Runtime Environment (build 1.8.0_72-b15)\\
+OpenJDK 64-Bit Server VM (build 25.72-b15, mixed mode)
+2. javac用不了，为何？
+3. 可能涉及环境变量的问题，暂时解决不了，所以重新安装了官方的JDK，可以正常运行
+   了。
+* Algorithm
+* Git/Github
+** 《GitHub入门与实践》
+*** 设置姓名及邮箱地址
+$ git config --global user.name "John"
+$ git config --global user.email "hitzhzw3889@126.com"
+*** 将color.ui设置为auto
+$ git config --global color.ui auto
+*** 在github上创建账户
+账号：zhzw3889
+密码：***@******1**
+*** 设置SSH Key
+$ ssh -keygen -t rsa -C "hitzhzw3889@126.com"
+
+密码：******
+*** git init  - To initialize repository
+$ mkdir git-tutorial
+$ cd git-tutorial
+$ git init
+*** git status - Check the status of the repository
+$ git status
+| Command                              | Effect                                 |
+|--------------------------------------+----------------------------------------|
+| git add [filename]                   | To add files to the stage              |
+| git commit [-m "commit information"] | Save the historic records of the stage |
+** 《Pro Git》
+
+* testTODO
+** g
+
