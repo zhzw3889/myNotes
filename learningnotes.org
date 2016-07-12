@@ -257,6 +257,12 @@ Tips:
 |         |                                              |
 ** xterm-mouse mode 
 ON/OFF   M-x xterm-mouse-mode
+** M-x list-packages
+1. 可以用来安装安装包中管理器中的插件包。
+2. company-mode及js2-mode可以用此方式。
+3. 自启动的话还要在.emacs文件中添加相应语句。
+** 相关网站学习点
+1. http://ergoemacs.org/emacs/elisp_library_system.html
 * HTML5/CSS3/JavaScript
 ** 其他
 1. emacs中有html-mode，在此模式中的快捷键如下：
@@ -268,37 +274,14 @@ ON/OFF   M-x xterm-mouse-mode
 | C-c C-c i | 插入图像引入标记<img>       |
 | C-c Enter | 插入<p>                     |
 | C-c /     | 插入闭合标志                |
-|           |                             |
-|           |                             |
-|           |                             |
 2. 基础教程学习后应该先投入实践，一段时间之后再看高级教程，这样才会起到总结及
    提高的作用。时间上可以跃进，步骤上却绝不可以！
 ** 《HTML5与CSS3基础教程（第8版）》
 *** HTML
-语义化HTML（semantic HTML）：使用最恰当的HTML元素进行标记的内容，在标记的过程
-中并不关心内容显示。\\
-1. 各标签、属性如下：
-| 一级元素 | 二级元素 | 属性    | 语义                          | HTML5新增 |
-|----------+----------+---------+-------------------------------+-----------|
-| head     |          |         | 页面文档的头部，有尾部</head> |           |
-|          | meta     | charset | 设置字符编码，一般为UTF-8     |           |
-|          | title    |         | 页面的标题，有尾部</title>    |           |
-|----------+----------+---------+-------------------------------+-----------|
-| body     |          |         | 页面的主体，有尾部</body>     |           |
-|          |          |         |                               |           |
-|          |          |         |                               |           |
-| h1~h6    |          |         |                               |           |
-| nav      |          |         |                               |           |
-| main     |          |         |                               |           |
-| article  |          |         |                               |           |
-| section  |          |         |                               |           |
-| aside    |          |         |                               |           |
-| footer   |          |         |                               |           |
-| div      |          |         |                               |           |
-|----------+----------+---------+-------------------------------+-----------|
 *** CSS
 ** 《JavaScript基础教程》
-
+此书竟然不系统地介绍数据类型及语法基础，貌似不太适合作为第一本书。
+** 《Professional: Javascript for Web Developers》
 ** 慕课网
 * SQL/PHP
 ** 《SQL必知必会》
@@ -407,5 +390,3 @@ $ git status
 ** 《Pro Git》
 
 * testTODO
-
-
