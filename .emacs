@@ -69,7 +69,7 @@
 ;(set-face-background 'highlight-indent-guides-even-face "#EE00EE")
 ;;(setq highlight-indent-guides-character ?ξ)
 ;(set-face-foreground 'highlight-indent-guides-character-face "#EE00EE")
-;;缩进线，经常出现误操作，我估计是因为与自动补全相冲突，竖线很难找到对齐的基准
+;;缩进线，经常出现输入及删除误操作，我估计是因为与自动补全相冲突，竖线很难找到对齐的基准
 ;;第二行设置线宽，fill为全部填充，column为字符宽度，character为可定制线，默认为细直线
 ;;第三四行为设置线的颜色
 ;;第五六行为设置character时，标志和颜色,"\|"可以替换为任何字符，如"ξ"，如果没有则为细直线
