@@ -69,7 +69,10 @@
 ;(set-face-background 'highlight-indent-guides-even-face "#EE00EE")
 ;;(setq highlight-indent-guides-character ?ξ)
 ;(set-face-foreground 'highlight-indent-guides-character-face "#EE00EE")
+;;.....................................................................................
 ;;缩进线，经常出现输入及删除误操作，我估计是因为与自动补全相冲突，竖线很难找到对齐的基准
+;;打开新文件是没有问题，编辑时会有问题，可能是由于代码中动态的处理不好
+;;.....................................................................................
 ;;第二行设置线宽，fill为全部填充，column为字符宽度，character为可定制线，默认为细直线
 ;;第三四行为设置线的颜色
 ;;第五六行为设置character时，标志和颜色,"\|"可以替换为任何字符，如"ξ"，如果没有则为细直线
@@ -82,3 +85,26 @@
 ;;org-mode下中文输入法时正常输入*及-
 (setq org-src-fontify-natively t)
 ;;org-mode下代码也高亮
+(global-set-key (kbd "RET") 'newline-and-indent)
+;;回车自动缩进
+(menu-bar-mode nil)
+;;去掉菜单栏，貌似没作用
+(tool-bar-mode nil)
+;;去掉工具栏，貌似没用
+(require 'session)
+(add-hook 'after-init-hook 'session-initialize)
+;;使用了这个扩展之后，你上次离开emacs 时的全局变量 (kill-ring，命令记录……
+;;局部变量，寄存器，打开的文件，改过的文件和最后修改的位置，…… 全部都会被记录下来。
+(load "desktop")
+(desktop-load-default)
+(desktop-read)
+;;关闭emacs是键入M-x desktop-save就可把本次离开的buffer记录下来，下次打开emacs时还会保留这些buffer
+(setq inhibit-startup-message t)
+;; 禁用启动信息
+(show-paren-mode t)
+(setq show-paren-style 'parentheses)
+;;下面的这个设置可以让光标指到某个括号的时候显示与它匹配的括号
+(require 'ibuffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+;;启用ibuffer，并绑定快捷键为C-x C-b
+
