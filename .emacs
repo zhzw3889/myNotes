@@ -57,12 +57,19 @@
 (setq user-mail-address "hitzhzw3889@126.com")
 ;; 邮箱地址
 (add-to-list 'load-path "~/.emacs.d")
-(require 'auto-complete-config)
-(ac-config-default)
-;;自动补全
+;;设置加载路径
+;;(require 'auto-complete-config)
+;;(ac-config-default)
+;;自动补全，暂停使用，换成company-mode
+;;---------------------------------------------------------------
+(package-initialize)
+(global-company-mode)
+(add-hook 'after-init-hook 'global-company-mode)
+;;company-mode应用到所用窗口
+;;---------------------------------------------------------------
 (require 'color-theme)
 ;;主题
-(require 'highlight-indent-guides)
+;;(require 'highlight-indent-guides)
 ;(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
 ;(setq highlight-indent-guides-method 'character)    
 ;(set-face-background 'highlight-indent-guides-odd-face "red")
