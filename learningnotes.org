@@ -6,11 +6,11 @@
 此情况试试可行度。
 ** $ ps axjf  #Check the process tree
 ** Install software
-| Num | Software | Download Site                       |
-|-----+----------+-------------------------------------|
-|   1 | Eclipse  | http://software.opensuse.org/search |
-|   2 | smplayer | http://software.opensuse.org/search |
-|   3 | WPS      | 官网                                |
+  | Num | Software | Download Site                       |
+  |-----+----------+-------------------------------------|
+  |   1 | Eclipse  | http://software.opensuse.org/search |
+  |   2 | smplayer | http://software.opensuse.org/search |
+  |   3 | WPS      | 官网                                |
 ** 《Unix & Linux大学教程》
 *** 第10章 命令语法
 1. 多个命令用;隔开
@@ -121,19 +121,19 @@
 * Emacs
 ** org-mode
 *** 常用操作快捷键
-| 快捷键      | 作用                                |
-|-------------+-------------------------------------|
-| Alt+Enter   | 新建同级标题                        |
-| Tab         | 折叠/翻开                           |
-| C-c C-e     | 输出为各种文件                      |
-| C-c -       | turn headline line to items         |
-| C-c *       | turn item into headine              |
-| S-up/down   | previous/next item?                 |
-| M-S-up/down | move item up/down                   |
-| C-c C-p/n   | 移动到上/下一标题                   |
-| C-c C-b/f   | 移动到和当前标题同等级的上/下一标题 |
-| C-c C-u     | 向上移动到更高一层的标题            |
-|-------------+-------------------------------------|
+  | 快捷键      | 作用                                |
+  |-------------+-------------------------------------|
+  | Alt+Enter   | 新建同级标题                        |
+  | Tab         | 折叠/翻开                           |
+  | C-c C-e     | 输出为各种文件                      |
+  | C-c -       | turn headline line to items         |
+  | C-c *       | turn item into headine              |
+  | S-up/down   | previous/next item?                 |
+  | M-S-up/down | move item up/down                   |
+  | C-c C-p/n   | 移动到上/下一标题                   |
+  | C-c C-b/f   | 移动到和当前标题同等级的上/下一标题 |
+  | C-c C-u     | 向上移动到更高一层的标题            |
+  |-------------+-------------------------------------|
 *** 正文换行
    有两个方法：
 
@@ -148,30 +148,30 @@
 3. 快捷键如下：
  - 整体区域
 
-|---------+--------------------------------|
-| 操作    | 说明                           |
-|---------+--------------------------------|
-| Tab     | 移动到下一区域，必要时新建一行 |
-| S-Tab   | 移动到上一区域                 |
-| M-a/e   | 移动到本单元格的开头/结尾      |
-| RET     | 移动到下一行，必要时新建一行   |
-| C-c C-c | 调整表格，不移动光标           |
-| C-c bar | 创建或转化为表格，TMD咋用啊？  |
-|---------+--------------------------------|
+  |---------+--------------------------------|
+  | 操作    | 说明                           |
+  |---------+--------------------------------|
+  | Tab     | 移动到下一区域，必要时新建一行 |
+  | S-Tab   | 移动到上一区域                 |
+  | M-a/e   | 移动到本单元格的开头/结尾      |
+  | RET     | 移动到下一行，必要时新建一行   |
+  | C-c C-c | 调整表格，不移动光标           |
+  | C-c bar | 创建或转化为表格，TMD咋用啊？  |
+  |---------+--------------------------------|
  - 编辑行或列
-|----------------+----------------------------------|
-| 操作           | 说明                             |
-|----------------+----------------------------------|
-| M-left/right   | 移动列                           |
-| M-up/down      | 移动行                           |
-| M-S-left/right | 删除/插入列                      |
-| M-S-up/down    | 删除/掺入行                      |
-| C-c -          | 在本行下方添加水平分割线         |
-| C-u C-c -      | 在本行上方添加水平分割线         |
-| C-c RET        | 添加水平分割线并跳到下一行       |
-| C-c ^          | 根据当前列排序，可以选择排序方式 |
-| C-c `          | 在新窗口中编辑该单元格           |
-|----------------+----------------------------------|
+  |----------------+----------------------------------|
+  | 操作           | 说明                             |
+  |----------------+----------------------------------|
+  | M-left/right   | 移动列                           |
+  | M-up/down      | 移动行                           |
+  | M-S-left/right | 删除/插入列                      |
+  | M-S-up/down    | 删除/掺入行                      |
+  | C-c -          | 在本行下方添加水平分割线         |
+  | C-u C-c -      | 在本行上方添加水平分割线         |
+  | C-c RET        | 添加水平分割线并跳到下一行       |
+  | C-c ^          | 根据当前列排序，可以选择排序方式 |
+  | C-c `          | 在新窗口中编辑该单元格           |
+  |----------------+----------------------------------|
 *** 标题
 **** 种类
 1. 无序列表以"-"、'+'或者'*'开头
@@ -188,24 +188,24 @@
 *** "TODO" item
 1. Any headline starting with TODO become a TODO item.
 2. Important commands:
-| Command | Effect                                                                 |
-|---------+------------------------------------------------------------------------|
-| C-c C-t | Rotate the TODO state of the current item among: unmarked, TODO, DONE. |
-|         | 
+  | Command | Effect                                                                 |
+  |---------+------------------------------------------------------------------------|
+  | C-c C-t | Rotate the TODO state of the current item among: unmarked, TODO, DONE. |
+  |         |                                                                        |
 ** Switching Buffers
 1. C-x b 
 2. C-x b [filename/buffer name]
 3. C-x b [newname]    #When quiting Emacs, the editor won't ask you whether
    or not you want to save it, so I can take it as a testing field.
 ** Buffer List
-| Command         | Effect                                                   |
-|-----------------+----------------------------------------------------------|
-| C-x C-b         | Emacs displays a list of buffers.                        |
-| C-x o           | Move to the buffer list window.                          |
-| C-n/n/Space     | Move down a  line.                                       |
-| C-p/p/Backspace | Move up a line.                                          |
-| d or k/s/~/%    | Mark the buffer to be deleted/saved/unmodified/read-only |
-| q               | Quit buffer list.                                        |
+  | Command         | Effect                                                   |
+  |-----------------+----------------------------------------------------------|
+  | C-x C-b         | Emacs displays a list of buffers.                        |
+  | C-x o           | Move to the buffer list window.                          |
+  | C-n/n/Space     | Move down a  line.                                       |
+  | C-p/p/Backspace | Move up a line.                                          |
+  | d or k/s/~/%    | Mark the buffer to be deleted/saved/unmodified/read-only |
+  | q               | Quit buffer list.                                        |
 
 Tips:
 + Type the first few characters of the correct buffer name and press Tab,
@@ -214,24 +214,24 @@ Tips:
 1. C-x k [buffer name] 
 2. M-x kill-some-buffers #Emacs offers to kill each and every buffer
 ** Shell Mode
-| Command   | Effect                                                                         |
-|-----------+--------------------------------------------------------------------------------|
-| C-c C-c   | Interrupt a command                                                            |
-| M-p/n     | To retrieve the last/subsequent shell command                                  |
-| C-c C-o   | Delete output from the most recent command                                     |
-| C-c C-r/e | Reposition the first/last line of last command to the top/bottom of the window |
-| C-c C-p/n | To move to the previous/next output group                                      |
+  | Command   | Effect                                                                         |
+  |-----------+--------------------------------------------------------------------------------|
+  | C-c C-c   | Interrupt a command                                                            |
+  | M-p/n     | To retrieve the last/subsequent shell command                                  |
+  | C-c C-o   | Delete output from the most recent command                                     |
+  | C-c C-r/e | Reposition the first/last line of last command to the top/bottom of the window |
+  | C-c C-p/n | To move to the previous/next output group                                      |
 ** Windows
-| Command | Effect                               |
-|---------+--------------------------------------|
-| C-x 2/3 | Split window vertically/horizontally |
-| C-x o   | Move to an other window              |
-| C-x 0/1 | Delete this wondow/other window      |
-| C-x ^   | Enlarge window vertically            |
-| C-x {/} | Shrink/Enlarge window horizontally   |
-| C-x 4 b | Switch to buffer in other window     |
-| C-x 4 f | Find file in other window            |
-| C-x 4 m | Mail in other window                 |
+  | Command | Effect                               |
+  |---------+--------------------------------------|
+  | C-x 2/3 | Split window vertically/horizontally |
+  | C-x o   | Move to an other window              |
+  | C-x 0/1 | Delete this wondow/other window      |
+  | C-x ^   | Enlarge window vertically            |
+  | C-x {/} | Shrink/Enlarge window horizontally   |
+  | C-x 4 b | Switch to buffer in other window     |
+  | C-x 4 f | Find file in other window            |
+  | C-x 4 m | Mail in other window                 |
 
 ** Email
 1. 设置邮箱地址:(setq user-mail-address "hitzhzw3889@126.com")
@@ -261,11 +261,11 @@ Tips:
 ** Emacs lisp
 1. 首先得搞清楚怎么使用里lisp-mode及lisp interaction mode，这样才能实验学习中
    的各要素，才能正确地写脚本。
-| 命令    | 作用                                         |
-|---------+----------------------------------------------|
-| C-j     | 交互模式下运行命令                           |
-| C-x C-e | 执行emacs lisp模式下光标所在行，求值单条语句 |
-|         |                                              |
+  | 命令    | 作用                                         |
+  |---------+----------------------------------------------|
+  | C-j     | 交互模式下运行命令                           |
+  | C-x C-e | 执行emacs lisp模式下光标所在行，求值单条语句 |
+  |         |                                              |
 ** xterm-mouse mode 
 ON/OFF   M-x xterm-mouse-mode
 ** M-x list-packages
@@ -273,26 +273,34 @@ ON/OFF   M-x xterm-mouse-mode
 2. company-mode及js2-mode可以用此方式。
 3. 自启动的话还要在.emacs文件中添加相应语句。
 4. 其他的有用包还有
-| 序号 | 包名      | 作用                                             |
-|------+-----------+--------------------------------------------------|
-|    1 | undo-tree | treat undo history as a tree                     |
-|------+-----------+--------------------------------------------------|
-|    2 | beacon    | Highlight the cursor whenever the window scrolls |
-|------+-----------+--------------------------------------------------|
+  | 序号 | 包名      | 作用                                             |
+  |------+-----------+--------------------------------------------------|
+  |    1 | undo-tree | treat undo history as a tree                     |
+  |------+-----------+--------------------------------------------------|
+  |    2 | beacon    | Highlight the cursor whenever the window scrolls |
+  |------+-----------+--------------------------------------------------|
 
 ** 相关网站学习点
 1. http://ergoemacs.org/emacs/elisp_library_system.html
-* HTML5/CSS3/JavaScript
+** 常用快捷键
+  | 序号 | 按键              | 作用     |
+  |------+-------------------+----------|
+  |    1 | C-h f XX-mode RET | 查看文档 |
+  |      |                   |          |
+  |      |                   |          |
+  |      |                   |          |
+  
+* HTML5/CSS3
 ** 其他
 1. emacs中有html-mode，在此模式中的快捷键如下：
-| 快捷键    | 作用                        |
-|-----------+-----------------------------|
-| C-c C-t   | 调用模板                    |
-| C-c C-s   | 启用/停用html-autoview-mode |
-| C-c 1-6   | 插入h1-h6标题               |
-| C-c C-c i | 插入图像引入标记<img>       |
-| C-c Enter | 插入<p>                     |
-| C-c /     | 插入闭合标志                |
+  | 快捷键    | 作用                        |
+  |-----------+-----------------------------|
+  | C-c C-t   | 调用模板                    |
+  | C-c C-s   | 启用/停用html-autoview-mode |
+  | C-c 1-6   | 插入h1-h6标题               |
+  | C-c C-c i | 插入图像引入标记<img>       |
+  | C-c Enter | 插入<p>                     |
+  | C-c /     | 插入闭合标志                |
 2. 基础教程学习后应该先投入实践，一段时间之后再看高级教程，这样才会起到总结及
    提高的作用。时间上可以跃进，步骤上却绝不可以！
 ** 《HTML5与CSS3基础教程（第8版）》
@@ -301,78 +309,78 @@ ON/OFF   M-x xterm-mouse-mode
 1. 语义化HTML(semantics HTML)指的是那些使用最恰当的HTML元素进行标记的内容，在
    标记的过程中并不关心内容显示。
 2. 各标签的简单层级关系如下表：
-| 序号 | 一级元素 | 二级    | 属性及值             | 作用                                             | HTML5 |
-|------+----------+---------+----------------------+--------------------------------------------------+-------|
-|    1 | DOCTYPE  |         | <!DOCTYPE html>      | 声明页面为html5文档                              | 是    |
-|    2 | html     |         | lang="en"            | 开始文档的实际html部分                           |       |
-|    3 | head     |         |                      | 网页文档的头部                                   |       |
-|    4 |          | meta    | charset="utf-8"      | 设置字符编码                                     |       |
-|    5 |          | title   |                      | 设置页面标题，title元素是必需的                  |       |
-|    6 | body     |         |                      | 主体                                             |       |
-|    7 |          | h1~h6   |                      | 六级标题，可以放在其他元素中                     |       |
-|    8 |          | header  | role="banner"        | 一组介绍性、导航性内容，加role表示页面级页眉     | 是    |
-|    9 |          | nav     | role="navigation"    | 明确表示主导航链接的区域，可以使用ul及ol结构     | 是    |
-|   10 |          | main    | role="main"          | 表示页面主要内容部分，一个页面只能使用一次       | 是    |
-|   11 |          | article |                      | 文章、评论等独立的内容项，可以嵌套使用           | 是    |
-|   12 |          | section |                      | 相似主题的一组内容，表示特定区域（与div不同）    | 是    |
-|   13 |          | aside   | role="complementary" | 独立于主体内容之外的一块内容                     | 是    |
-|   14 |          | footer  | role="contentinfo"   | 页脚，页面级才使用role                           | 是    |
-|   15 |          | div     |                      | 用于添加CSS及js的通用容器，不含语义，对比span    |       |
-|   16 |          |         | id="name"            | 一个页面同一ID只能出现一次                       |       |
-|   17 |          |         | class="name1 ..."    | 一个元素可有多个class且同一class可为多个元素使用 |       |
-|   18 |          |         | title="label"        | 与title元素不同，为任何部分添加提示标签          |       |
-|------+----------+---------+----------------------+--------------------------------------------------+-------|
+  | 序号 | 一级元素 | 二级    | 属性及值             | 作用                                             | HTML5 |
+  |------+----------+---------+----------------------+--------------------------------------------------+-------|
+  |    1 | DOCTYPE  |         | <!DOCTYPE html>      | 声明页面为html5文档                              | 是    |
+  |    2 | html     |         | lang="en"            | 开始文档的实际html部分                           |       |
+  |    3 | head     |         |                      | 网页文档的头部                                   |       |
+  |    4 |          | meta    | charset="utf-8"      | 设置字符编码                                     |       |
+  |    5 |          | title   |                      | 设置页面标题，title元素是必需的                  |       |
+  |    6 | body     |         |                      | 主体                                             |       |
+  |    7 |          | h1~h6   |                      | 六级标题，可以放在其他元素中                     |       |
+  |    8 |          | header  | role="banner"        | 一组介绍性、导航性内容，加role表示页面级页眉     | 是    |
+  |    9 |          | nav     | role="navigation"    | 明确表示主导航链接的区域，可以使用ul及ol结构     | 是    |
+  |   10 |          | main    | role="main"          | 表示页面主要内容部分，一个页面只能使用一次       | 是    |
+  |   11 |          | article |                      | 文章、评论等独立的内容项，可以嵌套使用           | 是    |
+  |   12 |          | section |                      | 相似主题的一组内容，表示特定区域（与div不同）    | 是    |
+  |   13 |          | aside   | role="complementary" | 独立于主体内容之外的一块内容                     | 是    |
+  |   14 |          | footer  | role="contentinfo"   | 页脚，页面级才使用role                           | 是    |
+  |   15 |          | div     |                      | 用于添加CSS及js的通用容器，不含语义，对比span    |       |
+  |   16 |          |         | id="name"            | 一个页面同一ID只能出现一次                       |       |
+  |   17 |          |         | class="name1 ..."    | 一个元素可有多个class且同一class可为多个元素使用 |       |
+  |   18 |          |         | title="label"        | 与title元素不同，为任何部分添加提示标签          |       |
+  |------+----------+---------+----------------------+--------------------------------------------------+-------|
 3 注释
 格式为<!--注释部分-->
 **** 文本
-| 序号 | 元素              | 属性及值          | 作用                                     | HTML5 |
-|------+-------------------+-------------------+------------------------------------------+-------|
-|    1 | p                 |                   | 创建新段落                               |       |
-|    2 | small             |                   | 表示细则一类的旁注，只适用于短语         |       |
-|    3 | strong            |                   | 表内容的重要性，默认粗体，对比b          |       |
-|    4 | em                |                   | 表强调的唯一元素，默认斜体，对比i        |       |
-|    5 | figure/figcaption |                   | 引入图片，后者为前者标题，可选           | 是    |
-|    6 | cite              |                   | 指明引用或参考，表参考源，默认斜体       |       |
-|    7 | blockquote/q      | cite="url"        | 表示引述的文本，前者新行，后者行中       |       |
-|    8 | time              | datetime="time"   | 指定时间，datetime中为机器可读格式       | 是    |
-|    9 | abbr              | title="expansion" | 提示框提示缩写的全程                     |       |
-|   10 | dfn               |                   | 定义术语，默认斜体，可与abbr合用         |       |
-|   11 | sup/sub           |                   | 创建上/下标                              |       |
-|   12 | address           |                   | 添加作者联系信息，一般为email            |       |
-|   13 | ins/del           |                   | 标注添加/删除的内容，默认加上下划/删除线 |       |
-|   14 | s                 |                   | 标注不再准确和或相关的文本，默认家删除线 |       |
-|   15 | code              |                   | 标记代码                                 |       |
-|   16 | kbd/samp/bar      |                   | 标记用户输入/事例输出/变量的值           |       |
-|   17 | pre               |                   | 使用预格式化的文本，即保留原有格式       |       |
-|   18 | mark              |                   | 突出显示文本，默认黄色背景               | 是    |
-|   19 | br                | <br>或<br />      | 插入换行，为空元素                       |       |
-|   20 | span              | id/class/lang等   | 无语义元素，不适合块级内容，对比div      |       |
-|------+-------------------+-------------------+------------------------------------------+-------|
+  | 序号 | 元素              | 属性及值          | 作用                                     | HTML5 |
+  |------+-------------------+-------------------+------------------------------------------+-------|
+  |    1 | p                 |                   | 创建新段落                               |       |
+  |    2 | small             |                   | 表示细则一类的旁注，只适用于短语         |       |
+  |    3 | strong            |                   | 表内容的重要性，默认粗体，对比b          |       |
+  |    4 | em                |                   | 表强调的唯一元素，默认斜体，对比i        |       |
+  |    5 | figure/figcaption |                   | 引入图片，后者为前者标题，可选           | 是    |
+  |    6 | cite              |                   | 指明引用或参考，表参考源，默认斜体       |       |
+  |    7 | blockquote/q      | cite="url"        | 表示引述的文本，前者新行，后者行中       |       |
+  |    8 | time              | datetime="time"   | 指定时间，datetime中为机器可读格式       | 是    |
+  |    9 | abbr              | title="expansion" | 提示框提示缩写的全程                     |       |
+  |   10 | dfn               |                   | 定义术语，默认斜体，可与abbr合用         |       |
+  |   11 | sup/sub           |                   | 创建上/下标                              |       |
+  |   12 | address           |                   | 添加作者联系信息，一般为email            |       |
+  |   13 | ins/del           |                   | 标注添加/删除的内容，默认加上下划/删除线 |       |
+  |   14 | s                 |                   | 标注不再准确和或相关的文本，默认家删除线 |       |
+  |   15 | code              |                   | 标记代码                                 |       |
+  |   16 | kbd/samp/bar      |                   | 标记用户输入/事例输出/变量的值           |       |
+  |   17 | pre               |                   | 使用预格式化的文本，即保留原有格式       |       |
+  |   18 | mark              |                   | 突出显示文本，默认黄色背景               | 是    |
+  |   19 | br                | <br>或<br />      | 插入换行，为空元素                       |       |
+  |   20 | span              | id/class/lang等   | 无语义元素，不适合块级内容，对比div      |       |
+  |------+-------------------+-------------------+------------------------------------------+-------|
 
 **** 图像
 ***** 图片的六个要素：格式、下载速度、颜色、大小（尺寸）、透明度、动画
 ***** web中最广泛的三种格式：JPEG、PNG、GIF，后两者为无损格式。各特点如下表：
-| 序号 | 格式  | 损失 | 大小 | 色彩数   | 基本透明 | alpha透明 | 动画 |
-|------+-------+------+------+----------+----------+-----------+------|
-|    1 | JPEG  | 有   | 小   | >=1600万 | N        | N         | N    |
-|    2 | PNG8  | 无   | 大   | 256      | Y        | Y         | N    |
-|    3 | PNG24 | 无   | 大   | >=1600万 | Y        | N         | N    |
-|    4 | PNG32 | 无   | 大   | >=1600万 | Y        | Y         | N    |
-|    5 | GIF   | 无   | 大   | 256      | Y        | N         | Y    |
-|------+-------+------+------+----------+----------+-----------+------|
+  | 序号 | 格式  | 损失 | 大小 | 色彩数   | 基本透明 | alpha透明 | 动画 |
+  |------+-------+------+------+----------+----------+-----------+------|
+  |    1 | JPEG  | 有   | 小   | >=1600万 | N        | N         | N    |
+  |    2 | PNG8  | 无   | 大   | 256      | Y        | Y         | N    |
+  |    3 | PNG24 | 无   | 大   | >=1600万 | Y        | N         | N    |
+  |    4 | PNG32 | 无   | 大   | >=1600万 | Y        | Y         | N    |
+  |    5 | GIF   | 无   | 大   | 256      | Y        | N         | Y    |
+  |------+-------+------+------+----------+----------+-----------+------|
 ***** 页面中插入图像：<img src="image.url" /> 
 ***** 提供替代文本：alt属性，在src属性及值的后面 
 ***** 指定图像尺寸：width、height属性，在src属性及值的后面
 **** 链接
 ***** a元素创建链接，格式为<a>Label text</a>
 ***** 各属性及格式如下表：
-| 序号 | 属性   | 格式                      | 作用                           | 备注        |
-|------+--------+---------------------------+--------------------------------+-------------|
-|    1 | href   | href="page.html"          | 激活标签文本时，转到此页面     | 提供URL地址 |
-|    2 | rel    | rel="external"            | 可选，指指向另一网站           | 提升语义    |
-|    3 | title  | title="prompting message" | 鼠标旋停时显示在链接旁         |             |
-|    4 | target | target="window"           | 在名为window的新窗口中打开链接 | 一般不用    |
-|------+--------+---------------------------+--------------------------------+-------------|
+  | 序号 | 属性   | 格式                      | 作用                           | 备注        |
+  |------+--------+---------------------------+--------------------------------+-------------|
+  |    1 | href   | href="page.html"          | 激活标签文本时，转到此页面     | 提供URL地址 |
+  |    2 | rel    | rel="external"            | 可选，指指向另一网站           | 提升语义    |
+  |    3 | title  | title="prompting message" | 鼠标旋停时显示在链接旁         |             |
+  |    4 | target | target="window"           | 在名为window的新窗口中打开链接 | 一般不用    |
+  |------+--------+---------------------------+--------------------------------+-------------|
 ***** 其他
 1. href指hypertext reference（超文本引用）。
 2. HTML5支持块级链接(block-level link)，方法同上，只要将相应段落加载a标签中即
@@ -461,6 +469,25 @@ selector {
    |    5 | 蓝   | 240 | 100% | 50% |
    |    6 | 紫红 | 300 | 100% | 50% |
    |------+------+-----+------+-----|
+**** 操作样式表
+***** 外部样式表（首选方法）
+ 1. html页面head部分输入<link rel="stylesheet" href="url.css"/>
+ 2. HTML5中不需要在link元素中包含type="text/css" 
+***** 嵌入样式表
+ 1. 在head中添加<style>代码部分<style/>
+ 2. 此规则不能用于其他页面，缓存的好处也不存在了。
+ 3. HTML5也不要求在style开始标签中包含属性type="text/css"
+***** 内联样式表（最不可取） 
+ 1. 在希望格式化的HTML元素的开始标签中输入style="border: 4px solid red"无需花
+    括号和选择器，多条声明用分号隔开。
+ 2. 测试可能用的到。
+ 3. 内联样式的优先级高于其他所有样式，!important除外。
+
+***** 样式的层叠和顺序
+ 1. 在其他条件相同的情况下，越晚出现的样式优先级越高。
+ 2. 不同的外部样式表中规则如有冲突，后出现的样式表中的规则优先。
+ 3. 避免使用!important
+**** 定义选择器
 ** 《DIV+CSS3网站布局：从入门到精通》
 *** 网页设计基础与网站开发流程
 **** 网页类型：
@@ -507,9 +534,58 @@ selector {
 ***** 承包网站开发流程
 承包网站的建设和开发与个人网站、网络项目的开发性质不同，它是开发者（或者网络公
 司）与客户（或者企业）之间的互动过程，这里面涉及双方多轮交流、沟通的过程和环节。
+* JavaScript
 ** 《JavaScript基础教程》
 此书竟然不系统地介绍数据类型及语法基础，貌似不太适合作为第一本书。
 ** 《Professional: Javascript for Web Developers》
+*** Language Basics
+**** SYNTAX
+ 1. Case-sensitivity
+ 2. Identifiers(camel case,the first letter is lowercase and each additional
+    word is offset by a capital letter,like:firstSecond,myCar)
+ 3. Comment,uses C-style comments for both sing-line(//) and block comments(/*
+    */).
+ 4. Statements,terminated by a semicolon, not required but preferred.
+ 5. Code block, using C-style syntax, beginning with a { and end with a }.
+**** KEYWORDS AND RESERVED WORDS
+  1. the complete list of keywords is as follows:
+     |    | a-g       | h-n        | o-z    |
+     |----+-----------+------------+--------|
+     |  1 | break     | instanceof | return |
+     |  2 | case      | if         | switch |
+     |  3 | catch     | new        | typeof |
+     |  4 | continue  |            | this   |
+     |  5 | do        |            | throw  |
+     |  6 | debugger* |            | try    |
+     |  7 | default   |            | var    |
+     |  8 | delete    |            | void   |
+     |  9 | else      |            | while  |
+     | 10 | finally   |            | with   |
+     | 11 | for       |            |        |
+     | 12 | function  |            |        |
+     |----+-----------+------------+--------|
+  2. the following is the complete list of reserved words defined in ECMA-262:
+     |    | a-g      | h-n        | o-z          |
+     |----+----------+------------+--------------|
+     |  1 | abstract | int        | package      |
+     |  2 | boolean  | interface  | private      |
+     |  3 | byte     | implements | protected    |
+     |  4 | char     | import     | public       |
+     |  5 | class    | long       | short        |
+     |  6 | const    | native     | static       |
+     |  7 | debugger | let        | super        |
+     |  8 | double   |            | synchronized |
+     |  9 | enum     |            | throws       |
+     | 10 | export   |            | transient    |
+     | 11 | extends  |            | volatile     |
+     | 12 | final    |            | yield        |
+     | 13 | float    |            |              |
+     | 14 | goto     |            |              |
+     |----+----------+------------+--------------|
+  3. In addition to the list of keywords and reserved words, ECMA-262, fifth
+     edition, places restrictions on the names "eval" and "arguments".
+**** VARIABLES
+
 ** 慕课网
 * SQL/PHP
 ** 《SQL必知必会》
