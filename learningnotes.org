@@ -413,7 +413,7 @@ Tips:
 4. 图片、音频、email都可以作为链接，格式如:<a href="url">Label text</a>，url为文件位置，
   其中email为："mailto:name@domain.com" ，是个例外且一般不推荐，电话为：tel+国
   家代码+电话号码。此外，链接中都可以使用title属性。
-*** TODO CSS
+*** TODO [#B] CSS
     DEADLINE: <2016-07-31 日>
 CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表。
 **** 构造规则
@@ -687,6 +687,13 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 *** DONE 第四章 案例研究：JavaScript图片库
     DEADLINE: <2016-07-25 一> SCHEDULED: <2016-07-25 一>
 *** DONE 第五章 最佳实践
+    #+BEGIN: clocktable :maxlevel 2 :scope subtree
+    Clock summary at [2016-07-26 二 22:36]
+    | Headline     | Time   |
+    |--------------+--------|
+    | *Total time* | *2:28* |
+    |--------------+--------|
+    #+END:
     CLOCK: [2016-07-26 二 21:47]--[2016-07-26 二 22:29] =>  0:42
     CLOCK: [2016-07-26 二 21:06]--[2016-07-26 二 21:41] =>  0:35
     CLOCK: [2016-07-26 二 20:21]--[2016-07-26 二 20:54] =>  0:33
