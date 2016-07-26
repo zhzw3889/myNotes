@@ -414,7 +414,7 @@ Tips:
   其中email为："mailto:name@domain.com" ，是个例外且一般不推荐，电话为：tel+国
   家代码+电话号码。此外，链接中都可以使用title属性。
 *** TODO CSS
-    DEADLINE: <2016-07-24 日>
+    DEADLINE: <2016-07-31 日>
 CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表。
 **** 构造规则
  + 每条规则都有两个主要部分：选择器（selector）和声明块（declaration block）。
@@ -614,11 +614,9 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 司）与客户（或者企业）之间的互动过程，这里面涉及双方多轮交流、沟通的过程和环节。
 * JavaScript
 ** 其他
-*** TODO JavaScript知识的总体框架的了解，最好是视频教程
-    DEADLINE: <2016-07-21 四> SCHEDULED: <2016-07-20 三>
 ** 《JavaScript基础教程》
  1. 以例子为导向，没有系统讲解语言本身的要点，感觉不太适合作为入门书.
- 2. 例子讲解的方式还算不错，功能逐渐完善，代码集少成多，伴随着思考深入的过程.
+ 2. 例子讲解的方式还算不错，功能逐渐完善，代码积少成多，伴随着思考深入的过程.
  3. 等到有时间了可以把里面的代码案例看看.
 ** 《Professional: Javascript for Web Developers》
 *** Language Basics
@@ -686,20 +684,24 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     DEADLINE: <2016-07-24 日> SCHEDULED: <2016-07-24 日>
 *** DONE 第三章 DOM
     DEADLINE: <2016-07-24 日> SCHEDULED: <2016-07-24 日>
-
-*** TODO 第四章 案例研究：JavaScript图片库
+*** DONE 第四章 案例研究：JavaScript图片库
     DEADLINE: <2016-07-25 一> SCHEDULED: <2016-07-25 一>
+*** DONE 第五章 最佳实践
+    CLOCK: [2016-07-26 二 21:47]--[2016-07-26 二 22:29] =>  0:42
+    CLOCK: [2016-07-26 二 21:06]--[2016-07-26 二 21:41] =>  0:35
+    CLOCK: [2016-07-26 二 20:21]--[2016-07-26 二 20:54] =>  0:33
+    CLOCK: [2016-07-26 二 19:31]--[2016-07-26 二 20:09] =>  0:38
 ** 慕课网
 ** 极客学院
 *** JavaScript基础教程
  1. 文档输出，document.write()
- 2. 
 *** JavaScript语法详解
 ** 相关网站
  1. www.w3school.com.cn
  2. 
 * SQL/PHP
 ** 《SQL必知必会》
+* Node.js
 * C 
 ** 《一站式学习C编程》
 *** 简单函数
