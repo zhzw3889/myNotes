@@ -698,6 +698,10 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     CLOCK: [2016-07-26 二 21:06]--[2016-07-26 二 21:41] =>  0:35
     CLOCK: [2016-07-26 二 20:21]--[2016-07-26 二 20:54] =>  0:33
     CLOCK: [2016-07-26 二 19:31]--[2016-07-26 二 20:09] =>  0:38
+*** TODO 第六章 案例研究：图片库改进
+    DEADLINE: <2016-07-28 四> SCHEDULED: <2016-07-28 四>
+*** TODO 第七章 动态创建标记
+    DEADLINE: <2016-07-29 五> SCHEDULED: <2016-07-29 五>
 ** 慕课网
 ** 极客学院
 *** JavaScript基础教程
@@ -705,11 +709,11 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 *** JavaScript语法详解
 ** 相关网站
  1. www.w3school.com.cn
- 2. 
 * SQL/PHP
 ** 《SQL必知必会》
 * Node.js
 * C 
+** DONE <The C programming Language>
 ** 《一站式学习C编程》
 *** 简单函数
 1. main函数只有两种声明形式：标准形式int main(int argc, char *argv[])及int
@@ -816,7 +820,6 @@ $ git status
 |                                      |                                        |
 |                                      |                                        |
 ** 《Pro Git》
-
 * testTODO
 
 
