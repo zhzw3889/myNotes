@@ -314,46 +314,46 @@ Tips:
 
 * HTML5/CSS3
 ** 其他
-1. emacs中有html-mode，在此模式中的快捷键如下：
-  | 快捷键    | 作用                        |
-  |-----------+-----------------------------|
-  | C-c C-t   | 调用模板                    |
-  | C-c C-s   | 启用/停用html-autoview-mode |
-  | C-c 1-6   | 插入h1-h6标题               |
-  | C-c C-c i | 插入图像引入标记<img>       |
-  | C-c Enter | 插入<p>                     |
-  | C-c /     | 插入闭合标志                |
-2. 基础教程学习后应该先投入实践，一段时间之后再看高级教程，这样才会起到总结及
+ 1. emacs中有html-mode，在此模式中的快捷键如下：
+   | 快捷键    | 作用                        |
+   |-----------+-----------------------------|
+   | C-c C-t   | 调用模板                    |
+   | C-c C-s   | 启用/停用html-autoview-mode |
+   | C-c 1-6   | 插入h1-h6标题               |
+   | C-c C-c i | 插入图像引入标记<img>       |
+   | C-c Enter | 插入<p>                     |
+   | C-c /     | 插入闭合标志                |
+ 2. 基础教程学习后应该先投入实践，一段时间之后再看高级教程，这样才会起到总结及
    提高的作用。时间上可以跃进，步骤上却绝不可以！
 ** 《HTML5与CSS3基础教程（第8版）》
 *** HTML
 **** 基本HTML结构
-1. 语义化HTML(semantics HTML)指的是那些使用最恰当的HTML元素进行标记的内容，在
+ 1. 语义化HTML(semantics HTML)指的是那些使用最恰当的HTML元素进行标记的内容，在
    标记的过程中并不关心内容显示。
-2. 各标签的简单层级关系如下表：
-  | 序号 | 一级元素 | 二级    | 属性及值             | 作用                                             | HTML5 |
-  |------+----------+---------+----------------------+--------------------------------------------------+-------|
-  |    1 | DOCTYPE  |         | <!DOCTYPE html>      | 声明页面为html5文档                              | 是    |
-  |    2 | html     |         | lang="en"            | 开始文档的实际html部分                           |       |
-  |    3 | head     |         |                      | 网页文档的头部                                   |       |
-  |    4 |          | meta    | charset="utf-8"      | 设置字符编码                                     |       |
-  |    5 |          | title   |                      | 设置页面标题，title元素是必需的                  |       |
-  |    6 | body     |         |                      | 主体                                             |       |
-  |    7 |          | h1~h6   |                      | 六级标题，可以放在其他元素中                     |       |
-  |    8 |          | header  | role="banner"        | 一组介绍性、导航性内容，加role表示页面级页眉     | 是    |
-  |    9 |          | nav     | role="navigation"    | 明确表示主导航链接的区域，可以使用ul及ol结构     | 是    |
-  |   10 |          | main    | role="main"          | 表示页面主要内容部分，一个页面只能使用一次       | 是    |
-  |   11 |          | article |                      | 文章、评论等独立的内容项，可以嵌套使用           | 是    |
-  |   12 |          | section |                      | 相似主题的一组内容，表示特定区域（与div不同）    | 是    |
-  |   13 |          | aside   | role="complementary" | 独立于主体内容之外的一块内容                     | 是    |
-  |   14 |          | footer  | role="contentinfo"   | 页脚，页面级才使用role                           | 是    |
-  |   15 |          | div     |                      | 用于添加CSS及js的通用容器，不含语义，对比span    |       |
-  |   16 |          |         | id="name"            | 一个页面同一ID只能出现一次                       |       |
-  |   17 |          |         | class="name1 ..."    | 一个元素可有多个class且同一class可为多个元素使用 |       |
-  |   18 |          |         | title="label"        | 与title元素不同，为任何部分添加提示标签          |       |
-  |------+----------+---------+----------------------+--------------------------------------------------+-------|
-3 注释
-格式为<!--注释部分-->
+ 2. 各标签的简单层级关系如下表：
+   | 序号 | 一级元素 | 二级    | 属性及值             | 作用                                             | HTML5 |
+   |------+----------+---------+----------------------+--------------------------------------------------+-------|
+   |    1 | DOCTYPE  |         | <!DOCTYPE html>      | 声明页面为html5文档                              | 是    |
+   |    2 | html     |         | lang="en"            | 开始文档的实际html部分                           |       |
+   |    3 | head     |         |                      | 网页文档的头部                                   |       |
+   |    4 |          | meta    | charset="utf-8"      | 设置字符编码                                     |       |
+   |    5 |          | title   |                      | 设置页面标题，title元素是必需的                  |       |
+   |    6 | body     |         |                      | 主体                                             |       |
+   |    7 |          | h1~h6   |                      | 六级标题，可以放在其他元素中                     |       |
+   |    8 |          | header  | role="banner"        | 一组介绍性、导航性内容，加role表示页面级页眉     | 是    |
+   |    9 |          | nav     | role="navigation"    | 明确表示主导航链接的区域，可以使用ul及ol结构     | 是    |
+   |   10 |          | main    | role="main"          | 表示页面主要内容部分，一个页面只能使用一次       | 是    |
+   |   11 |          | article |                      | 文章、评论等独立的内容项，可以嵌套使用           | 是    |
+   |   12 |          | section |                      | 相似主题的一组内容，表示特定区域（与div不同）    | 是    |
+   |   13 |          | aside   | role="complementary" | 独立于主体内容之外的一块内容                     | 是    |
+   |   14 |          | footer  | role="contentinfo"   | 页脚，页面级才使用role                           | 是    |
+   |   15 |          | div     |                      | 用于添加CSS及js的通用容器，不含语义，对比span    |       |
+   |   16 |          |         | id="name"            | 一个页面同一ID只能出现一次                       |       |
+   |   17 |          |         | class="name1 ..."    | 一个元素可有多个class且同一class可为多个元素使用 |       |
+   |   18 |          |         | title="label"        | 与title元素不同，为任何部分添加提示标签          |       |
+   |------+----------+---------+----------------------+--------------------------------------------------+-------|
+ 3. 注释
+   格式为<!--注释部分-->
 **** 文本
   | 序号 | 元素              | 属性及值          | 作用                                     | HTML5 |
   |------+-------------------+-------------------+------------------------------------------+-------|
@@ -404,13 +404,13 @@ Tips:
   |    4 | target | target="window"           | 在名为window的新窗口中打开链接 | 一般不用    |
   |------+--------+---------------------------+--------------------------------+-------------|
 ***** 其他
-1. href指hypertext reference（超文本引用）。
-2. HTML5支持块级链接(block-level link)，方法同上，只要将相应段落加载a标签中即
+ 1. href指hypertext reference（超文本引用）。
+ 2. HTML5支持块级链接(block-level link)，方法同上，只要将相应段落加载a标签中即
   可，几乎支持所有元素，如段落、列表、整篇文章。
-3. 创建锚(anchor)：转到页面特定位置使用，格式为
+ 3. 创建锚(anchor)：转到页面特定位置使用，格式为
   href="page.html#anchor-name"其中anchor-name为转至元素的id值，如在本页面内则
   无"page.html"
-4. 图片、音频、email都可以作为链接，格式如:<a href="url">Label text</a>，url为文件位置，
+ 4. 图片、音频、email都可以作为链接，格式如:<a href="url">Label text</a>，url为文件位置，
   其中email为："mailto:name@domain.com" ，是个例外且一般不推荐，电话为：tel+国
   家代码+电话号码。此外，链接中都可以使用title属性。
 *** TODO [#B] CSS
@@ -569,18 +569,18 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 ** 《DIV+CSS3网站布局：从入门到精通》
 *** 网页设计基础与网站开发流程
 **** 网页类型：
-+ 静态网页：手动更新页面信息，以.html及.htm为扩展名。
-+ 动态网页：通过网页脚本与语言自动处理、自动更新页面，以.asp/.aspx/.php/.jsp为扩展名。
+ + 静态网页：手动更新页面信息，以.html及.htm为扩展名。
+ + 动态网页：通过网页脚本与语言自动处理、自动更新页面，以.asp/.aspx/.php/.jsp为扩展名。
 **** 实现动态网页的服务器技术主要包括:ASP/ASP.NET、PHP和JSP等。
-+ ASP/ASP.NET(Active Server Pages):微软技术。
-+ PHP(Hypetext Preprocessor,超文本预处理器)：开源技术。
-+ JSP(Java Server Pages): Sun公司技术。
+ + ASP/ASP.NET(Active Server Pages):微软技术。
+ + PHP(Hypetext Preprocessor,超文本预处理器)：开源技术。
+ + JSP(Java Server Pages): Sun公司技术。
 **** 动态网页和静态网页
-+ 静态网页使用语言：HTML
-+ 动态网页使用语言：HTML+ASP、HTML+PHP或HTML+JSP等
+ + 静态网页使用语言：HTML
+ + 动态网页使用语言：HTML+ASP、HTML+PHP或HTML+JSP等
 **** 网页设计流程
-+ 画图和切图>编写代码>
-+ 团队协作开发稍微复杂系统，分工更加明确。
+ + 画图和切图>编写代码>
+ + 团队协作开发稍微复杂系统，分工更加明确。
 **** 网站开发流程
 ***** 个人网站开发流程
 ****** 确定主题。结合兴趣、背景等
@@ -588,11 +588,11 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 ****** 学习网页设计和开发技术。HTML/CSS/JS/PHP等
 ****** 选择服务器技术。ASP+Access/PHP+MYSQL
 ****** 网站策划。
-1. 栏目与板块编排
-2. 目录结构
-3. 链接结构。是指页面之间相互链接的拓扑结构，它建立在目录结构的基础之上，但可
+ 1. 栏目与板块编排
+ 2. 目录结构
+ 3. 链接结构。是指页面之间相互链接的拓扑结构，它建立在目录结构的基础之上，但可
    以跨越目录。
-4. 网站风格设计
+ 4. 网站风格设计
 ****** 数据结构规划
 ****** 准备网站内容
 ****** 程序开发。包括前台程序和后台程序，核心问题是编写后台程序。
@@ -601,14 +601,14 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 ****** 网站推广
 ****** 网站运行与维护
 ***** 应用项目开发流程
-1. 产品制作人，写产品计划书。
-2. 用户体验研究员，做调查分析。
-3. 信息建构师，设计产品架构。
-4. 互动设计师，作出互动流程。
-5. 视觉设计师和用户界面设计师，作出页面视觉设计。
-6. 前台工程师，前台开发。
-7. 后台工程师，后台开发。
-8. 用户体验研究员，做用户测试，确保质量。
+ 1. 产品制作人，写产品计划书。
+ 2. 用户体验研究员，做调查分析。
+ 3. 信息建构师，设计产品架构。
+ 4. 互动设计师，作出互动流程。
+ 5. 视觉设计师和用户界面设计师，作出页面视觉设计。
+ 6. 前台工程师，前台开发。
+ 7. 后台工程师，后台开发。
+ 8. 用户体验研究员，做用户测试，确保质量。
 ***** 承包网站开发流程
 承包网站的建设和开发与个人网站、网络项目的开发性质不同，它是开发者（或者网络公
 司）与客户（或者企业）之间的互动过程，这里面涉及双方多轮交流、沟通的过程和环节。
@@ -744,17 +744,17 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 ** 《Head First Java》
 *** 类与对象
 **** 编写类
-#+BEGIN_SRC java
-class Dog {
-  int size;
-  String breed;
-  String name;
+   #+BEGIN_SRC java
+   class Dog {
+     int size;
+     String breed;
+     String name;
 
-  void bark() {
-    System.out.println("Ruff! Ruff!");
-  }
-}
-#+END_SRC
+     void bark() {
+       System.out.println("Ruff! Ruff!");
+     }
+   }
+   #+END_SRC
 **** 编写测试用的类
 #+BEGIN_SRC java
 class DogTestDrive {
@@ -774,9 +774,8 @@ class DogTestDrive {
   }
 }
 #+END_SRC
-
 ** 《Java从入门到精通》
-1. 基本数据类型、变量与常量、基本运算符、流程控制等与C语言大体相似，可以参照C
+ 1. 基本数据类型、变量与常量、基本运算符、流程控制等与C语言大体相似，可以参照C
    语法相关知识。
 ** JDEE配置
 *** Collection of Emacs Development Environment Tools(CEDET)
@@ -811,18 +810,10 @@ $ cd git-tutorial
 $ git init
 *** git status - Check the status of the repository
 $ git status
-| Command                              | Effect                                 |
-|--------------------------------------+----------------------------------------|
-| git add [filename]                   | To add files to the stage              |
-| git commit [-m "commit information"] | Save the historic records of the stage |
-| git diff [filename]                  | To see the                             |
-|--------------------------------------+----------------------------------------|
-|                                      |                                        |
-|                                      |                                        |
+    | Command                              | Effect                                 |
+    |--------------------------------------+----------------------------------------|
+    | git add [filename]                   | To add files to the stage              |
+    | git commit [-m "commit information"] | Save the historic records of the stage |
+    | git diff [filename]                  | To see the                             |
+    |--------------------------------------+----------------------------------------|
 ** 《Pro Git》
-* testTODO
-
-
-
-
-
