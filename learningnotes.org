@@ -325,7 +325,8 @@ Tips:
    | C-c /     | 插入闭合标志                |
  2. 基础教程学习后应该先投入实践，一段时间之后再看高级教程，这样才会起到总结及
    提高的作用。时间上可以跃进，步骤上却绝不可以！
-** 《HTML5与CSS3基础教程（第8版）》
+** TODO [#A] 《HTML5与CSS3基础教程（第8版）》
+   DEADLINE: <2016-07-31 日>
 *** HTML
 **** 基本HTML结构
  1. 语义化HTML(semantics HTML)指的是那些使用最恰当的HTML元素进行标记的内容，在
@@ -413,8 +414,7 @@ Tips:
  4. 图片、音频、email都可以作为链接，格式如:<a href="url">Label text</a>，url为文件位置，
   其中email为："mailto:name@domain.com" ，是个例外且一般不推荐，电话为：tel+国
   家代码+电话号码。此外，链接中都可以使用title属性。
-*** TODO [#B] CSS
-    DEADLINE: <2016-07-31 日>
+*** CSS
 CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表。
 **** 构造规则
  + 每条规则都有两个主要部分：选择器（selector）和声明块（declaration block）。
@@ -678,14 +678,153 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 **** 内容太多，语言风格稍显罗嗦，至少得看一个月，看完就来不及实践自己的项目了，应该作为进阶读本.
 ** TODO [#A] 《JavaScript DOM编程艺术》
    DEADLINE: <2016-07-31 日> SCHEDULED: <2016-07-20 三>
+ 1. 三原则：平稳退化、渐进增强、以用户为中心
 *** DONE 第一章 Javascript简史
     DEADLINE: <2016-07-23 六> SCHEDULED: <2016-07-23 六>
+    CLOCK: [2016-07-30 六 14:35]--[2016-07-30 六 14:53] =>  0:18
+ 1. DOM是一套对文档的内容进行抽象和概念化的方法.
+ 2. DOM是一种API.
+ 3. W3C对DOM的定义：一个与系统平台和编程语言无关的接口，程序和脚本可以通过这个
+    接口动态地访问和修改文档的内容、结构和样式.
+ 4. 现代浏览器对DOM的特性的覆盖率都基本达到95%，可以实现"编写一次，随处运行"！
 *** DONE 第二章 Javascript语法
     DEADLINE: <2016-07-24 日> SCHEDULED: <2016-07-24 日>
+    CLOCK: [2016-07-30 六 15:17]--[2016-07-30 六 16:46] =>  1:29
+**** 准备工作
+ 1. 嵌入JavaScript代码的三种方式
+    1. 将JavaScript代码放到文档<head>标签中的<script>标签之间
+    2. 将代码存为扩展名为.js的独立文件，让<head>部分的<script>标签的src属性指向该文件.
+    3. 将<script>标签放到HTML文档的最后，</body>标签之前.
+ 2. 在互联网环境下，Web浏览器负责完成有关的解释和执行工作.
+**** 语法
+ 1. 语句
+ 2. 注释，单行多行的注释规则与C的相同
+ 3. 变量
+    1. 允许直接对变量赋值而无需事先声明
+    2. 推荐提前声明，规则如var good;
+    3. 不允许变量名中包含空格或标点符号($例外)
+    4. 变量名允许包含字母、数字、美元符号和下划线（第一个字符不允许是字母）
+    5. 驼峰格式是函数名、方法名和对象属性名的首选格式
+ 4. 数据类型
+    Javascript不需要进行类型声明，它是一种弱类型(weakly typed)语言.有如下类型：
+    1. 字符串，必须包在引号内，单引号或双引号都可. 
+    2. 数值
+    3. 布尔(boolean)值，只有true和false两个值
+    4. 数组，用Array声明，其他如引用等同C类似
+    5. 关联数组，下标用字符串代替，不推荐，应该使用更通用的对象(Object)
+    6. 对象，用Object关键字，使用点号来获取属性
+**** 操作
+ 1. 算数运算符
+    1. 赋值、加减乘除、
+    2. 加(+)有加法和拼接两种操作
+    3. 快捷操作符(+=)可以一次完成"加法和赋值"
+**** 条件语句
+ 1. if语句，同C
+ 2. 比较操作符(>,<,>=,<=,!=,==,!==,===)
+ 3. 逻辑操作符(&&,||,!)
+**** 循环语句
+ 1. while循环
+    #+BEGIN_SRC javascript
+    while (condition) {
+       statements;
+    }
+    #+END_SRC
+ 2. do...while循环
+    #+BEGIN_SRC javascript
+    do {
+      statements;
+    } while (condition);
+    #+END_SRC
+ 3. for循环
+    #+BEGIN_SRC javascript
+    for (initial condition; test condition; alter condition) {
+      statements;
+    }
+    #+END_SRC
+**** 函数
+ 1. 使用关键词function，语法如下：
+    #+BEGIN_SRC javascript
+    function name(arguments) {
+       statements;
+    }
+    #+END_SRC
+ 2. 可以定义任意多的参数，用逗号将他们分隔开.
+ 3. 用return返回值.
+ 4. 可以用var关键字明确为函数变量设定作用域，使用了var的变量为局部变量，没有使
+    用的为全局变量.
+**** 对象
+ 1. 包含在对象里的数据可以通过两种形式访问-属性(property)和方法(method)
+    1. 属性是隶属于某个特定对象的变量
+    2. 方法是只有某个特定对象才能调用的函数
+ 2. 通过点语法访问：
+    #+BEGIN_SRC javascript
+    Object.property
+    Object.method()
+    #+END_SRC
+ 3. 创建一个新实例使用new关键词，如var jeremy = new Person;
+ 4. 对象包括用户定义对象(user-defined object)和内建对象(native object)
+ 5. 内建对象，如Array,Math,Date等
+ 6. 宿主对象，运行环境(浏览器)提供的对象，如Form,Image,Element,document等
 *** DONE 第三章 DOM
     DEADLINE: <2016-07-24 日> SCHEDULED: <2016-07-24 日>
+    CLOCK: [2016-07-31 日 09:12]--[2016-07-31 日 11：31] => 2:19
+**** DOM含义
+ 1. D，表document，文档
+ 2. O，表object，对象
+ 3. M，表model，模型
+**** 节点（node）
+ 常见的三种：元素节点、文本节点和属性节点
+ 1. 元素节点（element node），如<body>,<p>,<ul>等
+ 2. 文本节点（text node），文本节点总是被包含在元素节点的内部
+ 3. 属性节点（attribute node），属性总是被放在起始标签中，所以属性节点总是被包
+    含在元素节点中
+**** 获取元素
+ 1. getElementById
+    1. 此方法返回一个与那个有着给定id属性值的元素节点对应的对象
+    2. 是document对象特有的函数
+ 2. getElementsByTagName
+    1. 返回一个对象数组
+    2. 可以用"*"包含文档中的每个元素
+ 3. getElementsByClassName
+    1. 返回一个具有相同类名的元素的数组
+    2. 可以指定多个类名，只要在字符串参数中用空格分隔类名即可
+**** 获取和设置属性
+ 1. getAttribute
+    1. getAttribute方法不属于document对象，所以不能通过document对象调用
+    2. 只能通过元素节点对象调用，可以与getElementByTagName方法合用
+    3. 返回属性的值
+ 2. setAttribute
+    1. 修改属性节点的值
+    2. 只能用于元素节点
+    3. 两个参数，如：object.setAttribute(attribute,value)
+    4. 此方法并不改变源码内容，即动态刷新不影响文档的静态内容.
 *** DONE 第四章 案例研究：JavaScript图片库
     DEADLINE: <2016-07-25 一> SCHEDULED: <2016-07-25 一>
+    CLOCK: [2016-07-31 日 22:35]--[2016-07-31 日 23:13] =>  0:38
+    CLOCK: [2016-07-31 日 17:35]--[2016-07-31 日 17:56] =>  0:21
+    CLOCK: [2016-07-31 日 15:33]--[2016-07-31 日 16:28] =>  0:55
+**** 事件处理函数
+ 语法如：event = "JavaScript statement(s)"
+ 1. onmouseover，鼠标悬停时触发动作
+ 2. onmouseout，鼠标离开时触发动作
+ 3. onclick，单击链接时触发动作
+ 4. onload，页面加载是执行
+**** DOM属性
+ 1. childNodes
+    1. 用来获取一个元素的所有子元素，它是包含这个元素所以子元素的数组
+    2. 用法如：element.childnodes
+ 2. nodeType
+    1. 返回属性值，格式如下：node.nodeType
+    2. 返回数字
+    3. 元素节点的nodeType属性值为1,属性节点为2,文本节点为3
+ 3. nodeValue
+    1. 返回节点的值或i设置节点的值，格式如下：node.nodeValue
+ 4. firstChild
+    1. 获取第一个子元素，用法如下：node.firstChild
+    2. 同于node.childNodes[0]
+ 5. lastChild
+    1. 获取最后一个子元素，用法如下：node.lastChild
+    2. 同于node.childNodes[node.childNodes.length-1]
 *** DONE 第五章 最佳实践
     #+BEGIN: clocktable :maxlevel 2 :scope subtree
     Clock summary at [2016-07-26 二 22:36]
@@ -698,17 +837,19 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     CLOCK: [2016-07-26 二 21:06]--[2016-07-26 二 21:41] =>  0:35
     CLOCK: [2016-07-26 二 20:21]--[2016-07-26 二 20:54] =>  0:33
     CLOCK: [2016-07-26 二 19:31]--[2016-07-26 二 20:09] =>  0:38
+*** TODO 复习总结前五章
+    DEADLINE: <2016-07-31 日>
 *** TODO 第六章 案例研究：图片库改进
-    DEADLINE: <2016-07-28 四> SCHEDULED: <2016-07-28 四>
+    DEADLINE: <2016-07-30 六> SCHEDULED: <2016-07-28 四>
 *** TODO 第七章 动态创建标记
-    DEADLINE: <2016-07-29 五> SCHEDULED: <2016-07-29 五>
+    DEADLINE: <2016-07-30 六> SCHEDULED: <2016-07-29 五>
+*** TODO 第八章 充实文档的内容
+    DEADLINE: <2016-07-30 六> SCHEDULED: <2016-07-30 六>
 ** 慕课网
-** 极客学院
-*** JavaScript基础教程
- 1. 文档输出，document.write()
-*** JavaScript语法详解
 ** 相关网站
  1. www.w3school.com.cn
+* jQuery
+* React
 * SQL/PHP
 ** 《SQL必知必会》
 * Node.js
@@ -793,23 +934,22 @@ class DogTestDrive {
 * Git/Github
 ** 《GitHub入门与实践》
 *** 设置姓名及邮箱地址
-$ git config --global user.name "John"
-$ git config --global user.email "hitzhzw3889@126.com"
+ 1. $ git config --global user.name "John"
+ 2. $ git config --global user.email "hitzhzw3889@126.com"
 *** 将color.ui设置为auto
-$ git config --global color.ui auto
+ 1. $ git config --global color.ui auto
 *** 在github上创建账户
-账号：zhzw3889
-密码：***@******1**
+ 1. 账号：zhzw3889
+ 2. 密码：***@******1**
 *** 设置SSH Key
-$ ssh -keygen -t rsa -C "hitzhzw3889@126.com"
-
-密码：******
+ 1. $ ssh -keygen -t rsa -C "hitzhzw3889@126.com"
+ 2. 密码：******
 *** git init  - To initialize repository
-$ mkdir git-tutorial
-$ cd git-tutorial
-$ git init
+ 1. $ mkdir git-tutorial
+ 2. $ cd git-tutorial
+ 3. $ git init
 *** git status - Check the status of the repository
-$ git status
+ 1. $ git status
     | Command                              | Effect                                 |
     |--------------------------------------+----------------------------------------|
     | git add [filename]                   | To add files to the stage              |
@@ -817,3 +957,10 @@ $ git status
     | git diff [filename]                  | To see the                             |
     |--------------------------------------+----------------------------------------|
 ** 《Pro Git》
+*** 起步
+**** Git基础要点
+ 1. 
+ 2. 
+ 3. 
+ 4. 
+
