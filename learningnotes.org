@@ -21,15 +21,15 @@
 5. 命令的每个部分之间必须至少有一个空格或者制表符（Unix中文件名及命令名不能使
    用空格）
 6. 7条规则（前5条是基本项）
-| 序号 | 规则                                                                 |
-|------+----------------------------------------------------------------------|
-|    1 | 方括号中的项是可选的                                                 |
-|    2 | 不在方括号中的项是必选项，必须作为命令的一部分输入                   |
-|    3 | 黑体字必须按原样准确键入                                             |
-|    4 | 斜体字必须用适当的值代替                                             |
-|    5 | 后面接省略号（...）的参数可以重复任意多次                            |
-|    6 | 如果一个单独的选项和一个参数组合在一起，那么该选项和参数必须同时使用 |
-|    7 | 由竖线字符分开的两个或多个项，表示可以从这个列表中选择一个项         |
+   | 序号 | 规则                                                                 |
+   |------+----------------------------------------------------------------------|
+   |    1 | 方括号中的项是可选的                                                 |
+   |    2 | 不在方括号中的项是必选项，必须作为命令的一部分输入                   |
+   |    3 | 黑体字必须按原样准确键入                                             |
+   |    4 | 斜体字必须用适当的值代替                                             |
+   |    5 | 后面接省略号（...）的参数可以重复任意多次                            |
+   |    6 | 如果一个单独的选项和一个参数组合在一起，那么该选项和参数必须同时使用 |
+   |    7 | 由竖线字符分开的两个或多个项，表示可以从这个列表中选择一个项         |
   
 *** 第11章 Shell
 1. 查看系统上安装了那些Shell： less /etc/shells
@@ -78,8 +78,8 @@
 2. 复位一个选项：set +o option
 **** 显示shell选项
 1. 显示shell选项的当前值
-| set -o | 容易阅读的方式显示，适合人类阅读                |
-| set +o | 紧缩的方式显示相同信息，适合用作shell脚本的数据 |
+   | set -o | 容易阅读的方式显示，适合人类阅读                |
+   | set +o | 紧缩的方式显示相同信息，适合用作shell脚本的数据 |
 
 *** 第13章 使用shell：命令和定制
 **** 元字符
@@ -117,7 +117,6 @@
    "The time and date are `date`."
 3. 反引号字符只在命令替换中使用！
 **** 历史列表
-
 ** opensuse
 * Emacs
 ** org-mode
@@ -137,58 +136,59 @@
   |-------------+-------------------------------------|
 *** 正文换行
    有两个方法：
-
-1、回车两次
-
-2、末尾加"\\"(引号内)
+ 1. 回车两次
+ 2. 末尾加"\\"(引号内)
 *** 字体
-*粗体*  /斜体/  +删除线+   _下划线_   下标：H_2 O   上标：E=mc^2    等宽字体：=git=
+ *粗体*  /斜体/  +删除线+   _下划线_   下标：H_2 O   上标：E=mc^2    等宽字体：=git=
 *** 表格
-1. '|'开头，TAB键对齐
-2. 两行之间加'|-'，再按TAB键就会有这样的效果
-3. 快捷键如下：
- - 整体区域
+ 1. '|'开头，TAB键对齐
+ 2. 两行之间加'|-'，再按TAB键就会有这样的效果
+ 3. 快捷键如下：
+    - 整体区域
 
-  |---------+--------------------------------|
-  | 操作    | 说明                           |
-  |---------+--------------------------------|
-  | Tab     | 移动到下一区域，必要时新建一行 |
-  | S-Tab   | 移动到上一区域                 |
-  | M-a/e   | 移动到本单元格的开头/结尾      |
-  | RET     | 移动到下一行，必要时新建一行   |
-  | C-c C-c | 调整表格，不移动光标           |
-  | C-c bar | 创建或转化为表格，TMD咋用啊？  |
-  |---------+--------------------------------|
- - 编辑行或列
-  |----------------+----------------------------------|
-  | 操作           | 说明                             |
-  |----------------+----------------------------------|
-  | M-left/right   | 移动列                           |
-  | M-up/down      | 移动行                           |
-  | M-S-left/right | 删除/插入列                      |
-  | M-S-up/down    | 删除/掺入行                      |
-  | C-c -          | 在本行下方添加水平分割线         |
-  | C-u C-c -      | 在本行上方添加水平分割线         |
-  | C-c RET        | 添加水平分割线并跳到下一行       |
-  | C-c ^          | 根据当前列排序，可以选择排序方式 |
-  | C-c `          | 在新窗口中编辑该单元格           |
-  |----------------+----------------------------------|
+     |---------+--------------------------------|
+     | 操作    | 说明                           |
+     |---------+--------------------------------|
+     | Tab     | 移动到下一区域，必要时新建一行 |
+     | S-Tab   | 移动到上一区域                 |
+     | M-a/e   | 移动到本单元格的开头/结尾      |
+     | RET     | 移动到下一行，必要时新建一行   |
+     | C-c C-c | 调整表格，不移动光标           |
+     | C-c bar | 创建或转化为表格，TMD咋用啊？  |
+     |---------+--------------------------------|
+    - 编辑行或列
+     |----------------+----------------------------------|
+     | 操作           | 说明                             |
+     |----------------+----------------------------------|
+     | M-left/right   | 移动列                           |
+     | M-up/down      | 移动行                           |
+     | M-S-left/right | 删除/插入列                      |
+     | M-S-up/down    | 删除/掺入行                      |
+     | C-c -          | 在本行下方添加水平分割线         |
+     | C-u C-c -      | 在本行上方添加水平分割线         |
+     | C-c RET        | 添加水平分割线并跳到下一行       |
+     | C-c ^          | 根据当前列排序，可以选择排序方式 |
+     | C-c `          | 在新窗口中编辑该单元格           |
+     |----------------+----------------------------------|
 
 *** 标题
 **** 种类
-1. 无序列表以"-"、'+'或者'*'开头
-2. 有序列表以'1.'或者'1)'开头
-3. 描述列表用'::'
+ 1. 无序列表以"-"、'+'或者'*'开头
+ 2. 有序列表以'1.'或者'1)'开头
+ 3. 描述列表用'::'
 **** 注意事项
-+ 列表符号后面都要有空格
-+ 同级别的列表缩进要相同
-+ 如果想要加入同级别的列表，可以M+RET
-+ 空两行折后列表结束，如果空一行执行M-RET，实际上还是输入同级项
+ + 列表符号后面都要有空格
+ + 同级别的列表缩进要相同
+ + 如果想要加入同级别的列表，可以M+RET
+ + 空两行折后列表结束，如果空一行执行M-RET，实际上还是输入同级项
 *** 插入代码
-1. <s, Tab
-2. 在光标后输入语言种类，如sh，java等
+ 1. <s, Tab
+ 2. 在光标后输入语言种类，如sh，java等
 *** table-insert
 *** "TODO" item
+    :LOGBOOK:
+    CLOCK: [2016-08-02 二 12:04]--[2016-08-02 二 12:35] =>  0:31
+    :END:
  1. Any headline starting with TODO become a TODO item.
  2. Important commands:
     | Command     | Effect                                                                 |
@@ -205,17 +205,31 @@
     | C-c C-x C-o | 结束计时                                                               |
     | C-c C-x C-r | 分析时间，创建时间统计表格                                             |
     |-------------+------------------------------------------------------------------------|
+*** Agenda views
+    :LOGBOOK:
+    CLOCK: [2016-08-02 二 12:39]--[2016-08-02 二 13:54] =>  1:15
+    :END:
+ 1. 把文件加入agenda列表才能在agenda里查看此文件的信息
+ 2. 常用快捷键如下：
+    | ordinal | commands | effect                                             |
+    |---------+----------+----------------------------------------------------|
+    |       1 | C-c [    | Add current file to the list of agenda files.      |
+    |       2 | C-c ]    | Remove current file from the list of agenda files. |
+    |       3 | C-c a    | Access to the dispatcher                           |
+    |       4 | C-c a #  | List projects that are stuck.                      |
+    |       5 | C-x C-w  | Write the agenda view to a file.                   |
+    |       6 | q        | Quit agenda, remove the agenda buffer.             |
+    |         |          |                                                    |
 *** 标签
  1. 快捷键如下：
     | 序号 | 快捷键如下 | 作用     |
     |------+------------+----------|
     | 1    | C-c C-q    | 增加标签 |
-    
 ** Switching Buffers
-1. C-x b 
-2. C-x b [filename/buffer name]
-3. C-x b [newname]    #When quiting Emacs, the editor won't ask you whether
-   or not you want to save it, so I can take it as a testing field.
+ 1. C-x b 
+ 2. C-x b [filename/buffer name]
+ 3. C-x b [newname]    #When quiting Emacs, the editor won't ask you whether
+    or not you want to save it, so I can take it as a testing field.
 ** Buffer List
   | Command         | Effect                                                   |
   |-----------------+----------------------------------------------------------|
@@ -225,13 +239,12 @@
   | C-p/p/Backspace | Move up a line.                                          |
   | d or k/s/~/%    | Mark the buffer to be deleted/saved/unmodified/read-only |
   | q               | Quit buffer list.                                        |
-
-Tips:
-+ Type the first few characters of the correct buffer name and press Tab,
+ Tips:
+ + Type the first few characters of the correct buffer name and press Tab,
   emacs fills the rest of the name.
 ** Deleting Buffers
-1. C-x k [buffer name] 
-2. M-x kill-some-buffers #Emacs offers to kill each and every buffer
+ 1. C-x k [buffer name] 
+ 2. M-x kill-some-buffers #Emacs offers to kill each and every buffer
 ** Shell Mode
   | Command   | Effect                                                                         |
   |-----------+--------------------------------------------------------------------------------|
@@ -253,20 +266,18 @@ Tips:
   | C-x 4 m | Mail in other window                 |
 
 ** Email
-1. 设置邮箱地址:(setq user-mail-address "hitzhzw3889@126.com")
-2. 发送邮件C-x m
+ 1. 设置邮箱地址:(setq user-mail-address "hitzhzw3889@126.com")
+ 2. 发送邮件C-x m
 ** Auto-complete-mode
  1. 从github上下载.zip压缩包解压到~/.emacs.d目录中。包括auto-complete-master.zip及popup-el-master.zip
- 2. 加载到~/.emacs.d中，命令为“M-x load-fil load-pathl，其中的load-path为
-   etc/install.el的绝对路径，不能搞错！
+ 2. 加载到~/.emacs.d中，命令为“M-x load-fil load-pathl，其中的load-path为etc/install.el的绝对路径，不能搞错！
  3. 选择加载目录为~/.emacs.d
- 4. 当加载成功时，会提醒你把如下代码加到~/.emacs中，代码可能随着环境的不同而不
-   同：
-#+BEGIN_SRC el
-(add-to-list 'load-path "~/.emacs.d")
-(require 'auto-complete-confige)
-(ac-config-default)
-#+END_SRC
+ 4. 当加载成功时，会提醒你把如下代码加到~/.emacs中，代码可能随着环境的不同而不同：
+   #+BEGIN_SRC el
+   (add-to-list 'load-path "~/.emacs.d")
+   (require 'auto-complete-confige)
+   (ac-config-default)
+   #+END_SRC
  5. 这个装插件的步骤应该具有普遍意义，其他类型的插件安装也可据此类推！
  6. 发现js-mode输入function是Function总是排在最前面，直接按回车的话输入Function
    显然不行，于是我把dict/js-mode中所有大写的单词排在小写的后面或者直接删除大
@@ -280,11 +291,11 @@ Tips:
 ** Emacs lisp
  1. 首先得搞清楚怎么使用里lisp-mode及lisp interaction mode，这样才能实验学习中
    的各要素，才能正确地写脚本。
-  | 命令    | 作用                                         |
-  |---------+----------------------------------------------|
-  | C-j     | 交互模式下运行命令                           |
-  | C-x C-e | 执行emacs lisp模式下光标所在行，求值单条语句 |
-  |         |                                              |
+   | 命令    | 作用                                         |
+   |---------+----------------------------------------------|
+   | C-j     | 交互模式下运行命令                           |
+   | C-x C-e | 执行emacs lisp模式下光标所在行，求值单条语句 |
+   |         |                                              |
 ** Tricks
 *** xterm-mouse mode 
  1. ON/OFF   M-x xterm-mouse-mode
@@ -302,16 +313,34 @@ Tips:
    |    2 | beacon    | Highlight the cursor whenever the window scrolls |
    |------+-----------+--------------------------------------------------|
 
+*** 关于.emacs
+ 1. 其实每改动一次文件不必关闭重启生效，这样很低效，可选如下几种方案
+    1. M-x load-file ~/.emacs即可，效果最佳
+    2. C-x C-e，添加命令后直接运行
+ 2. 
 ** 相关网站学习点
-1. http://ergoemacs.org/emacs/elisp_library_system.html
+ 1. http://ergoemacs.org/emacs/elisp_library_system.html
 ** 常用快捷键
-  | 序号 | 按键              | 作用     |
-  |------+-------------------+----------|
-  |    1 | C-h f XX-mode RET | 查看文档 |
-  |    2 | C-_               | undo     |
-  |------+-------------------+----------|
-  |      |                   |          |
-
+  | 序号 | 按键              | 后续按键 | 作用                  |
+  |------+-------------------+----------+-----------------------|
+  |    1 | C-h f XX-mode RET |          | 查看文档              |
+  |    2 | C-_               |          | undo                  |
+  |------+-------------------+----------+-----------------------|
+  |    3 | M-c               |          | 单词首字母大写        |
+  |    4 | M-u/l             |          | 单词全部大写/小写     |
+  |------+-------------------+----------+-----------------------|
+  |    5 | C-s/r             |          | 向下/上查找           |
+  |      |                   | C-s/r    | 跳到下一个/上一个结果 |
+  |      |                   | C-w      | 补全当前位置的单词    |
+  |------+-------------------+----------+-----------------------|
+  |    6 | M-%               |          | 启动查找替换          |
+  |      |                   | y        | 替换并跳到下一个      |
+  |      |                   | n        | 忽略并跳到下一个      |
+  |      |                   | ！       | 替换剩下的全部        |
+  |      |                   | q        | 结束退出              |
+  |------+-------------------+----------+-----------------------|
+  |    7 | M-x occur RET     |          | 列出匹配的全面模式    |
+  |------+-------------------+----------+-----------------------|
 * HTML5/CSS3
 ** 其他
  1. emacs中有html-mode，在此模式中的快捷键如下：
@@ -624,12 +653,11 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  1. Case-sensitivity
  2. Identifiers(camel case,the first letter is lowercase and each additional
     word is offset by a capital letter,like:firstSecond,myCar)
- 3. Comment,uses C-style comments for both sing-line(//) and block comments(/*
-    */).
+ 3. Comment,uses C-style comments for both sing-line(//) and block comments(/* */).
  4. Statements,terminated by a semicolon, not required but preferred.
  5. Code block, using C-style syntax, beginning with a { and end with a }.
 **** KEYWORDS AND RESERVED WORDS
-  1. the complete list of keywords is as follows:
+ 1. the complete list of keywords is as follows:
      |    | a-g       | h-n        | o-z    |
      |----+-----------+------------+--------|
      |  1 | break     | instanceof | return |
@@ -645,7 +673,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
      | 11 | for       |            |        |
      | 12 | function  |            |        |
      |----+-----------+------------+--------|
-  2. the following is the complete list of reserved words defined in ECMA-262:
+ 2. the following is the complete list of reserved words defined in ECMA-262:
      |    | a-g      | h-n        | o-z          |
      |----+----------+------------+--------------|
      |  1 | abstract | int        | package      |
@@ -663,8 +691,8 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
      | 13 | float    |            |              |
      | 14 | goto     |            |              |
      |----+----------+------------+--------------|
-  3. In addition to the list of keywords and reserved words, ECMA-262, fifth
-     edition, places restrictions on the names "eval" and "arguments".
+ 3. In addition to the list of keywords and reserved words, ECMA-262, fifth
+    edition, places restrictions on the names "eval" and "arguments".
 **** VARIABLES
  1. To define a variable, use the var operator followed by the variable name,
     like this: var message; 
@@ -677,7 +705,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  2. There is also 1 complex data type called Object.
 **** 内容太多，语言风格稍显罗嗦，至少得看一个月，看完就来不及实践自己的项目了，应该作为进阶读本.
 ** TODO [#A] 《JavaScript DOM编程艺术》
-   DEADLINE: <2016-07-31 日> SCHEDULED: <2016-07-20 三>
+   DEADLINE: <2016-08-07 日> SCHEDULED: <2016-07-23 六>
  1. 三原则：平稳退化、渐进增强、以用户为中心
 *** DONE 第一章 Javascript简史
     DEADLINE: <2016-07-23 六> SCHEDULED: <2016-07-23 六>
@@ -703,7 +731,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     1. 允许直接对变量赋值而无需事先声明
     2. 推荐提前声明，规则如var good;
     3. 不允许变量名中包含空格或标点符号($例外)
-    4. 变量名允许包含字母、数字、美元符号和下划线（第一个字符不允许是字母）
+    4. 变量名允许包含字母、数字、美元符号和下划线（第一个字符不允许是数字）
     5. 驼峰格式是函数名、方法名和对象属性名的首选格式
  4. 数据类型
     Javascript不需要进行类型声明，它是一种弱类型(weakly typed)语言.有如下类型：
@@ -785,6 +813,8 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  2. getElementsByTagName
     1. 返回一个对象数组
     2. 可以用"*"包含文档中的每个元素
+    3. 注意Elements，为复数，漏掉s的错误我犯了好多次，导致网页不能正常运行，原
+       因又极难找到！！
  3. getElementsByClassName
     1. 返回一个具有相同类名的元素的数组
     2. 可以指定多个类名，只要在字符串参数中用空格分隔类名即可
@@ -821,30 +851,297 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     1. 返回节点的值或i设置节点的值，格式如下：node.nodeValue
  4. firstChild
     1. 获取第一个子元素，用法如下：node.firstChild
-    2. 同于node.childNodes[0]
+    2. 同于node.childNode[+0]
  5. lastChild
     1. 获取最后一个子元素，用法如下：node.lastChild
     2. 同于node.childNodes[node.childNodes.length-1]
+ 6. nextSibling
+    1. 获取下一个同胞节点，用法如下:node.nextSibling
 *** DONE 第五章 最佳实践
-    #+BEGIN: clocktable :maxlevel 2 :scope subtree
-    Clock summary at [2016-07-26 二 22:36]
-    | Headline     | Time   |
-    |--------------+--------|
-    | *Total time* | *2:28* |
-    |--------------+--------|
-    #+END:
+    CLOCK: [2016-08-01 一 00:01]--[2016-08-01 一 00:52] =>  0:51
     CLOCK: [2016-07-26 二 21:47]--[2016-07-26 二 22:29] =>  0:42
     CLOCK: [2016-07-26 二 21:06]--[2016-07-26 二 21:41] =>  0:35
     CLOCK: [2016-07-26 二 20:21]--[2016-07-26 二 20:54] =>  0:33
     CLOCK: [2016-07-26 二 19:31]--[2016-07-26 二 20:09] =>  0:38
-*** TODO 复习总结前五章
+**** 平稳退化
+ 1. open()方法
+    1. 属于window对象，用法为window.open(url,name,features)
+    2. 三个参数都可选
+    3. 第三个参数为逗号隔开的字符串，其内容为新窗口的各种特性
+**** 渐进增强
+ 1. 所谓“渐进增强”就是用一些额外的信息层去包裹原始数据.按照此原则创建出来的
+    网页几乎都符合“平稳退化”的原则.
+**** 分离JavaScript
+ 1. 在外部JavaScript文件里把一个事件添加到某个元素上，格式为element.event = action...
+**** 向后兼容
+ 1. 对象检测
+    1. 有两种方式：检验合格和去除不和格的
+    2. 检验合格的，格式为：
+       #+BEGIN_SRC javascript
+       if (method) {
+          statement
+       }
+       #+END_SRC
+    3. 去除不合格的，格式为：
+       #+BEGIN_SRC javascript
+       if (!method) {
+          return false;
+       }
+       #+END_SRC
+ 2. 浏览器嗅探技术，事倍功半，不可取
+**** 性能考虑
+ 1. 尽量少访问DOM和尽量减少标记
+ 2. 合并和放置脚本
+ 3. 压缩脚本
+*** DONE 复习总结前五章
     DEADLINE: <2016-07-31 日>
-*** TODO 第六章 案例研究：图片库改进
-    DEADLINE: <2016-07-30 六> SCHEDULED: <2016-07-28 四>
-*** TODO 第七章 动态创建标记
-    DEADLINE: <2016-07-30 六> SCHEDULED: <2016-07-29 五>
-*** TODO 第八章 充实文档的内容
-    DEADLINE: <2016-07-30 六> SCHEDULED: <2016-07-30 六>
+*** DONE 第六章 案例研究：图片库改进
+    CLOSED: [2016-08-03 三 00:39] DEADLINE: <2016-08-02 二>
+    :LOGBOOK:
+    CLOCK: [2016-08-03 三 00:05]--[2016-08-03 三 00:39] =>  0:34
+    CLOCK: [2016-08-02 二 22:48]--[2016-08-02 二 23:54] =>  1:06
+    CLOCK: [2016-08-02 二 21:21]--[2016-08-02 二 22:28] =>  1:07
+    CLOCK: [2016-08-02 二 17:48]--[2016-08-02 二 19:21] =>  1:33
+    :END:
+**** 检查点
+ 1. 通过if语句进行对象检测
+ 2. 如果想用JavaCript给网页添加行为，就不该让JavaScript对这个网页的结构有任何
+    依赖.
+ 3. 结构话程序设计原则：函数应该只有一个入口和一个出口
+ 4. 如果一个函数有多个出口，只要这些出口集中出现在函数的开头部分，就是可以接受
+    的
+**** 变量名
+ 1. 把长的常用的引用赋值给一个有意义的变量，这样可以省很多事
+ 2. 如var gallery = document.getElementById("imagegallery");
+**** 遍历
+ 1. 使用for语句
+ 2. 计数器用i(increment)
+**** 改变行为
+ 1. links[i].onclick = function()，links[i]元素所对应的链接被点击时执行
+**** 共享onload事件
+ 1. window.onload = prepareGallery;
+ 2. addLoadEvent函数
+**** 键盘访问
+ 1. onkeypress事件，与onclick相似
+ 2. 用onkeypress会出现很多问题，比如链接确认后不能跳出到下一个
+ 3. 最好不用onkeypress事件处理函数，onclick事件处理函数已经能满足需求.
+*** DONE 第七章 动态创建标记
+    CLOSED: [2016-08-04 四 23:08] DEADLINE: <2016-08-04 四>
+    :LOGBOOK:
+    CLOCK: [2016-08-04 四 17:25]--[2016-08-04 四 18:22] =>  0:57
+    CLOCK: [2016-08-04 四 11:12]--[2016-08-04 四 13:40] =>  2:28
+    :END:
+**** 传统方法
+ 1. document.write
+    1) 方便快捷地把字符串插入到文档中
+    2) 其最大缺点是违背了"行为应该与表现分离"的原则
+    3) 应该避免在<body>部分乱用<script>标签，避免使用document.write方法
+ 2. innerHTML
+    1) 读取或写入HTML字符串
+    2) 无法区分插入和替换，一旦使用全部内容都被替换
+    3) innerHTML是HTML专有属性，不能用于任何其他标记语言文档
+    4) 在任何时候，标准的DOM都可以用来替代innerHTML
+**** DOM方法
+ 动态方式创建标记实际上，并不是在创建标记，而是在改变DOM节点树
+ 1. createElement
+    1) 创建元素节点，语法为document.createElement("p");
+    2) 上例中nodeName为p，nodeType为1，即元素节点，其他依次类推.
+ 2. appendChild
+    1) 让新建的节点成为某元素的子节点
+    2) 语法为parent.appendChild(child)
+    3) parent等元素可以用getElementById()等方法获得，child为新建的字节点
+    4) 次方法还可以用来连接那些尚未成为文档树一部分的节点
+ 3. createTextNode
+    1) 创建文本节点
+    2) 语法为document.createTextNode("Hello world");
+    3) 可以用appendChild将其插入为某个元素的字节点
+ 4. insertBefore
+    1) 把一个新元素插入到现有元素的前面
+    2) 语法为parentElement.insertBefore(newElement,targetElement)
+    3) parentElement可以用targetElement.parentNode代替
+    4) 在DOM中元素节点的父元素必须是另一个元素节点
+**** 一个更复杂的组合
+ 1. 用DOM方法代替document.write方法或innerHTML属性
+ 2. 可用两种方式
+    1) 从左向右，依次序建立完备的新节点，建立一个追加一个
+    2) 按步骤来，新建所有节点>>追加新节点>>添加到文档，本人觉得这种更清晰，但
+       当节点太多时，可能没有第一种简洁.
+**** 重回图片库
+ 1. 用createElement等方法替换html脚本中的img及p标签
+ 2. 自建函数insertAfter()
+    #+BEGIN_SRC js
+    function insertAfter(newElement,targetElement) {
+       var parent = targetElement.parentNode;
+       if (parent.lastChild == targetElement) {
+         parent.appendChild(newElement);
+       } else {
+       parent.insertBefore(newElement,targetElement.nextSibling);
+       }
+    }    
+    #+END_SRC
+ 3. 将img放在ul节点后面，将p节点放在img节点后面
+**** Ajax
+    使用Ajax可以做到只更新页面中的一小部分，已经加载的页面中只有一小部分区域会
+    更新，而不必再次加载整个页面.
+ 1. XHLHttpRequest对象
+    1. 作为浏览器与服务器之间的中间人，它只是负责传递请求和响应
+ 2. Hijax，渐进增强地使用Ajax
+ 3. Ajax应用主要依赖于服务器端处理，而非客户端处理
+*** DONE 第八章 充实文档的内容
+    CLOSED: [2016-08-06 六 12:34] SCHEDULED: <2016-08-04 四> DEADLINE: <2016-08-05 五>
+    - CLOSING NOTE [2016-08-06 六 12:34] \\
+      可以快速地阅读了，因为时间紧张没有逐个敲代码.
+    :LOGBOOK:
+    CLOCK: [2016-08-06 六 12:25]--[2016-08-06 六 12:33] =>  0:08
+    CLOCK: [2016-08-06 六 11:18]--[2016-08-06 六 11:47] =>  0:29
+    CLOCK: [2016-08-06 六 10:07]--[2016-08-06 六 11:06] =>  0:59
+    CLOCK: [2016-08-05 五 09:29]--[2016-08-05 五 11:06] =>  1:37
+    :END:
+**** 两个原则
+ 1. 渐进增强
+ 2. 平稳退化
+**** 显示"缩略语列表"
+ 1. for/in循环
+    1. 格式为for(variable in array)
+    2. 在进入第一次循环时，变量variable将被赋值为数组array的第一个元素的下标值
+ 2. 这部分主要就是用前面的知识创建列表(<dl>)、标题(<dt>)及描述(<dd>)标签
+ 3. 引用body标签的具体做法有两种：
+    1. 使用DOM Core：document.getElementsByTagName("body")[+0]
+    2. 使用HTML-DOM：document.body
+**** 显示"文档来源链接表"
+**** 显示"快捷键清单"
+**** 非常3+5(检索和添加信息)
+ 1. 在需要对文档里的现有信息进行检索时，以下3种DOM方法最有用：
+    1. getElementById
+    2. getElementsByTagName
+    3. getAttribute
+ 2. 在需要把信息添加到文档里去时，一下5种DOM方法最有用：
+    1. createElement
+    2. createTextNode
+    3. appendChild
+    4. insertBefore
+    5. setAttribute
+*** DONE 第九章 CSS-DOM
+    CLOSED: [2016-08-07 日 11:37] SCHEDULED: <2016-08-04 四> DEADLINE: <2016-08-05 五>
+    - CLOSING NOTE [2016-08-07 日 11:37] \\
+      帮张的忙以及解决emacs之org-mode的输出文件为html格式的问题推迟了该任务的完成.
+    :LOGBOOK:
+    CLOCK: [2016-08-07 日 11:25]--[2016-08-07 日 11:37] =>  0:12
+    CLOCK: [2016-08-07 日 10:22]--[2016-08-07 日 10:58] =>  0:36
+    CLOCK: [2016-08-06 六 13:48]--[2016-08-06 六 14:54] =>  1:06
+    :END:
+**** 三位一体的网页
+ 1. 结构层(structural layer)，使用(X)HTML去搭建文档的结构
+ 2. 表示层(presentation layer)，使用CSS去设置文档的呈现效果
+ 3. 行为层(behavior layer)，使用DOM脚本去实现文档的行为
+**** style属性
+ 1. 文档的每个元素节点都有一个style属性，它元素的样式
+ 2. 查询这个属性将返回一个*对象*而不是一个简单的字符串，即style对象
+ 3. 引用属性element.style.color
+ 4. style只能返回内嵌样式
+ 5. style对象的各个属性都是可读写的，如element.style.property = value
+**** 何时该用DOM脚本设置样式
+ 在使用CSS不方便的场合，可以用DOM对文档的样式做一些小的增强
+ 1. 根据元素在节点树里的位置来设置样式、
+ 2. 根据某种条件反复设置某种样式
+ 3. 响应事件
+**** className属性  
+ 1. 是一个可读/可写的属性，凡是元素节点都有这个属性
+*** DONE 第十章 用JavaScript实现动画效果
+    CLOSED: [2016-08-07 日 23:51] SCHEDULED: <2016-08-04 四> DEADLINE: <2016-08-06 六>
+    :LOGBOOK:
+    CLOCK: [2016-08-07 日 23:32]--[2016-08-07 日 23:51] =>  0:19
+    CLOCK: [2016-08-07 日 21:35]--[2016-08-07 日 23:01] =>  1:26
+    CLOCK: [2016-08-07 日 19:27]--[2016-08-07 日 19:50] =>  0:23
+    CLOCK: [2016-08-07 日 17:49]--[2016-08-07 日 18:52] =>  1:03
+    CLOCK: [2016-08-07 日 15:02]--[2016-08-07 日 16:18] =>  1:16
+    :END:
+**** 动画基础知识
+ 1. 位置，position属性，有如下四种合法值
+    1. static，同relative相似，按标记出现的先后顺序
+    2. fixed
+    3. relative，与static相似，可从正常显示顺序里脱离出来
+    4. absolute，可以出现在容器的任何位置，由top、left、right、bottom等属性决
+       定
+ 2. 时间
+    1. setTimeout函数，让某个函数在经过一段预订的时间之后才开始执行，语法为
+       setTimeout("function", interval)，interval为以毫秒为单位执行的数字
+    2. clearTimeout函数，取消等待执行队列里的某个函数，语法为clearTimeout(variable)
+ 3. 时间递增量
+    1. 获得元素的当前位置，用到parseInt函数来提取数字
+    2. 如果元素已经到达它的目的地，则退出这个函数
+    3. 如果元素尚未到达它的目的地，则把它向目的地移近一点
+    4. 经过一段时间间隔之后从步骤1开始重复上述步骤
+ 4. 抽象
+    1. 创建moveElement函数，每次调用新函数可能变化的东西有四个：
+       1. 打算移动的元素的ID，elementID
+       2. 该元素的目的地的"左"位置，final_x
+       3. 该元素的目的地的"上"位置，final_y
+       4. 两次移动之间的停顿时间，interval
+	代码如下：
+	#+BEGIN_SRC javascript
+      function moveElement(elementID,final_x,final_y,interval) {
+      if (!document.getElementById) return false;
+      if (!document.getElementById(elementID)) return false;
+      var elem = document.getElementById(elementID);
+      var xpos = parseInt(elem.style.left);
+      var ypos = parseInt(elem.style.top);
+      if (xpos == final_x && ypos == final_y) {
+	return true;
+      }
+      if (xpos < final_x) {
+	xpos++;
+      }
+      if (xpos > final_x) {
+	xpos--;
+      }
+      if (ypos < final_y) {
+	ypos++;
+      }
+      if (ypos > final_y) {
+	ypos--;
+      }
+      elem.style.left = xpos + "px";
+      elem.style.top = ypos + "px";
+      var repeat = "moveElement('"+elementID+"',"+final_x+","+final_y+","+interval+")";
+      movement = setTimeout(repeat,interval);
+    }
+	#+END_SRC    
+    2. 使用moveElement函数
+       + 在html文档中添加元素，再在js文档中代入相关信息，最后再在结构文档中添
+         加引用即可
+**** 实用的动画
+ 1. 提出问题
+    + onmouseover事件被触发时显示一张图片
+ 2. 解决问题
+    1. 为所有的预览图片生成为一张"集体照"形式的图片
+    2. 隐藏这张"集体照"图片的绝大部分
+    3. 当用户把鼠标旋停在某个链接的上方时，只显示这张"集体照"图片的相应部分
+ 3. CSS
+    CSS的overflow属性用来处理一个元素的尺寸超出容器尺寸的情况，overflow属性的
+    可取值有四种：
+    1. visible，不裁剪溢出的内容
+    2. hidden，隐藏溢出的内容
+    3. scroll，类似于hidden，但显示滚动条可以看到其他部分
+    4. auto，类似于scroll，但内容没有溢出就不显示滚动条
+    最适合的是hidden元素
+ 4. JavaScript
+    + 用moveElement函数来移动图片，根据用户把鼠标指针旋停在哪个链接上，我们将
+      这个图片向左或向右移动.
+ 5. *变量作用域问题*
+    1. 创建属性，语法如element.property = value，其中property可以自定义
+ 6. 改进动画效果
+    1. 根据与目的的距离决定每次移动的步伐大小
+    2. 用到Math对象的ceil方法，语法为Math.ceil(number)，它将把浮点数number向"
+       大于"方向舍入为与之最接近的整数
+ 7. 添加安全检查
+ 8. 生成HTML标记
+    + 将为了能够用JavaScript代码实现动画效果而存在的标记用DOM去创建
+*** TODO 第十一章 HTML5
+    SCHEDULED: <2016-08-04 四> DEADLINE: <2016-08-06 六>
+**** 
+*** TODO 第十二章 综合示例
+    SCHEDULED: <2016-08-04 四> DEADLINE: <2016-08-07 日>
 ** 慕课网
 ** 相关网站
  1. www.w3school.com.cn
@@ -857,29 +1154,29 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 ** DONE <The C programming Language>
 ** 《一站式学习C编程》
 *** 简单函数
-1. main函数只有两种声明形式：标准形式int main(int argc, char *argv[])及int
+ 1. main函数只有两种声明形式：标准形式int main(int argc, char *argv[])及int
    main(void)，其他写法都是错误的或不可移植的。
-2. 局部变量在每次函数调用时分配存储空间，在每次函数返回时释放存储空间。
-3. 全局变量在程序开始时分配存储空间，在程序结束时释放存储空间。
-4. 局部变量可以用类型相符的任意表达式来初始化，而全局变量只能用常量表达式来初
-   始化。
-5. 如果全局变量在定义时不初始化则初始值是0,如果局部变量在定义时不初始化则初始
-   值是不确定的。
-6. 在一个函数中可以声明另一个函数，但不能定义另一个函数，C语言不允许嵌套定义函
-   数。
+ 2. 局部变量在每次函数调用时分配存储空间，在每次函数返回时释放存储空间。
+ 3. 全局变量在程序开始时分配存储空间，在程序结束时释放存储空间。
+ 4. 局部变量可以用类型相符的任意表达式来初始化，而全局变量只能用常量表达式来初
+    始化。
+ 5. 如果全局变量在定义时不初始化则初始值是0,如果局部变量在定义时不初始化则初始
+    值是不确定的。
+ 6. 在一个函数中可以声明另一个函数，但不能定义另一个函数，C语言不允许嵌套定义函
+    数。
 *** 分支语句
-1. 语句快（大括号内）中也可以定义局部变量。
-2. C语言规定，else总是和它上面最近的一个if配对。
-3. case后面跟的表达式必须是常量表达式，这个值和全局变量的初始值一样必须在编译
-   时计算出来。
-4. switch语句虽然可以被if...else...语句代替，但是，有时候编译器会对switch语句
-   做整体优化，使它比等价的if/else语句所生成的指令效率更高。
+ 1. 语句快（大括号内）中也可以定义局部变量。
+ 2. C语言规定，else总是和它上面最近的一个if配对。
+ 3. case后面跟的表达式必须是常量表达式，这个值和全局变量的初始值一样必须在编译
+    时计算出来。
+ 4. switch语句虽然可以被if...else...语句代替，但是，有时候编译器会对switch语句
+    做整体优化，使它比等价的if/else语句所生成的指令效率更高。
 *** 深入理解函数
 **** return语句
-1. 函数的返回值不是左值，或者说函数调用表达式不能做左值。
-2. 即便返回语句写成return x;，返回的也是变量x的值，而非变量x本身，因为变量x马
-   上就要被释放了。
-3. 正负号的优先级和逻辑非运算符相同，比加减的优先级要高。
+ 1. 函数的返回值不是左值，或者说函数调用表达式不能做左值。
+ 2. 即便返回语句写成return x;，返回的也是变量x的值，而非变量x本身，因为变量x马
+    上就要被释放了。
+ 3. 正负号的优先级和逻辑非运算符相同，比加减的优先级要高。
 **** 增量式开
 * Java
 ** 《Head First Java》
@@ -897,24 +1194,24 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
    }
    #+END_SRC
 **** 编写测试用的类
-#+BEGIN_SRC java
-class DogTestDrive {
-  public static void main (String[] args) {
-  //Dog测试码
-  }
-}
-#+END_SRC
+   #+BEGIN_SRC java
+   class DogTestDrive {
+     public static void main (String[] args) {
+     //Dog测试码
+     }
+   }
+   #+END_SRC
 **** 在测试用的类中建立对象并存取对象的变量和方法
-#+BEGIN_SRC java
-class DogTestDrive {
-  public static void main (String[] args) 
-{
-    Dog d = new Dog(); //建立Dog对象
-    d.size = 40;       //存取该对象的变量
-    d.bark();          //调用它的方法
-  }
-}
-#+END_SRC
+   #+BEGIN_SRC java
+   class DogTestDrive {
+     public static void main (String[] args) 
+   {
+       Dog d = new Dog(); //建立Dog对象
+       d.size = 40;       //存取该对象的变量
+       d.bark();          //调用它的方法
+     }
+   }
+   #+END_SRC
 ** 《Java从入门到精通》
  1. 基本数据类型、变量与常量、基本运算符、流程控制等与C语言大体相似，可以参照C
    语法相关知识。
@@ -932,7 +1229,8 @@ class DogTestDrive {
    了。
 * Algorithm
 * Git/Github
-** 《GitHub入门与实践》
+** TODO 《GitHub入门与实践》
+   DEADLINE: <2016-08-08 一> SCHEDULED: <2016-08-04 四>
 *** 设置姓名及邮箱地址
  1. $ git config --global user.name "John"
  2. $ git config --global user.email "hitzhzw3889@126.com"
@@ -963,4 +1261,5 @@ class DogTestDrive {
  2. 
  3. 
  4. 
+
 
