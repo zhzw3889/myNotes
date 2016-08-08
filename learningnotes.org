@@ -1,5 +1,6 @@
 #+TITLE: 编程学习笔记
 * Linux
+  - CLOSING NOTE [2016-08-08 一 22:47]
 ** 实践小技巧
 窗口总是偶然变成无边框模式(即窗口的标题栏及最小化、最大化、关闭按钮总是消失),应
 该不是bug的问题，右击窗口发现有此选项，即用Alt+F3启动鼠标可用模式，下次再遇到
@@ -145,7 +146,6 @@
  2. 两行之间加'|-'，再按TAB键就会有这样的效果
  3. 快捷键如下：
     - 整体区域
-
      |---------+--------------------------------|
      | 操作    | 说明                           |
      |---------+--------------------------------|
@@ -170,7 +170,6 @@
      | C-c ^          | 根据当前列排序，可以选择排序方式 |
      | C-c `          | 在新窗口中编辑该单元格           |
      |----------------+----------------------------------|
-
 *** 标题
 **** 种类
  1. 无序列表以"-"、'+'或者'*'开头
@@ -653,7 +652,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  1. Case-sensitivity
  2. Identifiers(camel case,the first letter is lowercase and each additional
     word is offset by a capital letter,like:firstSecond,myCar)
- 3. Comment,uses C-style comments for both sing-line(//) and block comments(/* */).
+ 3. Comment,uses C-style comments for both sing-line and block comments
  4. Statements,terminated by a semicolon, not required but preferred.
  5. Code block, using C-style syntax, beginning with a { and end with a }.
 **** KEYWORDS AND RESERVED WORDS
@@ -733,7 +732,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     3. 不允许变量名中包含空格或标点符号($例外)
     4. 变量名允许包含字母、数字、美元符号和下划线（第一个字符不允许是数字）
     5. 驼峰格式是函数名、方法名和对象属性名的首选格式
- 4. 数据类型
+ 4. 数据类型\\
     Javascript不需要进行类型声明，它是一种弱类型(weakly typed)语言.有如下类型：
     1. 字符串，必须包在引号内，单引号或双引号都可. 
     2. 数值
@@ -1137,11 +1136,71 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  7. 添加安全检查
  8. 生成HTML标记
     + 将为了能够用JavaScript代码实现动画效果而存在的标记用DOM去创建
-*** TODO 第十一章 HTML5
-    SCHEDULED: <2016-08-04 四> DEADLINE: <2016-08-06 六>
-**** 
+*** DONE 第十一章 HTML5
+    CLOSED: [2016-08-08 一 22:37] SCHEDULED: <2016-08-04 四> DEADLINE: <2016-08-06 六>
+    :LOGBOOK:
+    CLOCK: [2016-08-08 一 20:32]--[2016-08-08 一 22:37] =>  2:05
+    :END:
+**** HTML5简介
+**** 来自朋友的忠告\\
+ 1. 使用Modernizr工具.
+ 2. 使用Modernizr非常简单，从http://www.modernizr.com/ 下载它，将在文档的
+    <head>中添加该脚本：
+   #+BEGIN_SRC html
+   <script src="modernizr-1.5.min.js"></script>
+   #+END_SRC
+**** 几个示例
+ 1. Canvas
+ 2. 音频和视频，<video>及<audio>
+    1. 也有混乱的时候，没有一款浏览器支持所有容器和编解码器，因此我们必须提供
+       多种后备格式
+    2. 自定义控件，通过DOM属性去实现
+ 3. 表单
+**** HTML5还有其他特性吗
+**** 小节
 *** TODO 第十二章 综合示例
-    SCHEDULED: <2016-08-04 四> DEADLINE: <2016-08-07 日>
+    DEADLINE: <2016-08-09 二> SCHEDULED: <2016-08-04 四>
+    :LOGBOOK:
+    CLOCK: [2016-08-08 一 23:27]--[2016-08-08 一 23:47] =>  0:20
+    CLOCK: [2016-08-08 一 22:59]--[2016-08-08 一 23:17] =>  0:18
+    :END:
+**** DONE 项目简介
+     CLOSED: [2016-08-08 一 23:47]
+     - CLOSING NOTE [2016-08-08 一 23:47]
+ 1. 原始资料
+    + 这个网站不需要太多的页面，它本质上就是一个宣传手册.
+ 2. 站点结构
+    1. 目录结构：
+       |------+------------+--------------------|
+       | 序号 | 站点文件夹 | 作用               |
+       |------+------------+--------------------|
+       |    1 | /images    | 保存要用的图片     |
+       |    2 | /styles    | 保存CSS文件        |
+       |    3 | /scripts   | 保存JavaScript文件 |
+       |------+------------+--------------------|
+    2. 页面拓扑
+       |------+---------+--------------+--------------|
+       | 序号 | 页面    | 页面文件     | 作用         |
+       |------+---------+--------------+--------------|
+       |    1 | Home    | index.html   | 主页         |
+       |    2 | About   | about.html   | 介绍背景信息 |
+       |    3 | Photos  | photos.html  | 存放照片     |
+       |    4 | Live    | live.html    | 巡演日程安排 |
+       |    5 | Contact | contact.html | 联系页面     |
+       |------+---------+--------------+--------------|
+ 3. 页面结构
+    |------+-----------+--------------------------------------|
+    | 序号 | 标签      | 作用                                 |
+    |------+-----------+--------------------------------------|
+    |    1 | <header>  | 头部区域，品牌性信息，也存放logo     |
+    |    2 | <nav>     | 导航区域，包含一组指向各个页面的链接 |
+    |    3 | <article> | 内容区域，包含实质性内容             |
+    |------+-----------+--------------------------------------|
+**** 设计
+**** CSS
+**** 标记
+**** JavaScript
+**** 小节
 ** 慕课网
 ** 相关网站
  1. www.w3school.com.cn
