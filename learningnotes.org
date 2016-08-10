@@ -6,6 +6,7 @@
 该不是bug的问题，右击窗口发现有此选项，即用Alt+F3启动鼠标可用模式，下次再遇到
 此情况试试可行度。
 ** $ ps axjf  #Check the process tree
+** C-S t 打开新终端标签
 ** Install software
   | Num | Software | Download Site                       |
   |-----+----------+-------------------------------------|
@@ -803,8 +804,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  常见的三种：元素节点、文本节点和属性节点
  1. 元素节点（element node），如<body>,<p>,<ul>等
  2. 文本节点（text node），文本节点总是被包含在元素节点的内部
- 3. 属性节点（attribute node），属性总是被放在起始标签中，所以属性节点总是被包
-    含在元素节点中
+ 3. 属性节点（attribute node），属性总是被放在起始标签中，所以属性节点总是被包含在元素节点中
 **** 获取元素
  1. getElementById
     1. 此方法返回一个与那个有着给定id属性值的元素节点对应的对象
@@ -1197,11 +1197,13 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     |    3 | <article> | 内容区域，包含实质性内容             |
     |------+-----------+--------------------------------------|
 **** 设计
+ 1. 
+ 2. 
+ 3. 
 **** CSS
 **** 标记
 **** JavaScript
 **** 小节
-** 慕课网
 ** 相关网站
  1. www.w3school.com.cn
 * jQuery
@@ -1321,4 +1323,173 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  3. 
  4. 
 
+* 慕课网
+** DONE Linux Guide for Developers
+   CLOSED: [2016-08-10 三 18:58]
+   - CLOSING NOTE [2016-08-10 三 18:58] \\
+     只是些基础的内容，但是对于前端应该不需要太过追求！
+   :LOGBOOK:
+   CLOCK: [2016-08-10 三 15:38]--[2016-08-10 三 18:57] =>  3:19
+   :END:
+*** DONE 课程介绍
+    CLOSED: [2016-08-10 三 11:14]
+    - CLOSING NOTE [2016-08-10 三 11:14]
+*** DONE 你好，命令行 
+    CLOSED: [2016-08-10 三 11:23]
+    - CLOSING NOTE [2016-08-10 三 11:23]
+ 1. man command，之后输入/可以搜索参数如-r等
+*** DONE 在文件系统中跳转
+    CLOSED: [2016-08-10 三 11:34]
+    - CLOSING NOTE [2016-08-10 三 11:34]
+ 1. pwd命令，打印当前目录
+ 2. ls命令，列出文件
+ 3. 绝对路径以/开头，相对路径以.和..开头
+ 4. cd命令，Change (working) Dir
+*** DONE 操作文件和目录
+    CLOSED: [2016-08-10 三 16:26]
+    - CLOSING NOTE [2016-08-10 三 16:26]
+ 1. 走马观花看命令
+    |------+-------+-----------------+----------------------------|
+    | 序号 | 命令  | 格式            | 操作                       |
+    |------+-------+-----------------+----------------------------|
+    |    1 | cp    | cp file1 file2  | 拷贝文件(copy)             |
+    |      |       | cp -r dir1 dir2 | 拷贝目录                   |
+    |------+-------+-----------------+----------------------------|
+    |    2 | mv    | mv file ..      | 移动文件到上一级目录(move) |
+    |      |       | mv file dir/    | 移动到当前的dir目录        |
+    |      |       | mv file1 file2  | 重命名文件(rename)         |
+    |      |       | mv dir1 dir2    | 重命名目录                 |
+    |------+-------+-----------------+----------------------------|
+    |    3 | rm    | rm file         | 删除文件(remove)           |
+    |      |       | rm -r dir       | 删除目录                   |
+    |------+-------+-----------------+----------------------------|
+    |    4 | touch | touch file      | 创建文件                   |
+    |    5 | mkdir | mkdir dir       | 创建目录                   |
+    |    6 | cat   | cat file        | 查看文件                   |
+    |    7 | file  | file file       | 查看文件类型               |
+    |------+-------+-----------------+----------------------------|
+ 2. 通配符
+    1. *
+ 3. 打包压缩
+    | 序号 | 命令  | 格式                       | 操作                      |
+    |------+-------+----------------------------+---------------------------|
+    |    1 | zip   | zip file                   | 压缩文件                  |
+    |      | unzip | zuzip file.zip             | 解压缩文件                |
+    |------+-------+----------------------------+---------------------------|
+    |    2 | tar   | tar zcvf file.tar.gz dir/  | 将dir压缩为file.tar.gz    |
+    |      |       | tar zxvf file.tar.gz       | 解压缩文件                |
+    |------+-------+----------------------------+---------------------------|
+    |    3 | tar   | tar jcvf file.tar.bz2 dir/ | 将dir目录压缩file.tar.bz2 |
+    |      |       | tar jxvf file.tar.bz2      | 解压缩file文件            |
+    |------+-------+----------------------------+---------------------------|
+*** DONE 重定向
+    CLOSED: [2016-08-10 三 16:45]
+    - CLOSING NOTE [2016-08-10 三 16:45]
+ 1. 三个重要文件
+    1. 文件描述符(file descriptor)
+       |----+----------------------|
+       | 值 | 文件种类             |
+       |----+----------------------|
+       |  0 | stdio，标准输入文件  |
+       |  1 | stdout，标准输出文件 |
+       |  2 | stderr，标准错误文件 |
+       |----+----------------------|
+ 2. 拐弯(重定向)的各种方式
+    1. redirect stdout，输出重定向，>
+    2. redirect stderr，错误输出重定向，2>
+    3. redirect stdin，输入重定向，<
+ 3. 管道
+    1. 格式为command1|command2|command3
+*** DONE 用户和文件权限
+    CLOSED: [2016-08-10 三 17:02]
+    - CLOSING NOTE [2016-08-10 三 17:02]
+ 1. 三种权限
+    1. reading,r
+    2. writing,w
+    3. executing,x
+ 2. 文件模式(file mode)
+    + 即"ls -l file"后首列的"-rw-rw-r--"
+ 3. chmod
+    + 用法如chmod 666 file，其中6为rwx真值表的八进制数
+*** DONE 进程
+    CLOSED: [2016-08-10 三 17:30]
+    - CLOSING NOTE [2016-08-10 三 17:30]
+ 1. 获取进程号
+    1. PID(Process ID)
+    2. ps aux|less
+    3. ps aux|grep vim
+ 2. 后台执行
+    1. 不占据当前shell
+    2. firefox &
+ 3. kill
+    1. kill -9 PID
+    2. 当卡死时，可以到其他工作台关闭进程 
+*** DONE 查找
+    CLOSED: [2016-08-10 三 17:48]
+    - CLOSING NOTE [2016-08-10 三 17:48]
+ 1. locate，全局查找
+    1. locate vimrc
+    2. 不能搜到新建文件
+    3. 需要手动运行updatedb命令，默认一天执行一次
+ 2. find，当前目录查找
+    1. find .|grep .txt，查找当前目录的所有txt文件
+    2. find . -type f，只查找文件
+    3. find . -type d，只看到目录
+ 3. grep
+*** DONE 网络操作
+    CLOSED: [2016-08-10 三 17:56]
+    - CLOSING NOTE [2016-08-10 三 17:56] \\
+      略看
+ 1. ssh
+ 2. rsync
+*** DONE 安装软件
+    CLOSED: [2016-08-10 三 18:11]
+    - CLOSING NOTE [2016-08-10 三 18:11]
+ 1. 手动安装
+ 2. deb包，ubuntu中装包：sudo dpkg -i *.deb
+ 3. 从apt-get仓库安装
+    1. 安装：apt-get install 
+    2. 卸载：apt-get remove，如果要一并删除配置文件则为：apt-get purge
+*** DONE 轻触shell脚本编程
+    CLOSED: [2016-08-10 三 18:55]
+    - CLOSING NOTE [2016-08-10 三 18:55]
+ 1. 指定解析器 
+    1. 首行加#!/usr/bin/env bash
+ 2. 语句即命令
+    1. 如echo "hello"等命令直接罗列
+ 3. 位置参数
+    1. $#，参数总数
+    2. $0，脚本程序名
+    3. $1，第一个参数
+    4. $2，第二个参数
+ 4. 脚本不在当前shell执行
+    1. 如要使其在当前shell执行用source命令
+ 5. 循环控制\\
+    把文件加后缀.txt，$1为目录参数，脚本如下：
+    #+BEGIN_SRC sh
+    #!/usr/bin/env bash
+    cd $1
+    echo I am in `pwd`
+    for file in `ls`
+    do
+      mv $file $file.txt
+    done
+    #+END_SRC
+ 6. 远程执行
+ 7. 确认执行\\
+    代码为：
+    #+BEGIN_SRC sh
+    echo -n "Want to sync? (y/n): "
+    read AAA
+    if ["${AAA:-y}" = "y"]; then
+       sync_server
+    else 
+       echo Nothing done, bye.
+    fi
+    #+END_SRC
+ 8. 其他语言写脚本
+*** DONE Goodbye
+    CLOSED: [2016-08-10 三 18:57]
+    - CLOSING NOTE [2016-08-10 三 18:57]
+ * http://beijinglug.org/
 
