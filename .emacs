@@ -126,7 +126,7 @@
 ;;高亮光标所在行，可以通过M-x hl-line-mode在当前buffer应用
 (require 'vline)
 ;;高亮光标所在列，可以通过M-x vline-mode在当前buffer应用
-;---------------------org-mode------------------------------------->
+;;----------org-mode------------------------------------------->
 (setq org-src-fontify-natively t)
 ;;org-mode下代码也高亮
 (defun org-mode-my-init ()
@@ -142,14 +142,59 @@
 ;;当标记为done是自动加时间标签
 (setq org-log-done 'note)
 ;;标记为done是插入便签
-;;------aggressive-indent-mode---------------------------------->
+;;----------aggressive-indent-mode------------------------------>
 (global-aggressive-indent-mode 1)
 (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
-;;------ace-window---------------------------------------------->
+;;----------ace-window------------------------------------------>
 (global-set-key (kbd "M-p") 'ace-window)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 ;;启用ace-window
 ;;下面的命令是我只要按M-p，多个窗口就会用单个字母去标记
 ;;只要输入此字母就会立刻跳到这个窗口
-;;-------------------------------------------------------------->
+;;----------ido-mode-------------------------------------------->
+(require 'ido)
+(ido-mode t)
+;;----------yasnippet------------------------------------------->
+(yas-global-mode 1)
+;;----------zone-matrix----------------------------------------->
+;;(require 'zone-matrix)
+;;(require 'zone-matrix-settings)
+(require 'zone-settings)
+(setq zone-programs [zone-matrix])
+(zone-when-idle 120)
+;;To enable Zone Mode for all buffers
+;;after Emacs is idle for 2 minutes
+
+(defun zone-choose (pgm)
+  "Choose a PGM to run for `zone'."
+  (interactive
+   (list
+    (completing-read
+     "Program: "
+     (mapcar 'symbol-name zone-programs))))
+  (let ((zone-programs (list (intern pgm))))
+    (zone)))
+;;Choose a particular Zone program.
+
+;;(defun lock-screen ()
+;;"Lock screen using (zone) and xtrlock
+;;calls M-x zone on all frames and runs xtrlock"
+;;(interactive)
+;;(save-excursion
+;;(shell-command "xtrlock &")
+;;(set-process-sentinel
+;;(start-process "xtrlock" nil "xtrlock")
+;;'(lambda (process event)
+;;(zone-leave-me-alone)))
+;;(zone-when-idle 1)))
+;;Lock X11 with M-x lock-screen
+;;找不到xtrlock
+;;----------tabbar-mode----------------------------------------->
+(require 'tabbar)
+;;(tabbar-mode 1)
+(global-set-key (kbd "<C-next>")  'tabbar-forward)
+(global-set-key (kbd "<C-prior>")  'tabbar-backward)
+;;----->
+
+
 
