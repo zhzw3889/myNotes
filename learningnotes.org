@@ -1,11 +1,5 @@
 #+TITLE: 编程学习笔记
 * Linux
-  - CLOSING NOTE [2016-08-08 一 22:47]
-** 实践小技巧
-窗口总是偶然变成无边框模式(即窗口的标题栏及最小化、最大化、关闭按钮总是消失),应
-该不是bug的问题，右击窗口发现有此选项，即用Alt+F3启动鼠标可用模式，下次再遇到
-此情况试试可行度。
-** $ ps axjf  #Check the process tree
 ** C-S t 打开新终端标签
 ** Install software
   | Num | Software | Download Site                       |
@@ -34,10 +28,10 @@
    |    7 | 由竖线字符分开的两个或多个项，表示可以从这个列表中选择一个项         |
   
 *** 第11章 Shell
-1. 查看系统上安装了那些Shell： less /etc/shells
-2. 显示当前Shell名称： echo $SHELL
-3. 改变登陆shell： chsh [-s shell] [userid],其中userid是用户标识，shell是新登
-   录shell的路径名。改变登录shell时，修改的是/etc/passwd文件。
+ 1. 查看系统上安装了那些Shell： less /etc/shells
+ 2. 显示当前Shell名称： echo $SHELL
+ 3. 改变登陆shell： chsh [-s shell] [userid],其中userid是用户标识，shell是新登
+    录shell的路径名。改变登录shell时，修改的是/etc/passwd文件。
 *** 第12章 使用shell：变量和选项
 **** 交互式shell和非交互式shell
 1. shell既可以充当用户界面（交互式程序），也可以作为脚本解释器（非交互式程序）。
@@ -120,6 +114,8 @@
 3. 反引号字符只在命令替换中使用！
 **** 历史列表
 ** opensuse
+*** 主题安装路径为~/.local/share/plasma/desktoptheme，将压缩文件加载到此文件夹即可.
+*** 壁纸路径为：~/.local/share
 * Emacs
 ** org-mode
 *** 常用操作快捷键
@@ -184,29 +180,50 @@
 *** 插入代码
  1. <s, Tab
  2. 在光标后输入语言种类，如sh，java等
+ 3. C-c ',源码的缩进及对齐非常好用，在新的buffer中编辑也很方便
 *** table-insert
 *** "TODO" item
+    :PROPERTIES:
+    :Effort:   0:30
+    :END:
     :LOGBOOK:
+    CLOCK: [2016-08-12 五 12:42]--[2016-08-12 五 12:59] =>  0:17
+    CLOCK: [2016-08-12 五 12:11]--[2016-08-12 五 12:23] =>  0:12
     CLOCK: [2016-08-02 二 12:04]--[2016-08-02 二 12:35] =>  0:31
     :END:
+    #+BEGIN: clocktable :maxlevel 2 :scope subtree
+    #+CAPTION: Clock summary at [2016-08-12 五 12:59]
+    | Headline     | Time   |
+    |--------------+--------|
+    | *Total time* | *1:00* |
+    |--------------+--------|
+    #+END:
  1. Any headline starting with TODO become a TODO item.
  2. Important commands:
-    | Command     | Effect                                                                 |
-    |-------------+------------------------------------------------------------------------|
-    | C-c C-t     | Rotate the TODO state of the current item among: unmarked, TODO, DONE. |
-    | C-c C-s RET | 开始时间戳                                                             |
-    | C-c C-d RET | 结束时间戳                                                             |
-    | C-c .       | 加时间段，要输入两次，开始和结束                                       |
-    | C-c [       | 将todo加入agenda                                                       |
-    | C-c C-a     | 调出agenda，不不能直接用，要在.emacs中加定义语句的                     |
-    | < ++d>      | 在开始时间戳中加++d可以设置为每天都做                                  |
-    | S-up/down   | 设置优先级ABC                                                          |
-    | C-c C-x C-i | 开始计时                                                               |
-    | C-c C-x C-o | 结束计时                                                               |
-    | C-c C-x C-r | 分析时间，创建时间统计表格                                             |
-    |-------------+------------------------------------------------------------------------|
+    | Command             | Effect                                                                 |
+    |---------------------+------------------------------------------------------------------------|
+    | C-c C-t             | Rotate the TODO state of the current item among: unmarked, TODO, DONE. |
+    | C-c C-s RET         | 开始时间戳                                                             |
+    | C-c C-d RET         | 结束时间戳                                                             |
+    | C-c .               | 加时间段，要输入两次，开始和结束                                       |
+    | C-c [               | 将todo加入agenda                                                       |
+    | C-c C-a             | 调出agenda，不不能直接用，要在.emacs中加定义语句的                     |
+    | < ++d>              | 在开始时间戳中加++d可以设置为每天都做                                  |
+    | S-up/down           | 设置优先级ABC                                                          |
+    |---------------------+------------------------------------------------------------------------|
+    | C-c C-x C-i         | 开始计时                                                               |
+    | C-c C-x C-o         | 结束计时                                                               |
+    | C-c C-x C-r         | 分析时间，创建时间统计表格                                             |
+    | C-c C-c/C-c C-x C-u | Update dynamic block at point.                                         |
+    | C-c C-c C-q         | Cancel the current clock.                                              |
+    | C-c C-x C-d         | org-clock-display, press C-c C-c to make the overlays disappear        |
+    | C-c C-x e           | Set the effort estimate for the current entry.                         |
+    | C-c C-x C-e         | Modify the effort estimate of the item currently being clocked.        |
+    | C-c C-x C-j         | Jump to the headline of the currently clocked in task.                 |
+    |---------------------+------------------------------------------------------------------------|
 *** Agenda views
     :LOGBOOK:
+    CLOCK: [2016-08-12 五 12:24]--[2016-08-12 五 12:32] =>  0:08
     CLOCK: [2016-08-02 二 12:39]--[2016-08-02 二 13:54] =>  1:15
     :END:
  1. 把文件加入agenda列表才能在agenda里查看此文件的信息
@@ -225,6 +242,12 @@
     | 序号 | 快捷键如下 | 作用     |
     |------+------------+----------|
     | 1    | C-c C-q    | 增加标签 |
+** yasnippet
+*** 安装
+ 1. 用elpa安装即可
+*** 使用
+ 1. 输入关键词后按tab键
+ 2. 
 ** Switching Buffers
  1. C-x b 
  2. C-x b [filename/buffer name]
@@ -363,24 +386,25 @@
  2. 各标签的简单层级关系如下表：
    | 序号 | 一级元素 | 二级    | 属性及值             | 作用                                             | HTML5 |
    |------+----------+---------+----------------------+--------------------------------------------------+-------|
-   |    1 | DOCTYPE  |         | <!DOCTYPE html>      | 声明页面为html5文档                              | 是    |
-   |    2 | html     |         | lang="en"            | 开始文档的实际html部分                           |       |
-   |    3 | head     |         |                      | 网页文档的头部                                   |       |
-   |    4 |          | meta    | charset="utf-8"      | 设置字符编码                                     |       |
-   |    5 |          | title   |                      | 设置页面标题，title元素是必需的                  |       |
-   |    6 | body     |         |                      | 主体                                             |       |
-   |    7 |          | h1~h6   |                      | 六级标题，可以放在其他元素中                     |       |
-   |    8 |          | header  | role="banner"        | 一组介绍性、导航性内容，加role表示页面级页眉     | 是    |
-   |    9 |          | nav     | role="navigation"    | 明确表示主导航链接的区域，可以使用ul及ol结构     | 是    |
-   |   10 |          | main    | role="main"          | 表示页面主要内容部分，一个页面只能使用一次       | 是    |
-   |   11 |          | article |                      | 文章、评论等独立的内容项，可以嵌套使用           | 是    |
-   |   12 |          | section |                      | 相似主题的一组内容，表示特定区域（与div不同）    | 是    |
-   |   13 |          | aside   | role="complementary" | 独立于主体内容之外的一块内容                     | 是    |
-   |   14 |          | footer  | role="contentinfo"   | 页脚，页面级才使用role                           | 是    |
-   |   15 |          | div     |                      | 用于添加CSS及js的通用容器，不含语义，对比span    |       |
-   |   16 |          |         | id="name"            | 一个页面同一ID只能出现一次                       |       |
-   |   17 |          |         | class="name1 ..."    | 一个元素可有多个class且同一class可为多个元素使用 |       |
-   |   18 |          |         | title="label"        | 与title元素不同，为任何部分添加提示标签          |       |
+   | <L>  |          |         |                      |                                                  |       |
+   | 1    | DOCTYPE  |         | <!DOCTYPE html>      | 声明页面为html5文档                              | 是    |
+   | 2    | html     |         | lang="en"            | 开始文档的实际html部分                           |       |
+   | 3    | head     |         |                      | 网页文档的头部                                   |       |
+   | 4    |          | meta    | charset="utf-8"      | 设置字符编码                                     |       |
+   | 5    |          | title   |                      | 设置页面标题，title元素是必需的                  |       |
+   | 6    | body     |         |                      | 主体                                             |       |
+   | 7    |          | h1~h6   |                      | 六级标题，可以放在其他元素中                     |       |
+   | 8    |          | header  | role="banner"        | 一组介绍性、导航性内容，加role表示页面级页眉     | 是    |
+   | 9    |          | nav     | role="navigation"    | 明确表示主导航链接的区域，可以使用ul及ol结构     | 是    |
+   | 10   |          | main    | role="main"          | 表示页面主要内容部分，一个页面只能使用一次       | 是    |
+   | 11   |          | article |                      | 文章、评论等独立的内容项，可以嵌套使用           | 是    |
+   | 12   |          | section |                      | 相似主题的一组内容，表示特定区域（与div不同）    | 是    |
+   | 13   |          | aside   | role="complementary" | 独立于主体内容之外的一块内容                     | 是    |
+   | 14   |          | footer  | role="contentinfo"   | 页脚，页面级才使用role                           | 是    |
+   | 15   |          | div     |                      | 用于添加CSS及js的通用容器，不含语义，对比span    |       |
+   | 16   |          |         | id="name"            | 一个页面同一ID只能出现一次                       |       |
+   | 17   |          |         | class="name1 ..."    | 一个元素可有多个class且同一class可为多个元素使用 |       |
+   | 18   |          |         | title="label"        | 与title元素不同，为任何部分添加提示标签          |       |
    |------+----------+---------+----------------------+--------------------------------------------------+-------|
  3. 注释
    格式为<!--注释部分-->
@@ -1159,8 +1183,14 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 **** HTML5还有其他特性吗
 **** 小节
 *** TODO 第十二章 综合示例
-    DEADLINE: <2016-08-09 二> SCHEDULED: <2016-08-04 四>
+    DEADLINE: <2016-08-12 五> SCHEDULED: <2016-08-04 四>
+    :PROPERTIES:
+    :Effort:   7:00
+    :END:
     :LOGBOOK:
+    CLOCK: [2016-08-12 五 23:25]--[2016-08-13 六 01:08] =>  1:43
+    CLOCK: [2016-08-12 五 16:44]--[2016-08-12 五 17:59] =>  1:15
+    CLOCK: [2016-08-10 三 22:07]--[2016-08-10 三 22:57] =>  0:50
     CLOCK: [2016-08-08 一 23:27]--[2016-08-08 一 23:47] =>  0:20
     CLOCK: [2016-08-08 一 22:59]--[2016-08-08 一 23:17] =>  0:18
     :END:
@@ -1196,14 +1226,156 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     |    2 | <nav>     | 导航区域，包含一组指向各个页面的链接 |
     |    3 | <article> | 内容区域，包含实质性内容             |
     |------+-----------+--------------------------------------|
-**** 设计
- 1. 
- 2. 
- 3. 
-**** CSS
-**** 标记
-**** JavaScript
-**** 小节
+**** DONE 设计
+     CLOSED: [2016-08-10 三 22:13]
+     - CLOSING NOTE [2016-08-10 三 22:13]
+ 1. background.gif，背景图片
+ 2. logo.gif，品牌图像
+ 3. navbar.gif，导航条
+ 4. guitarist.gif，人物剪影
+    把这些图片放在images文件夹中
+**** DONE CSS
+     CLOSED: [2016-08-10 三 22:40]
+     - CLOSING NOTE [2016-08-10 三 22:40]
+ 1. layout.css，整体布局样式
+ 2. color.css，颜色样式
+ 3. typography.css，版式样式\\
+    创建basic.css，把上面三个样式表导入这个基本的样式表中，代码为：
+    #+BEGIN_SRC css
+    @import url(layout.css);
+    @import url(color.css);
+    @import url(typography.css);
+    #+END_SRC
+    四个css文件一起放在styles文件夹中.
+**** DONE 标记
+     CLOSED: [2016-08-10 三 22:57]
+     - CLOSING NOTE [2016-08-10 三 22:57]
+**** TODO JavaScript
+     先在scripts文件夹中创建global.js，在其中添加几个整个站点都会用到的函数，
+     包含：addLoadEvent函数，insertAfter函数，addClass函数.
+ 1. 页面突出显示
+    1. 取得导航列表中所有链接
+    2. 循环遍历这些链接
+    3. 如果发现了与当前URL匹配的链接，为他添加here类\\
+    新属性及新方法：
+    * window.location.href，取得当前页面的URL
+    * indexOf方法，用于在字符串中寻找子字符串的位置，引用string.indexOf(substring)\\
+    * toLowerCase()，把文本转化为小写字母
+    highlightPage函数源码为：
+    #+BEGIN_SRC js
+      function highlightPage() {
+          if (!document.getElementsByTagName) return false;
+          if (!document.getElementById) return false;  
+          var headers = document.getElementsByTagName('header');
+          if (headers.length == 0) return false;
+          var navs = headers[0].getElementsByTagName('nav');
+          if (navs.length == 0) return false;
+
+          var links = navs[0].getElementsByTagName("a");
+          for (var i=0; i<links.length; i++) {
+              var linkurl;
+              for (var i=0; i<links.length; i++) {
+                  linkurl = links[i].getAttribute("href");
+                  if (window.location.href.indexOf(linkurl) != -1) {
+                      links[i].className = "here";
+                      var linktext = links[i].lastChild.nodeValue.toLowerCase();
+                      document.body.setAttribute("id",linktext);
+                  }
+              }
+          }
+      }
+    #+END_SRC
+ 2. JavaScript幻灯片
+    * 创建一个frame边框，把slideshow长条图放在其中展示，代码如下：
+    #+BEGIN_SRC js
+      function prepareSlideshow() {
+          if (!document.getElementsByTagName) return false;
+          if (!document.getElementById) return false;
+          if (!document.getElementById("intro")) return false;
+          var intro = document.getElementById("intro");
+          var slideshow = document.createElement("div");
+          slideshow.setAttribute("id","slideshow");
+          var frame = document.createElement("img");
+          frame.setAttribute("src","images/frame.gif");
+          frame.setAttribute("alt","");
+          frame.setAttribute("id","frame");
+          slideshow.appendChild(frame);
+          var preview = document.createElement("img");
+          preview.setAttribute("src","images/slideshow.gif");
+          preview.setAttribute("alt","a glimpse of what awaits you");
+          preview.setAttribute("id","preview");
+          slideshow.appendChild(preview);
+          insertAfter(slideshow,intro);
+          var links = document.getElementsByTagName("a");
+          for (var i=0; i<links.length; i++) {
+              links[i].onmouseover = function() {
+                  var destination = this.getAttribute("href");
+                  if (destination.indexOf("index.html") != -1) {
+                      moveElement("preview",0,0,5);
+                  }
+                  if (destination.indexOf("about.html") != -1) {
+                      moveElement("preview",-150,0,5);
+                  }
+                  if (destination.indexOf("photos.html") != -1) {
+                      moveElement("preview",-300,0,5);
+                  }
+                  if (destination.indexOf("live.html") != -1) {
+                      moveElement("preview",-450,0,5);
+                  }
+                  if (destination.indexOf("contact.html") != -1) {
+                      moveElement("preview",-600,0,5);
+                  }
+              }
+          }
+      }
+    #+END_SRC
+ 3. 内部导航
+    1. 单击<nav>中的每个链接，都会跳到带有相应id属性的<section>
+    2. 选择性的每次只显示其中一个部分(section)
+    3. split方法，根据分割符把一个字符串分成两或多部分，格式如下：
+    #+BEGIN_SRC js
+      array = string.split(character);
+    #+END_SRC
+    4. showSection函数与prepareInternalnav函数如下：\\
+    #+BEGIN_SRC js
+      function showSection(id) {
+          var sections = document.getElementsByTagName("section");
+          for (var i=0; i<sections.length; i++ ) {
+              if (sections[i].getAttribute("id") != id) {
+                  sections[i].style.display = "none";
+              } else {
+                  sections[i].style.display = "block";
+              }
+          }
+      }
+
+      function prepareInternalnav() {
+          if (!document.getElementsByTagName) return false;
+          if (!document.getElementById) return false;
+          var articles = document.getElementsByTagName("article");
+          if (articles.length == 0) return false;
+          var navs = articles[0].getElementsByTagName("nav");
+          if (navs.length == 0) return false;
+          var nav = navs[0];
+          var links = nav.getElementsByTagName("a");
+          for (var i=0; i<links.length; i++ ) {
+              var sectionId = links[i].getAttribute("href").split("#")[1];
+              if (!document.getElementById(sectionId)) continue;
+              document.getElementById(sectionId).style.display = "none";
+              links[i].destination = sectionId;
+              links[i].onclick = function() {
+                  showSection(this.destination);
+                  return false;
+              }
+          }
+      }
+    #+END_SRC
+ 4. JavaScript图片库
+ 5. 增强表格
+ 6. 增强表单
+ 7. 压缩代码
+ 8. 小结
+**** TODO 小节
 ** 相关网站
  1. www.w3school.com.cn
 * jQuery
@@ -1291,7 +1463,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 * Algorithm
 * Git/Github
 ** TODO 《GitHub入门与实践》
-   DEADLINE: <2016-08-08 一> SCHEDULED: <2016-08-04 四>
+   DEADLINE: <2016-08-13 六> SCHEDULED: <2016-08-04 四>
 *** 设置姓名及邮箱地址
  1. $ git config --global user.name "John"
  2. $ git config --global user.email "hitzhzw3889@126.com"
@@ -1491,5 +1663,6 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 *** DONE Goodbye
     CLOSED: [2016-08-10 三 18:57]
     - CLOSING NOTE [2016-08-10 三 18:57]
- * http://beijinglug.org/
+    - http://beijinglug.org/
+
 
