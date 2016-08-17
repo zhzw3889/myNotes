@@ -2060,12 +2060,12 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     :END:
 ** 《Pro Git》
 #+BEGIN: clocktable :maxlevel 2 :scope subtree
-#+CAPTION: Clock summary at [2016-08-17 三 23:34]
+#+CAPTION: Clock summary at [2016-08-18 四 01:53]
 | Headline        | Time   |      |
 |-----------------+--------+------|
-| *Total time*    | *0:18* |      |
+| *Total time*    | *2:14* |      |
 |-----------------+--------+------|
-| \_  《Pro Git》 |        | 0:18 |
+| \_  《Pro Git》 |        | 2:14 |
 #+END:
 *** 查阅
     :LOGBOOK:
@@ -2089,7 +2089,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  3. man git-<verb>
 *** Git基础
     :LOGBOOK:
-    CLOCK: [2016-08-17 三 23:34]
+    CLOCK: [2016-08-17 三 23:34]--[2016-08-18 四 01:30] =>  01:56
     :END:
 **** 取得项目的Git仓库
  1. 从当前目录初始化：git init
