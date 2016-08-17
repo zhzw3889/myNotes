@@ -728,8 +728,20 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     Undefined, Null, boolean, Number, and String.
  2. There is also 1 complex data type called Object.
 **** 内容太多，语言风格稍显罗嗦，至少得看一个月，看完就来不及实践自己的项目了，应该作为进阶读本.
-** TODO [#A] 《JavaScript DOM编程艺术》
-   DEADLINE: <2016-08-07 日> SCHEDULED: <2016-07-23 六>
+** DONE [#A] 《JavaScript DOM编程艺术》
+   CLOSED: [2016-08-15 一 18:28]
+   - CLOSING NOTE [2016-08-15 一 18:28] \\
+     这本书除了能助我进入JavaScript世界之外所含的知识非常有限，要使能力有实际的替身
+     还得去看更高级更全面的教程加上海量的实践.
+   #+BEGIN: clocktable :maxlevel 2 :scope subtree
+   #+CAPTION: Clock summary at [2016-08-15 一 18:27]
+   | Headline                                 | Time       |          |
+   |------------------------------------------+------------+----------|
+   | *Total time*                             | *1d 11:36* |          |
+   |------------------------------------------+------------+----------|
+   | \_  TODO [#A] 《JavaScript DOM编程艺术》 |            | 1d 11:36 |
+   #+END:
+   DEADLINE: <2016-08-13 六> SCHEDULED: <2016-07-23 六>
  1. 三原则：平稳退化、渐进增强、以用户为中心
 *** DONE 第一章 Javascript简史
     DEADLINE: <2016-07-23 六> SCHEDULED: <2016-07-23 六>
@@ -1182,12 +1194,29 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  3. 表单
 **** HTML5还有其他特性吗
 **** 小节
-*** TODO 第十二章 综合示例
+*** DONE 第十二章 综合示例
+    CLOSED: [2016-08-13 六 17:58]
+    :PROPERTIES:
+    :Effort:   7:00
+    :END:
+    - CLOSING NOTE [2016-08-13 六 17:58] \\
+      除了最后的Ajax的内容稍显困难之外，其余内容基本可以看得很顺，相信我也可以
+      自己做出来只要不是新知识的鸿沟，其他的都是可以现场克服的.
+    #+BEGIN: clocktable :maxlevel 2 :scope subtree
+    #+CAPTION: Clock summary at [2016-08-15 一 18:27]
+    | Headline     | Time   |
+    |--------------+--------|
+    | *Total time* | *6:50* |
+    |--------------+--------|
+    #+END:
     DEADLINE: <2016-08-12 五> SCHEDULED: <2016-08-04 四>
     :PROPERTIES:
     :Effort:   7:00
     :END:
     :LOGBOOK:
+    CLOCK: [2016-08-13 六 16:43]--[2016-08-13 六 17:56] =>  1:13
+    CLOCK: [2016-08-13 六 11:25]--[2016-08-13 六 12:00] =>  0:35
+    CLOCK: [2016-08-13 六 10:42]--[2016-08-13 六 11:18] =>  0:36
     CLOCK: [2016-08-12 五 23:25]--[2016-08-13 六 01:08] =>  1:43
     CLOCK: [2016-08-12 五 16:44]--[2016-08-12 五 17:59] =>  1:15
     CLOCK: [2016-08-10 三 22:07]--[2016-08-10 三 22:57] =>  0:50
@@ -1250,7 +1279,8 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 **** DONE 标记
      CLOSED: [2016-08-10 三 22:57]
      - CLOSING NOTE [2016-08-10 三 22:57]
-**** TODO JavaScript
+**** DONE JavaScript
+     - CLOSING NOTE [2016-08-13 六 17:51] 
      先在scripts文件夹中创建global.js，在其中添加几个整个站点都会用到的函数，
      包含：addLoadEvent函数，insertAfter函数，addClass函数.
  1. 页面突出显示
@@ -1336,7 +1366,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     #+BEGIN_SRC js
       array = string.split(character);
     #+END_SRC
-    4. showSection函数与prepareInternalnav函数如下：\\
+    1. showSection函数与prepareInternalnav函数如下：\\
     #+BEGIN_SRC js
       function showSection(id) {
           var sections = document.getElementsByTagName("section");
@@ -1371,11 +1401,351 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
       }
     #+END_SRC
  4. JavaScript图片库
+    1. 四张照片400*300px，放在images/photos中，再创建4张缩略图也放其中
+    2. 创建一组链接，设置标签及其属性值
+    3. 制作占位符图片placeholder.gif放到images/中
+    4. 把第六、七章的图片库脚本放入scripts/global.js中，源码如下：\\
+    #+BEGIN_SRC js
+      function showPic(whichpic) {
+          if (!document.getElementById("placeholder")) return true;
+          var source = whichpic.getAttribute("href");
+          var placeholder = document.getElementById("placeholder");
+          placeholder.setAttribute("src",source);
+          if (!document.getElementById("description")) return false;
+          if (whichpic.getAttribute("title")) {
+              var text = whichpic.getAttribute("title");
+          } else {
+              var text = "";
+          }
+          var description = document.getElementById("description");
+          if (description.firstChild.nodeType == 3) {
+              description.firstChild.nodeValue = text;
+          }
+          return false;
+      }
+
+      function preparePlaceholder() {
+          if (!document.createElement) return false;
+          if (!document.createTextNode) return false;
+          if (!document.getElementById) return false;
+          if (!document.getElementById("imagegallery")) return false;
+          var placeholder = document.createElement("img");
+          placeholder.setAttribute("id","placeholder");
+          placeholder.setAttribute("src","images/placeholder.gif");
+          placeholder.setAttribute("alt","my image gallery");
+          var description = document.createElement("p");
+          description.setAttribute("id","description");
+          var desctext = document.createTextNode("Choose an image");
+          description.appendChild(desctext);
+          var gallery = document.getElementById("imagegallery");
+          insertAfter(description,gallery);
+          insertAfter(placeholder,description);
+      }
+
+      function prepareGallery() {
+          if (!document.getElementsByTagName) return false;
+          if (!document.getElementById) return false;
+          if (!document.getElementById("imagegallery")) return false;
+          var gallery = document.getElementById("imagegallery");
+          var links = gallery.getElementsByTagName("a");
+          for ( var i=0; i < links.length; i++) {
+              links[i].onclick = function() {
+                  return showPic(this);
+              }
+          }
+      }
+    #+END_SRC
  5. 增强表格
- 6. 增强表单
+    1. 书写巡演表格数据<table>，放到live.html中的<article>元素中
+    2. 将第九章的stripeTables及highlightRows函数及第8章的displayAbbreviations
+       函数添加到global.js中，代码为：\\
+    #+BEGIN_SRC js
+      function stripeTables() {
+          if (!document.getElementsByTagName) return false;
+          var tables = document.getElementsByTagName("table");
+          for (var i=0; i<tables.length; i++) {
+              var odd = false;
+              var rows = tables[i].getElementsByTagName("tr");
+              for (var j=0; j<rows.length; j++) {
+                  if (odd == true) {
+                      addClass(rows[j],"odd");
+                      odd = false;
+                  } else {
+                      odd = true;
+                  }
+              }
+          }
+      }
+
+      function highlightRows() {
+          if(!document.getElementsByTagName) return false;
+          var rows = document.getElementsByTagName("tr");
+          for (var i=0; i<rows.length; i++) {
+              rows[i].oldClassName = rows[i].className
+              rows[i].onmouseover = function() {
+                  addClass(this,"highlight");
+              }
+              rows[i].onmouseout = function() {
+                  this.className = this.oldClassName
+              }
+          }
+      }
+
+      function displayAbbreviations() {
+          if (!document.getElementsByTagName || !document.createElement || !document.createTextNode) return false;
+          var abbreviations = document.getElementsByTagName("abbr");
+          if (abbreviations.length < 1) return false;
+          var defs = new Array();
+          for (var i=0; i<abbreviations.length; i++) {
+              var current_abbr = abbreviations[i];
+              if (current_abbr.childNodes.length < 1) continue;
+              var definition = current_abbr.getAttribute("title");
+              var key = current_abbr.lastChild.nodeValue;
+              defs[key] = definition;
+          }
+          var dlist = document.createElement("dl");
+          for (key in defs) {
+              var definition = defs[key];
+              var dtitle = document.createElement("dt");
+              var dtitle_text = document.createTextNode(key);
+              dtitle.appendChild(dtitle_text);
+              var ddesc = document.createElement("dd");
+              var ddesc_text = document.createTextNode(definition);
+              ddesc.appendChild(ddesc_text);
+              dlist.appendChild(dtitle);
+              dlist.appendChild(ddesc);
+          }
+          if (dlist.childNodes.length < 1) return false;
+          var header = document.createElement("h3");
+          var header_text = document.createTextNode("Abbreviations");
+          header.appendChild(header_text);
+          var articles = document.getElementsByTagName("article");
+          if (articles.length == 0) return false;
+          articles[0].appendChild(header);
+          articles[0].appendChild(dlist);
+      }
+    #+END_SRC
+ 6. 增强表单\\
+    创建contact.html，<article>中包含一个<form>
+    1. 字段标签，有三个字段：name、email和message，如果label中的文本被单击，关
+       联的表单字段就会获得焦点，对不支持的浏览器准备如下代码：\\
+       #+BEGIN_SRC js
+         function focusLabels() {
+             if (!document.getElementsByTagName) return false;
+             var labels = document.getElementsByTagName("label");
+             for (var i=0; i<labels.length; i++) {
+                 if (!labels[i].getAttribute("for")) continue;
+                 labels[i].onclick = function() {
+                     var id = this.getAttribute("for");
+                     if (!document.getElementById(id)) return false;
+                     var element = document.getElementById(id);
+                     element.focus();
+                 }
+             }
+         }
+       #+END_SRC
+    2. 占位符值，placeholder属性中文本，"Your name"、"Your email address"等，
+       在不支持html5的浏览器准备了resetFields及prepareForms函数，代码如下：\\
+       #+BEGIN_SRC js
+         function resetFields(whichform) {
+             if (Modernizr.input.placeholder) return;
+             for (var i=0; i<whichform.elements.length; i++) {
+                 var element = whichform.elements[i];
+                 if (element.type == "submit") continue;
+                 if (!element.getAttribute('placeholder')) continue;
+                 element.onfocus = function() {
+                     if (this.value == this.getAttribute('placeholder')) {
+                         this.value = "";
+                     }
+                 }
+                 element.onblur = function() {
+                     if (this.value == "") {
+                         this.value = this.getAttribute('placeholder');
+                     }
+                 }
+                 element.onblur();
+             }
+         }
+
+         function prepareForms() {
+             for (var i=0; i<document.forms.length; i++) {
+                 var thisform = document.forms[i];
+                 resetFields(thisform);
+                 thisform.onsubmit = function() {
+                     if (!validateForm(this)) return false;
+                     var article = document.getElementsByTagName('article')[0];
+                     if (submitFormWithAjax(this, article)) return false;
+                     return true;
+                 }
+             }
+         }
+       #+END_SRC
+    3. 表单验证，主要验证是否空白(isFilled)或格式是否正确(isEmail)，为必填的项
+       目增加特别的样式(validateForm)，在prepareForms函数中通过onsubmit事件处理
+       函数添加验证行为，代码如下：
+       #+BEGIN_SRC js
+         function validateForm(whichform) {
+             for (var i=0; i<whichform.elements.length; i++) {
+                 var element = whichform.elements[i];
+                 if (element.getAttribute("required") == 'required') {
+                     if (!isFilled(element)) {
+                         alert("Please fill in the "+element.name+" field.");
+                         return false;
+                     }
+                 }
+                 if (element.getAttribute("type") == 'email') {
+                     if (!isEmail(element)) {
+                         alert("The "+element.name+" field must be a valid email address.");
+                         return false;
+                     }
+                 }
+             }
+             return true;
+         }
+
+         function isFilled(field) {
+             return (field.value.length > 1 && field.value != field.placeholder);
+         }
+
+         function isEmail(field) {
+             return (field.value.indexOf("@") != -1 && field.value.indexOf(".") != -1);
+         }
+
+         function prepareForms() {
+             for (var i=0; i<document.forms.length; i++) {
+                 var thisform = document.forms[i];
+                 resetFields(thisform);
+                 thisform.onsubmit = function() {
+                     if (!validateForm(this)) return false;
+                     var article = document.getElementsByTagName('article')[0];
+                     if (submitFormWithAjax(this, article)) return false;
+                     return true;
+                 }
+             }
+         }
+       #+END_SRC
+    4. *提交表单* ，有点晕，等网上的视频教程等看完及实践后再回来看吧！
  7. 压缩代码
+    1. 用Closure Compiler压缩代码，网址为http://closure-compiler.appspot.com/home
+    2. 压缩后的代码命名为global.min.js，放入scripts文件夹
+    3. 把所有页面的<scripts>标签中引用的脚本改为这个压缩版.
  8. 小结
-**** TODO 小节
+**** DONE 小节
+     CLOSED: [2016-08-13 六 17:56]
+     - CLOSING NOTE [2016-08-13 六 17:56]
+*** DONE 附录 JavaScript库
+    CLOSED: [2016-08-15 一 18:24]
+    - CLOSING NOTE [2016-08-15 一 18:24] \\
+      只是简单地介绍非常有限的子集，追求完整的功能还得系统地去学习相应的知识
+    :LOGBOOK:
+    CLOCK: [2016-08-15 一 18:13]--[2016-08-15 一 18:24] =>  0:11
+    CLOCK: [2016-08-15 一 17:55]--[2016-08-15 一 18:05] =>  0:10
+    CLOCK: [2016-08-15 一 11:10]--[2016-08-15 一 12:05] =>  0:55
+    CLOCK: [2016-08-13 六 21:47]--[2016-08-13 六 22:53] =>  1:06
+    :END:
+**** DONE 选择合适的库
+     CLOSED: [2016-08-13 六 22:35]
+     - CLOSING NOTE [2016-08-13 六 22:35]
+ 1. 如果同时使用多个库，重复功能和冗余代码也是不可避免的
+ 2. 功能过多会影响下载速度
+ 3. 模块化可以至加载相应功能的文件，从而降低下载量
+ 4. 动态加载文件时，一次请求一个大文件要比多次请求多个小文件更好
+***** 有代表性的库
+ 1. jQuery，
+ 2. Prototype
+ 3. The Yahoo!User Interface (YUI) Library
+ 4. Dojo Toolkit
+ 5. MooTools，
+***** 内容分发网络
+ 1. 内容分发网络(CDN,Content Delevery Network)，可以解决分布共享库的问题.
+ 2. Google为上面5个库提供了免费的CDN服务.
+**** DONE 语法
+     CLOSED: [2016-08-13 六 22:51]
+     - CLOSING NOTE [2016-08-13 六 22:51]
+ 1. 很多库都把$()函数作为其选择器方法的简写
+ 2. 多数库都支持以点将方法连缀起来的语法，也就是通过点操作符把多个方法调用连接
+    成一行代码，如$('p').removeClass('classFoo').addClass('classBar');
+ 3. 迭代，不少库都提供了方便对元素列表进行操作的循环结构，如下面两种方式同效：
+    #+BEGIN_SRC js
+      var item = document.getElementsByTagname("li");
+      for (var i=0; i<item.length; i++) {
+          alert(typeof items[i]);
+      }
+
+      $('li').each(function(i){
+          alert(typeof this);
+      })
+    #+END_SRC
+**** DONE 选择元素
+     CLOSED: [2016-08-14 日 01:06]
+     - CLOSING NOTE [2016-08-14 日 01:06]
+     使用各种CSS选择器来选择元素，如下为三种基本调用：
+     1. 带#的ID，如$('#elementid')
+     2. 带.的类名，如$('.element-class')
+     3. 标签名，如$('tag')\\
+     还有其他很多更精确的高级用法，如下：
+     1. CSS选择器，如var links = $('article nav a');
+     2. 库所提供的专有选择器，如$("tr:odd").addClass("odd");
+     3. 使用回调函数筛选，即基于每个元素执行相应的筛选代码，如下代码：
+	#+BEGIN_SRC js
+          //jQuery库的回调筛选函数
+          var singleImageAnchors = $('a').filter(function(){
+              return ($('img',this).length == 1)
+          });
+	#+END_SRC
+**** DONE 操作DOM元素
+     CLOSED: [2016-08-15 一 11:27]
+     - CLOSING NOTE [2016-08-15 一 11:27]
+ 1. 生成内容，把HTML代码作为$函数的参数传入，即可创建新的节点，如下代码：
+    #+BEGIN_SRC js
+      $('<div id="example">Hello</div>').appendTo(document.body);
+    #+END_SRC
+ 2. 操作内容，DOM操作在任何一个库中都受到极大的重视，他们分别都提供了一些用于
+    删除、插入、添加、前置等操作的快捷方法，如下代码：\\
+    #+BEGIN_SRC js
+      $('ul#list1 li').appendTo("ul#list2");
+      //把list1的所有元素移动到list2中
+      $('ul#list1 li').clone().appendTo("ul#list2");
+      //把list1的所有元素复制到list2中
+    #+END_SRC
+**** DONE 处理事件
+     CLOSED: [2016-08-15 一 12:02]
+     - CLOSING NOTE [2016-08-15 一 12:02]
+     事件其实是用户交互的根本所在
+ 1. 加载事件
+    1. 以addLoadEvent事件为例，jQuery的ready方法以类似的方式实现了相应的机制：
+       #+BEGIN_SRC js
+         $(document).ready(handler);
+         $(handler);
+       #+END_SRC
+ 2. 其他事件
+    1. 还有很多特定于元素的事件，例如blur、focus、click、dblclick、mouseover、
+       mouseout和submit等
+    2. 使用这些事件方法，可以为DOM元素批量注册事件处理函数，如下代码：
+       #+BEGIN_SRC js
+         $('a').click(function(event) {
+             //在新窗口中打开当前href中的链接
+             window.open(this.getAttribute('href'));
+             //阻止链接的默认动作
+             return false;
+         })
+       #+END_SRC
+**** DONE Ajax
+     CLOSED: [2016-08-15 一 18:04]
+     - CLOSING NOTE [2016-08-15 一 18:04] \\
+       Ajax是软肋，得专门找东西看才能明白！
+ 1. Prototype与Ajax
+ 2. jQuery与Ajax
+**** DONE 动画和效果
+     CLOSED: [2016-08-15 一 18:24]
+     - CLOSING NOTE [2016-08-15 一 18:24]
+ 1. 基于CSS属性的动画
+    * 动画的最基本形式，就是随着时间推移改变一个元素的CSS属性. 
+ 2. 组合动画
+ 3. 注意可访问性
+**** DONE 小节
+     CLOSED: [2016-08-15 一 18:24]
+     - CLOSING NOTE [2016-08-15 一 18:24]
 ** 相关网站
  1. www.w3school.com.cn
 * jQuery
@@ -1463,30 +1833,224 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 * Algorithm
 * Git/Github
 ** TODO 《GitHub入门与实践》
-   DEADLINE: <2016-08-13 六> SCHEDULED: <2016-08-04 四>
-*** 设置姓名及邮箱地址
- 1. $ git config --global user.name "John"
- 2. $ git config --global user.email "hitzhzw3889@126.com"
-*** 将color.ui设置为auto
- 1. $ git config --global color.ui auto
-*** 在github上创建账户
+   DEADLINE: <2016-08-17 三> SCHEDULED: <2016-08-04 四>
+   :PROPERTIES:
+   :Effort:   7:00
+   :END:
+   #+BEGIN: clocktable :maxlevel 2 :scope subtree
+   #+CAPTION: Clock summary at [2016-08-17 三 00:09]
+   | Headline                      | Time    |       |
+   |-------------------------------+---------+-------|
+   | *Total time*                  | *10:56* |       |
+   |-------------------------------+---------+-------|
+   | \_  TODO 《GitHub入门与实践》 |         | 10:56 |
+   #+END:
+   :LOGBOOK:
+   CLOCK: [2016-08-15 一 20:53]--[2016-08-15 一 22:24] =>  1:31
+   :END:
+*** DONE 第1章  欢迎来到GitHub的世界
+    CLOSED: [2016-08-15 一 22:19]
+    - CLOSING NOTE [2016-08-15 一 22:19] \\
+      本章没什么实际的知识点，基本都是软文.
+ 1. GitHub是为开发者提供Git仓库的托管服务
+ 2. Pull Request、@用户名、Markdown、Issue、Wiki简介
+*** DONE 第2章  Git的导入
+    CLOSED: [2016-08-15 一 22:55]
+    - CLOSING NOTE [2016-08-15 一 22:55]
+    :LOGBOOK:
+    CLOCK: [2016-08-15 一 22:29]--[2016-08-15 一 22:55] =>  0:26
+    :END:
+ 1. 版本管理系统分集中型和分散型，Git属于分散型
+ 2. Fork出的仓库与原仓库是两个不同的仓库，开发者可以随意编辑，这个Fork出的仓库
+    应该不会保持与最新仓库的同步.
+**** 初始设置
+ 1. 设置姓名及邮箱地址
+    1. $ git config --global user.name "John"
+    2. $ git config --global user.email "hitzhzw3889@126.com"\\
+    这两种信息会保存在~/.gitconfig文件中.
+ 2. 提高命令输出的可读性
+    1. 将color.ui设置为auto:$ git config --global color.ui auto
+    2. 此信息也将保存在~/.gitconfig文件中.
+*** DONE 第3章  使用GitHub的前期准备
+    CLOSED: [2016-08-16 二 00:50]
+    - CLOSING NOTE [2016-08-16 二 00:50]
+    :LOGBOOK:
+    CLOCK: [2016-08-15 一 23:33]--[2016-08-16 二 00:50] =>  1:17
+    :END:
+**** 在github上创建账户
  1. 账号：zhzw3889
  2. 密码：***@******1**
-*** 设置SSH Key
+**** 设置SSH Key
  1. $ ssh -keygen -t rsa -C "hitzhzw3889@126.com"
  2. 密码：******
-*** git init  - To initialize repository
- 1. $ mkdir git-tutorial
- 2. $ cd git-tutorial
- 3. $ git init
-*** git status - Check the status of the repository
- 1. $ git status
-    | Command                              | Effect                                 |
-    |--------------------------------------+----------------------------------------|
-    | git add [filename]                   | To add files to the stage              |
-    | git commit [-m "commit information"] | Save the historic records of the stage |
-    | git diff [filename]                  | To see the                             |
-    |--------------------------------------+----------------------------------------|
+**** 设置公开密钥
+ 1. cat ~/.ssh/id_rsa.pub查看公开密钥的内容
+ 2. 文件的内容为:ssh-rsa 公开密钥的内容 hitzhzw3889@126.com
+ 3. 把它粘贴到GitHub的Key部分\\
+ 公钥与私钥应该是配对正确才可使用的.
+**** 创建仓库
+**** 连接仓库
+ * 仓库的URL为http://github.com/用户名/仓库名
+**** 公开代码
+ 1. clone已有仓库
+    1. git clone git@github.com:zhzw3889/Hello-World.git
+    2. cd Hello-World
+ 2. 编写代码
+ 3. 提交
+    1. git add hello_world.php
+    2. git commit -m "Add hello world script by php"
+    3. 通过git log查看提交日志
+ 4. 进行push
+    1. git push
+    2. 只要执行push，GitHub上的仓库就会被更新.
+       push时应该可以选择目录的，否则结果如下，全都到:
+       #+BEGIN_SRC sh
+         00:38:57John>~/test$git push
+         Enter passphrase for key '/home/John/.ssh/id_rsa': 
+         对象计数中: 76, 完成.
+         Delta compression using up to 4 threads.
+         压缩对象中: 100% (70/70), 完成.
+         写入对象中: 100% (76/76), 43.85 KiB | 0 bytes/s, 完成.
+         Total 76 (delta 36), reused 0 (delta 0)
+         remote: Resolving deltas: 100% (36/36), done.        
+         To git@github.com:zhzw3889/learningnotes.git
+         7db5f05..e8a781c  master -> master
+       #+END_SRC
+*** DONE 第4章  通过实际操作学习Git
+    CLOSED: [2016-08-17 三 00:07]
+    - CLOSING NOTE [2016-08-17 三 00:07] \\
+      基本理解了Git的机理，更细节深入的操作以后可以在实践中加深.
+    :LOGBOOK:
+    CLOCK: [2016-08-16 二 22:16]--[2016-08-17 三 00:07] =>  1:51
+    CLOCK: [2016-08-16 二 19:41]--[2016-08-16 二 22:01] =>  2:20
+    CLOCK: [2016-08-16 二 17:39]--[2016-08-16 二 18:19] =>  0:40
+    CLOCK: [2016-08-16 二 15:55]--[2016-08-16 二 17:22] =>  1:27
+    CLOCK: [2016-08-16 二 09:37]--[2016-08-16 二 11:01] =>  1:24
+    :END:
+**** 基本操作
+ 1. git init——初始化仓库
+    1. $ mkdir git-tutorial
+    2. $ cd git-tutorial
+    3. $ git init
+ 2. git status——查看仓库状态
+    1. $ git status
+ 3. git add——向暂存区中添加文件
+    暂存区是提交之前的一个临时区域.
+    1. git add readme.md
+    2. git status
+ 4. git commit——保存仓库的历史记录
+    1. 记述一行提交信息：git commit `[-m "commit information"]
+    2. 记述详细提交信息：git commit，貌似不起作用
+    3. 中止提交：提交信息留空或直接关闭编辑器
+ 5. git log——查看提交日志
+    1. 只显示提交信息的第一行：git log --pretty=short
+    2. 只显示制定目录、文件的日志：git log readme.md
+    3. 显示文件的改动：git log -p
+ 6. git diff——查看更改前后的差别
+    1. 查看工作树和暂存区的差别：git diff
+    2. 查看工作树和最新提交的差别：git diff HEAD
+**** 分支的操作
+ 1. git branch——显示分支一览表
+ 2. git checkout -b——创建、切换分支
+    1. git checkout -b feature-A，创建feature-A并切换到此分支，如下两条命令也
+       起到同样效果：
+       #+BEGIN_SRC git
+       git branch feature-A
+       git checkout feature-A
+       #+END_SRC
+    2. 切换到master分支：git checkout master
+    3. 切换回上一个分支：git checkout -
+ 3. 特性分支\\
+    基于特性主题的作业在特性分支中进行，主题完成后再与master分支合并.
+ 4. 主干分支\\
+    主干分支是特性分支的原点，同时也是合并的终点，通常人们会用master分支作为主
+    干分支.
+ 5. git merge——合并分支
+    1. git checkout master
+    2. git merge --no-ff feature-A，--no-ff参数是为了在历史记录中明确记录下本
+       次分支合并.
+    3. 合并成功后不用再次合并，只要在master上commit就可以了.(自)
+ 6. git log --graph——以图表形式查看分支
+**** 更改提交的操作
+ 1. git reset——回溯历史版本\\
+    让仓库的HEAD、暂存区、当前工作树回溯到指定状态.
+    1. 回溯到创建feature-A分支前：git reset --hard 哈希值
+    2. 创建fix-B分支：git checkout -b fix-B
+    3. 推进至feature-A分支合并后的状态：git reflog查看当前仓库的操作日志，在日
+       志中找出回溯历史之前的哈希值为06781cc，以下命令为：
+       #+BEGIN_SRC git
+       git checkout master
+       git reset --hard 06781cc
+       #+END_SRC
+ 2. 消除冲突
+    1. 查看冲突部分并将其解决：直接在编辑器中修改即可
+    2. 提交解决后的结果：在master中add、commit
+ 3. git commit --amend——修改提交信息
+    1. 在emacs里的shell-mode中打不开git编辑器，而在终端中可以，而且默认是vim模
+       式，可能是这个原因，只要我把git的编辑器设置成emacs模式应该就可以用
+       了.(自)
+ 4. git rebase -i——压缩历史
+    1. 创建feature-C分支:\\
+       git checkout -b feature-C\\
+       git commit -am "Add feature-C"
+    2. 修正拼写错误\\
+       修改后运行:git diff查看结果，然后提交：git commit -am "Fix typo"
+    3. 更改历史\\
+       把"Fix typo"与前一次的提交合并：git rebase -i HEAD~2，把第二个pick修改
+       为fixup，查看git log --graph为已修改
+    4. 合并至master分支\\
+       #+BEGIN_SRC git
+       git checkout master
+       git merge --no-ff feature-C
+       #+END_SRC
+**** 推送至远程仓库
+ 1. git remote add——添加远程仓库
+    1. GitHub上创建的仓库路径为"git@github.com:用户名/git-tutorial.git"
+    2. 将其设置成本地仓库的远程仓库：
+       #+BEGIN_SRC git
+       git remote add origin git@github.com:zhzw3889/git-tutorial.git
+       #+END_SRC
+       远程仓库名称被设置为origin，以后推送只要指定此名称即可.
+ 2. git push——推送至远程仓库
+    1. 推送至master分支：git push -u origin master
+    2. -u参数是为了将来运行git pull命令从远程仓库获取内容时，本地仓库的这个分
+       支就可以直接从origin的master分支获取内容.
+    3. 推送至master以外的分支
+       #+BEGIN_SRC git
+       git checkout -b feature-D
+       git push -u origin feature-D
+       #+END_SRC
+**** 从远程仓库获取
+ 1. git clone——获取远程仓库
+    1. 在home下创建test-clone&pull目录，并且git init
+    2. 在此目录下执行：git clone git@github.com:zhzw3889/git-tutorial.git
+    3. cd git-tutorial
+    4. git branch -a，同时显示本地仓库和远程仓库的分支信息
+    5. 将feature-D分支获取至本地仓库：git checkout -b feature-D origin/feature-D
+    6. 向本地的feature-D分支提交更改，添加一行"- feature-D"，再查看变更并提交：\\
+       git diff\\
+       git commit -am "Add feature-D"
+    7. 推送feature-D分支：git push
+ 2. git pull——获取最新的远程仓库分支
+    1. 回到原来目录：cd ~/git-tutorial
+    2. git branch发现多了个*feature-D分支
+    3. 将本地的feature更新到最新状态：git pull origin feature-D
+**** 帮助大家深入理解Git的资料
+ 1. Pro Git
+ 2. *learnGitBranching* ，网站不错
+ 3. try Git
+*** TODO 第5章  详细解说GitHub的功能
+*** TODO 第6章  尝试Pull Request
+*** TODO 第7章  接受Pull Request
+*** TODO 第8章  与GitHub相互协作的工具及服务
+*** TODO 第9章  使用GitHub的开发流程
+*** TODO 第10章 将GitHub应用到企业
+*** TODO 附录A  支持GitHub的GUI客户端
+*** TODO 附录B  通过Gist轻松实现代码共享
+*** TODO 复习
+    :LOGBOOK:
+    CLOCK: [2016-08-17 三 10:33]--[2016-08-17 三 10:45] =>  0:12
+    :END:
 ** 《Pro Git》
 *** 起步
 **** Git基础要点
@@ -1494,7 +2058,14 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  2. 
  3. 
  4. 
-
+** 其他
+*** 初始配置
+    |------+---------------------------------------+-----------------------|
+    | 序号 | 命令                                  | 作用                  |
+    |------+---------------------------------------+-----------------------|
+    |    1 | git config --global core.editor emacs | 把默认编辑器设成emacs |
+    |      |                                       |                       |
+    
 * 慕课网
 ** DONE Linux Guide for Developers
    CLOSED: [2016-08-10 三 18:58]
@@ -1666,3 +2237,5 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     - http://beijinglug.org/
 
 
+
+    
