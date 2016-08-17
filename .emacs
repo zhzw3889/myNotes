@@ -18,10 +18,10 @@
   ;;; XEmacs
   ;;; ------
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  (progn
-     (if (file-readable-p "~/.xemacs/init.el")
-        (load "~/.xemacs/init.el" nil t))
-  )
+    (progn
+      (if (file-readable-p "~/.xemacs/init.el")
+	  (load "~/.xemacs/init.el" nil t))
+      )
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;; GNU-Emacs
   ;;; ---------
@@ -40,15 +40,17 @@
   ;; we set the default file ~/.gnu-emacs-custom
   (setq custom-file "~/.gnu-emacs-custom")
   (load "~/.gnu-emacs-custom" t t)
+;;;[<0;45;23M]
+  )
 ;;;
-)
-;;;
-;-------------------------basic------------------------------>
+;;-------------------------basic------------------------------>
 (setq column-number-mode t) 
 (setq line-number-mode t) 
 ;;在minibuffer 显示行号及列号
-(setq xterm-mouse-mode nil)
-;;默认关闭xterm-mouse-mode
+;;(setq xterm-mouse-mode nil)
+;;默认关闭xterm-mouse-mode，关闭但不起作用
+;;(display-time)
+;;显示时间
 (global-linum-mode 'linum-mode)
 ;;在左列添加行号
 ;(setq linum-format "%d ")
@@ -157,44 +159,19 @@
 ;;----------yasnippet------------------------------------------->
 (yas-global-mode 1)
 ;;----------zone-matrix----------------------------------------->
-;;(require 'zone-matrix)
-;;(require 'zone-matrix-settings)
+(require 'zone-matrix)
+(require 'zone-matrix-settings)
 (require 'zone-settings)
 (setq zone-programs [zone-matrix])
-(zone-when-idle 120)
+(zone-when-idle 300)
 ;;To enable Zone Mode for all buffers
-;;after Emacs is idle for 2 minutes
-
-(defun zone-choose (pgm)
-  "Choose a PGM to run for `zone'."
-  (interactive
-   (list
-    (completing-read
-     "Program: "
-     (mapcar 'symbol-name zone-programs))))
-  (let ((zone-programs (list (intern pgm))))
-    (zone)))
-;;Choose a particular Zone program.
-
-;;(defun lock-screen ()
-;;"Lock screen using (zone) and xtrlock
-;;calls M-x zone on all frames and runs xtrlock"
-;;(interactive)
-;;(save-excursion
-;;(shell-command "xtrlock &")
-;;(set-process-sentinel
-;;(start-process "xtrlock" nil "xtrlock")
-;;'(lambda (process event)
-;;(zone-leave-me-alone)))
-;;(zone-when-idle 1)))
-;;Lock X11 with M-x lock-screen
-;;找不到xtrlock
+;;after Emacs is idle for 5 minutes
 ;;----------tabbar-mode----------------------------------------->
 (require 'tabbar)
 ;;(tabbar-mode 1)
 (global-set-key (kbd "<C-next>")  'tabbar-forward)
 (global-set-key (kbd "<C-prior>")  'tabbar-backward)
-;;----->
-
+;;----------git-emacs------------------------------------------->
+(require 'git-emacs)
 
 

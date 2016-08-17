@@ -2040,19 +2040,87 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  2. *learnGitBranching* ，网站不错
  3. try Git
 *** TODO 第5章  详细解说GitHub的功能
-*** TODO 第6章  尝试Pull Request
-*** TODO 第7章  接受Pull Request
-*** TODO 第8章  与GitHub相互协作的工具及服务
-*** TODO 第9章  使用GitHub的开发流程
-*** TODO 第10章 将GitHub应用到企业
-*** TODO 附录A  支持GitHub的GUI客户端
-*** TODO 附录B  通过Gist轻松实现代码共享
+*** 第6章  尝试Pull Request
+    - CLOSING NOTE [2016-08-17 三 22:52]
+*** 第7章  接受Pull Request
+    - CLOSING NOTE [2016-08-17 三 22:52]
+*** 第8章  与GitHub相互协作的工具及服务
+    - CLOSING NOTE [2016-08-17 三 22:52]
+*** 第9章  使用GitHub的开发流程
+    - CLOSING NOTE [2016-08-17 三 22:52]
+*** 第10章 将GitHub应用到企业
+    - CLOSING NOTE [2016-08-17 三 22:52]
+*** 附录A  支持GitHub的GUI客户端
+    - CLOSING NOTE [2016-08-17 三 22:52]
+*** 附录B  通过Gist轻松实现代码共享
+    - CLOSING NOTE [2016-08-17 三 22:52]
 *** TODO 复习
     :LOGBOOK:
     CLOCK: [2016-08-17 三 10:33]--[2016-08-17 三 10:45] =>  0:12
     :END:
 ** 《Pro Git》
+#+BEGIN: clocktable :maxlevel 2 :scope subtree
+#+CAPTION: Clock summary at [2016-08-17 三 23:34]
+| Headline        | Time   |      |
+|-----------------+--------+------|
+| *Total time*    | *0:18* |      |
+|-----------------+--------+------|
+| \_  《Pro Git》 |        | 0:18 |
+#+END:
+*** 查阅
+    :LOGBOOK:
+    CLOCK: [2016-08-17 三 22:50]--[2016-08-17 三 22:58] =>  0:08
+    :END:
 *** 起步
+    :LOGBOOK:
+    CLOCK: [2016-08-17 三 22:58]--[2016-08-17 三 23:08] =>  0:10
+    :END:
+**** 关于版本控制
+**** Git基础要点
+**** 安装Git
+**** 初始运行Git前的配置
+ 1. 用户信息
+ 2. 文本编辑器：git config --global core.editor emacs
+ 3. 差异分析工具：git config --global merge.tool vimdiff
+ 4. 查看配置信息：git config --list
+**** 获取帮助
+ 1. git help <verb>
+ 2. git <verb> --help
+ 3. man git-<verb>
+*** Git基础
+    :LOGBOOK:
+    CLOCK: [2016-08-17 三 23:34]
+    :END:
+**** 取得项目的Git仓库
+ 1. 从当前目录初始化：git init
+ 2. 从现有仓库克隆：git clone [url]
+**** 记录每次更新到仓库
+ 1. 查看当前文件状态：git status
+ 2. 跟踪新文件：git add file/dir
+ 3. 暂存已修改文件：git add file/dir
+ 4. 忽略某些文件： 新建.gitignore文件
+ 5. 查看已暂存和未暂存的更新：
+    1. git diff，暂存的和修改但为暂存的
+    2. git diff --cached/staged，此次暂存的和上次提交的
+ 6. 提交更新：git commit [-m] ["说明"]
+ 7. 跳过使用暂存区域：git commit -a，可以和上面的合并使用
+ 8. 移除文件(从暂存区域)：git rm
+ 9. 移动文件：git mv file_from file_to
+**** 查看提交历史
+ 1. 
+ 2. 
+ 3. 
+**** 撤销操作
+**** 远程仓库的使用
+**** 打标签
+**** 技巧和窍门
+*** Git分支
+*** 服务器上的Git
+*** 分布式Git
+*** Git工具
+*** 自定义Git
+*** Git与其他系统
+*** Git内部原理
 **** Git基础要点
  1. 
  2. 
