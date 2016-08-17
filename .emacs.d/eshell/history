@@ -1,0 +1,128 @@
+git add Program
+git status
+git ~/Program/K&R
+git add ~/Program/K&R
+git add ~/Program/K&R
+git add ~/Program/K&R/*.c
+git add ~/Program/*.c
+git status
+git rm --cached ~/Program/y13/*.c
+git status
+git rm --cached ~/Program/\345\265\214\345\205\245\345\274\217/test.c
+git status
+git commit -m "First commit"
+git rm --cached ~/Program/\345\265\214\345\205\245\345\274\217/test.c
+git status
+git config --global user.email "hitzhzw3889@126.com"
+clear
+clear
+ls
+ls -l *.c
+ls
+E1-17
+./E1-17
+./AOE1-14
+alias
+alias
+ls -r
+ls
+ls --verse
+ls --version
+emacs --verse
+emacs --version
+qgo --version
+mkdir --version
+vim --version
+vim --version | less
+su --version
+who are  you
+whoami
+whoareyou
+ls
+ls -lF
+pstreexb
+javac test.java
+javac
+whatis man
+whatis man cp
+whatis man cp rm mv
+ls ~/Program
+ls ~/Program -F
+ls ~/Program -lF
+ls ~/Program 
+ls -F  ~/Program 
+ls  ~/Program -F 
+ls -lF  ~/Program 
+man  ls
+git config --global user.email "hitzhzw3889@126.com"
+man
+man ls
+man ls
+man ls
+man ls
+whatis man
+date; users;uptime
+ls
+cat test,java
+cat test.java
+ls
+echo $EHELL
+echo $SHELL
+echo the ;to
+echo "the ;to"
+echo "let's go; Yes"
+gcc threelines.c -o threelines
+./threelines 
+gcc threelines_1.c -o threelines_1
+ls
+mv threelines_1 threelines_1.c
+ls
+gcc threelines_1.c -o threelines_1
+./threelines_1
+gcc threelines_1.c -o threelines_1
+./threelines_1
+xb
+gcc threelines_1.c -o threelines_1
+ls -lF
+alias
+alias
+ls
+ls
+gcc localvariables.c -o localvariables
+./localvariables 
+./localvariables 
+gcc localvariables_2.c -o localvariables_2
+./localvariables_2
+./localvariables_2
+./localvariables_2
+./localvariables_2
+echo 'This line ends without a matching quoteand here is the missing quote'
+type date time set
+type 
+ls
+ls -lF
+sudo 
+sudo shutdown 
+minicom -s
+ls
+git
+sql
+mysql
+mysql -uroot -p
+cd /var/run/mysql/mysql.sock
+cd /var/run/mysql
+cd /var/run
+ls
+cd ~
+vim 
+ls
+git
+git
+tree
+ls
+ls -lF
+ls
+ll
+ls -al
+sudo
+node
