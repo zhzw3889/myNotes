@@ -2060,12 +2060,12 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     :END:
 ** 《Pro Git》
 #+BEGIN: clocktable :maxlevel 2 :scope subtree
-#+CAPTION: Clock summary at [2016-08-18 四 01:53]
+#+CAPTION: Clock summary at [2016-08-18 四 20:52]
 | Headline        | Time   |      |
 |-----------------+--------+------|
-| *Total time*    | *2:14* |      |
+| *Total time*    | *3:47* |      |
 |-----------------+--------+------|
-| \_  《Pro Git》 |        | 2:14 |
+| \_  《Pro Git》 |        | 3:47 |
 #+END:
 *** 查阅
     :LOGBOOK:
@@ -2089,7 +2089,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  3. man git-<verb>
 *** Git基础
     :LOGBOOK:
-    CLOCK: [2016-08-18 四 19:18]
+    CLOCK: [2016-08-18 四 19:18]--[2016-08-18 四 20:51] =>  1:33
     CLOCK: [2016-08-17 三 23:34]--[2016-08-18 四 01:30] =>  01:56
     :END:
 **** 取得项目的Git仓库
@@ -2132,10 +2132,15 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  1. 查看当前的远程库：git remote
  2. -v选项(verbose简写)，显示对应的克隆地址
  3. 添加远程仓库：git remote add [shortname] [url]
- 4. 从远程仓库抓取数据：git fetch [remote-name]
- 5. 
- 6. 
- 7. 
+ 4. 从远程仓库抓取数据：git fetch [remote-name]\\
+    远程仓库领先于本地仓库时：git push myNotes master
+ 5. 推送数据到远程仓库：git push [remote-name] [branch-name]\\
+    $ git push origin master
+ 6. 查看远程仓库信息：git remote show [remote-name]\\
+    $ git remote show myNotes
+ 7. 远程仓库的删除和重命名：\\
+    重命名：git remote rename [old-name] [new-name] \\
+    删除：git remote rm
 **** 打标签
 **** 技巧和窍门
 *** Git分支
