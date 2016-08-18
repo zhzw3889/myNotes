@@ -2089,6 +2089,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  3. man git-<verb>
 *** Git基础
     :LOGBOOK:
+    CLOCK: [2016-08-18 四 19:18]
     CLOCK: [2016-08-17 三 23:34]--[2016-08-18 四 01:30] =>  01:56
     :END:
 **** 取得项目的Git仓库
@@ -2107,11 +2108,34 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  8. 移除文件(从暂存区域)：git rm
  9. 移动文件：git mv file_from file_to
 **** 查看提交历史
- 1. 
- 2. 
- 3. 
+ 1. 列出所有更新：git log
+ 2. 展开显示每次提交的内容差异：git log -p
+ 3. 仅显示最近两次更新：git log -2
+ 4. 仅显示简要的增改行数统计：git log --stat
+ 5. 指定使用完全不同于默认格式的方式展示提交历史：--pretty，如：\\
+    git log --pretty=oneline\\
+    git log --pretty=format:"%h -% an, %ar : %s"
+ 6. 以ASCII图形的方式显示：git log --graph
+ 7. 限制输出长度(时间段)：--since和--until，如：\\
+    git log --since=2.weeks\\
+    --author 仅显示指定作者相关的提交\\
+    --committer 仅显示指定提交者相关的提交
+ 8. 使用图形化工具查阅提交历史：gitk
 **** 撤销操作
+ 1. 修改最近一次提交：git commit --amend
+ 2. 取消已经暂存的文件：git reset HEAD <file>...
+ 3. 取消对文件的修改：git checkout -- <file>...
+ 4. 记住，任何提交到git的都可以被恢复，即便在已删除的分支中的提交或者用--amend
+    重新改写的提交.可能失去的数据仅限于没有提交过的，对Git来说它们好像从未存在
+    过一样.
 **** 远程仓库的使用
+ 1. 查看当前的远程库：git remote
+ 2. -v选项(verbose简写)，显示对应的克隆地址
+ 3. 添加远程仓库：git remote add [shortname] [url]
+ 4. 从远程仓库抓取数据：git fetch [remote-name]
+ 5. 
+ 6. 
+ 7. 
 **** 打标签
 **** 技巧和窍门
 *** Git分支
