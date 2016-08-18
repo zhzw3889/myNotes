@@ -1895,6 +1895,8 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  1. clone已有仓库
     1. git clone git@github.com:zhzw3889/Hello-World.git
     2. cd Hello-World
+    3. git clone git://github.com/git/git
+    4. cd clone
  2. 编写代码
  3. 提交
     1. git add hello_world.php
@@ -2060,18 +2062,20 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     :END:
 ** 《Pro Git》
 #+BEGIN: clocktable :maxlevel 2 :scope subtree
-#+CAPTION: Clock summary at [2016-08-18 四 20:52]
+#+CAPTION: Clock summary at [2016-08-18 四 23:16]
 | Headline        | Time   |      |
 |-----------------+--------+------|
-| *Total time*    | *3:47* |      |
+| *Total time*    | *5:22* |      |
 |-----------------+--------+------|
-| \_  《Pro Git》 |        | 3:47 |
+| \_  《Pro Git》 |        | 5:22 |
 #+END:
 *** 查阅
     :LOGBOOK:
     CLOCK: [2016-08-17 三 22:50]--[2016-08-17 三 22:58] =>  0:08
     :END:
-*** 起步
+*** DONE 起步
+    CLOSED: [2016-08-18 四 23:18]
+    - CLOSING NOTE [2016-08-18 四 23:18]
     :LOGBOOK:
     CLOCK: [2016-08-17 三 22:58]--[2016-08-17 三 23:08] =>  0:10
     :END:
@@ -2087,10 +2091,13 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  1. git help <verb>
  2. git <verb> --help
  3. man git-<verb>
-*** Git基础
+*** DONE Git基础
+    CLOSED: [2016-08-18 四 23:18]
+    - CLOSING NOTE [2016-08-18 四 23:18]
     :LOGBOOK:
+    CLOCK: [2016-08-18 四 21:39]--[2016-08-18 四 23:14] =>  1:35
     CLOCK: [2016-08-18 四 19:18]--[2016-08-18 四 20:51] =>  1:33
-    CLOCK: [2016-08-17 三 23:34]--[2016-08-18 四 01:30] =>  01:56
+    CLOCK: [2016-08-17 三 23:34]--[2016-08-18 四 01:30] =>  1:56
     :END:
 **** 取得项目的Git仓库
  1. 从当前目录初始化：git init
@@ -2142,7 +2149,20 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     重命名：git remote rename [old-name] [new-name] \\
     删除：git remote rm
 **** 打标签
+ 1. 列显已有的标签：git tag
+ 2. 新建标签：轻量级的(lightweight)和含附注的(annotated)
+ 3. 含备注的标签：-a \\
+    git tag -a v1.4 -m 'my version 1.4'\\
+    查看标签：git show v1.4
+ 4. 签署标签：-a换成-s
+ 5. 轻量级标签：git tag v1.4-lw
+ 6. 验证标签：git tag -v [tag-name]
+ 7. 后期加注标签：git tag -a v1.2 9fceb02
+ 8. 共享标签：git push origin [tagname]\\
+    一次推送所有(本地新增的)标签：git push origin --tags
 **** 技巧和窍门
+ 1. 自动完成
+ 2. Git命令别名
 *** Git分支
 *** 服务器上的Git
 *** 分布式Git
