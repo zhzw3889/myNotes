@@ -1833,14 +1833,14 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 * Algorithm
 * Git/Github
 #+BEGIN: clocktable :maxlevel 2 :scope subtree
-#+CAPTION: Clock summary at [2016-08-19 五 12:17]
+#+CAPTION: Clock summary at [2016-08-20 六 12:04]
 | Headline                      | Time    |       |
 |-------------------------------+---------+-------|
-| *Total time*                  | *19:03* |       |
+| *Total time*                  | *21:17* |       |
 |-------------------------------+---------+-------|
-| Git/Github                    | 19:03   |       |
-| \_  TODO 《GitHub入门与实践》 |         | 13:41 |
-| \_  《Pro Git》               |         |  5:22 |
+| Git/Github                    | 21:17   |       |
+| \_  DONE 《GitHub入门与实践》 |         | 13:41 |
+| \_  《Pro Git》               |         |  7:36 |
 #+END:
 ** DONE 《GitHub入门与实践》
    CLOSED: [2016-08-20 六 00:37] DEADLINE: <2016-08-17 三> SCHEDULED: <2016-08-04 四>
@@ -2095,12 +2095,12 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
     :END:
 ** 《Pro Git》
 #+BEGIN: clocktable :maxlevel 2 :scope subtree
-#+CAPTION: Clock summary at [2016-08-18 四 23:16]
+#+CAPTION: Clock summary at [2016-08-20 六 12:04]
 | Headline        | Time   |      |
 |-----------------+--------+------|
-| *Total time*    | *5:22* |      |
+| *Total time*    | *7:36* |      |
 |-----------------+--------+------|
-| \_  《Pro Git》 |        | 5:22 |
+| \_  《Pro Git》 |        | 7:36 |
 #+END:
 *** 查阅
     :LOGBOOK:
@@ -2196,7 +2196,93 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 **** 技巧和窍门
  1. 自动完成
  2. Git命令别名
-*** Git分支
+*** DONE Git分支
+    CLOSED: [2016-08-20 六 18:34]
+    - CLOSING NOTE [2016-08-20 六 18:34]
+    :LOGBOOK:
+    CLOCK: [2016-08-20 六 16:09]--[2016-08-20 六 18:34] =>  2:25
+    CLOCK: [2016-08-20 六 09:50]--[2016-08-20 六 12:04] =>  2:14
+    :END:
+**** 何为分支 
+ 1. Git中的分支，其实本质上仅仅是个指向commit对象的可变指针.
+ 2. HEAD在Git中是一个指向你正在工作中的本地分支的指针.
+ 3. git checkout master这条命令做了两件事，它把HEAD指针移回到master分支，并把
+    工作目录中的文件换成了master分支所指向的快照内容.
+ 4. 新建一个分支就是向一个文件写入41个字节(外加一个换行符)那么简单.
+ 5. Git每次提交时都记录了祖先信息，所以以后要合并分支时，寻找恰当的合并基础(即
+    共同祖先)的工作其实已经完成了一大半，实现起来非常容易.
+**** 基本的分支与合并
+ 1. 基本分支
+    1. 转换分支的时候最好保持一个清洁的工作区域.
+    2. git checkout -b iss53的功能相当于下面两条命令：\\
+       git branch iss53\\
+       git checkout iss53\\
+       注意：这里新建的分支都是在原来的分支的基础上建立的新分支，而不一定都是
+       master上的新建分支，这取决于git branch之前在什么分支上.
+    3. 合并之后的分支可以用如下命令删除：\\
+       git branch -d branch-name
+    4. 当切换回某分支时，Git会把工作目录的内容恢复为checkout时它所指向的那个
+       commit快照.它会自动添加、删除和修改文件以确保目录的内容和你上次提交时完
+       全一样.
+ 2. 基本合并
+    1. 合并的步骤如下：\\
+       git checkout branch-to-merge-into(master)\\
+       git merge branch-to-merge-in
+    2. 当master分支所指向的commit并非想要并入分支的直接祖先时，Git会用两个分支
+       的末端和它们的共同祖先进行一次简单的三方合并计算，并对三方合并的结果作
+       一新的快照，并自动创建一个指向它的commit，而且，Git可以自己裁决哪个共同
+       祖先才是最佳合并基础.
+ 3. 冲突的合并
+    1. 当发生合并冲突时可以用git status查阅
+    2. "======"上下两部分为冲突的文件内容，修改后删除包含如下标记的三行文本：
+       1. ========
+       2. <<<<<<<<
+       3. >>>>>>>>
+    3. 也可用git mergetool命令调用可视化的合并工具
+    4. 用git commit完成此次的合并提交
+ 4. 分支管理
+    1. git branch，列出当前所有分支清单
+    2. git branch -v，查看各个分支最后一次commit信息
+    3. git branch --merge/--no-merge，筛选出已经/尚未与当前分支合并的分支
+    4. 已经合并的分支可以用git branch -d来删掉
+    5. 尚未合并的分支可以用-D强制删除，如git branch -D branch-name
+**** 分支式工作流程
+ 1. 长期分支
+ 2. 特性分支
+    1. 一个特性分支是指一个短期的，用来实现单一特性或与其相关工作的分支.
+    2. 该技术允许你迅速且完全的进行语境切换——因为你的工作分散在不同的流水线里，
+       每个分支里的改变都和它的目标特性相关，浏览代码之类的事情因而变得更简单
+       了.
+    3. 在工作中可以大胆使用测试分支.（自）
+**** 远程分支
+ 1. 远程分支(remote branch)是对远程仓库状态的索引.它们是一些无法移动的本地分支，
+    只有在进行Git的网络活动时才会更新.
+ 2. 只要不和服务器通讯，origin/master指针就不会移动.
+ 3. git add add把远程仓库加为当前项目的远程分支之一.
+ 4. 可以用git fetch (仓库名) 来获取本地没有的数据.
+ 5. 推送
+    1. 你的本地分支不会被自动同步到你引入的远程分支中，除非你明确执行推送操作.
+    2. git push (远程仓库名) (分支名)
+ 6. 跟踪分支(tracking branch)
+    1. 从远程分支检出的本地分支，称为跟踪分支.
+    2. 跟踪分支是一种和远程分支有直接联系的本地分支，在跟踪分支里输入git push，
+       Git会自行推断应该向哪个服务器的哪个分支推送数据.
+    3. 在克隆仓库时，Git通常会自动创建一个master分支来跟踪origin/master，这才是
+       git push和git pull一开始就能正常工作的原因.
+    4. 在本地分支设定不同于远程分支的名字：git checkout -b sf origin/serverfix
+ 7. 删除远程分支
+    1. git push [远程名] ：[分支名]，注意有个空格键
+    2. 如想在服务器上删除serverfix分支：git push origin :serverfix
+**** 衍合(rebase)
+ 1. 衍合基础
+    1. 把当前分支branch1衍合入master分支，用如下步骤：\\
+       git checkout branch1\\
+       git rebase master\\
+    2. 衍合能产生一个更为整洁的提交历史
+    3. 合并结果中最后一次提交所指向的快照，无论是通过一次衍合还是一次三方合并，
+       都是同样的快照内容，只是提交的历史不同罢了.
+ 2. 更多有趣的衍合——有点复杂，以后再看
+ 3. 衍合的风险——一句话，永远不要衍合那些已经推送到公共仓库的更新.
 *** 服务器上的Git
 *** 分布式Git
 *** Git工具
