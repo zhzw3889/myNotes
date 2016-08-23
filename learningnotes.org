@@ -119,19 +119,22 @@
 * Emacs
 ** org-mode
 *** 常用操作快捷键
-  | 快捷键      | 作用                                |
-  |-------------+-------------------------------------|
-  | Alt+Enter   | 新建同级标题                        |
-  | Tab         | 折叠/翻开                           |
-  | C-c C-e     | 输出为各种文件                      |
-  | C-c -       | turn headline line to items         |
-  | C-c *       | turn item into headine              |
-  | S-up/down   | previous/next item?                 |
-  | M-S-up/down | move item up/down                   |
-  | C-c C-p/n   | 移动到上/下一标题                   |
-  | C-c C-b/f   | 移动到和当前标题同等级的上/下一标题 |
-  | C-c C-u     | 向上移动到更高一层的标题            |
-  |-------------+-------------------------------------|
+  | 快捷键         | 作用                                |
+  |----------------+-------------------------------------|
+  | Alt+Enter      | 新建同级标题                        |
+  | Tab            | 折叠/翻开                           |
+  | C-c C-e        | 输出为各种文件                      |
+  | C-c -          | turn headline line to items         |
+  | C-c *          | turn item into headine              |
+  | S-up/down      | previous/next item?重要性ABC        |
+  | M-up/down      | move item up/down                   |
+  | M-left/right   | 升/降级列表项，不包括子项           |
+  | M-S-left/right | 升/降级列表项，包括子项             |
+  | C-c C-p/n      | 移动到上/下一标题                   |
+  | C-c C-b/f      | 移动到和当前标题同等级的上/下一标题 |
+  | C-c C-u        | 向上移动到更高一层的标题            |
+  |----------------+-------------------------------------|
+
 *** 正文换行
    有两个方法：
  1. 回车两次
@@ -377,9 +380,15 @@
    | C-c /     | 插入闭合标志                |
  2. 基础教程学习后应该先投入实践，一段时间之后再看高级教程，这样才会起到总结及
    提高的作用。时间上可以跃进，步骤上却绝不可以！
-** TODO [#A] 《HTML5与CSS3基础教程（第8版）》
-   DEADLINE: <2016-07-31 日>
+** 《HTML5与CSS3基础教程（第8版）》
 *** HTML
+    :LOGBOOK:
+    CLOCK: [2016-08-23 二 18:25]--[2016-08-23 二 19:08] =>  0:43
+    CLOCK: [2016-08-23 二 16:44]--[2016-08-23 二 17:54] =>  1:10
+    CLOCK: [2016-08-23 二 14:48]--[2016-08-23 二 16:20] =>  1:32
+    CLOCK: [2016-08-23 二 10:17]--[2016-08-23 二 12:01] =>  1:44
+    CLOCK: [2016-08-21 日 09:10]--[2016-08-21 日 11:04] =>  1:54
+    :END:
 **** 基本HTML结构
  1. 语义化HTML(semantics HTML)指的是那些使用最恰当的HTML元素进行标记的内容，在
    标记的过程中并不关心内容显示。
@@ -467,6 +476,330 @@
  4. 图片、音频、email都可以作为链接，格式如:<a href="url">Label text</a>，url为文件位置，
   其中email为："mailto:name@domain.com" ，是个例外且一般不推荐，电话为：tel+国
   家代码+电话号码。此外，链接中都可以使用title属性。
+**** 列表
+     所有的列表都是由父元素和子元素构成的，父元素用于指定要创建的列表的类型，
+     子元素用于指定要创建的列表项目类型，大致如下表：
+     | 列表类型 | 父元素 | 子元素 |
+     |----------+--------+--------|
+     | 有序列表 | ol     | li     |
+     | 无序列表 | ul     | li     |
+     | 描述列表 | dl     | dt和dd |
+     |----------+--------+--------|
+***** 创建有序列表和无序列表
+***** 选择标记(列表项目左侧的标记的类型)
+ 1. 选择标记list-style-type: marker(variable)，marker以后靠查表
+ 2. 显示无标记列表list-style-type: none
+***** 使用定制的标记
+***** 选择列表的起始编号
+ 1. 在ol开始标签中输入start="n"，n表示列表的起始值
+ 2. 在目标li项目内输入value="n"，n代表该列表项目的值
+ 3. value值覆盖start值
+ 4. 使用value属性对某列表项目的编号进行修改后，后续的列表也会相应地重新编号.
+***** 控制标记的位置
+ 1. 使用list-style-position: inside/outside(default)
+ 2. list-style-position属性是继承的
+***** 同时设置所有的列表样式属性
+ 1. 可以将list-style-type,list-style-position,list-style-image放在一条属性中，
+    如下：
+    #+BEGIN_SRC css
+      ul {
+          list-style: circle inside url(arrow-right.png);
+      }
+    #+END_SRC
+ 2. 常用用法为使用list-style: none;取消标记
+ 3. list-style属性是继承的
+***** 设置嵌套列表的样式
+      #+BEGIN_SRC css
+        ol {
+        list-style-type: upper-roman;
+        }
+
+        ol ol {
+        list-style-type: upper-alpha;
+        }
+
+        ol ol ol {
+        list-style-type: decimal;
+        }
+
+        /* Set font sizing */
+        ol li {
+        font-size: .875em;
+        }
+
+        li li {
+            font-size: 1em; /* prevent shrinking text! */
+        }
+      #+END_SRC
+***** 创建描述列表(description list)
+ 1. 每个列表都包含在dl中，其中的每个名-值组都有一个或多个dt元素(名称或术语)以及一个或多
+    个dd元素(它们的值).
+ 2. 可以嵌套和任意组合使用.
+**** DONE 表单
+     CLOSED: [2016-08-23 二 16:20] DEADLINE: <2016-08-23 二>
+***** HTML5对表单的改进——查阅
+***** 创建表单
+ 1. 每个表单都已form开始标签开始，以form结束标签结束.
+ 2. action属性：服务器上的脚本，如action="save-info.php"
+ 3. method属性：get/post，不确定时用post
+***** 处理表单
+ 1. 表单从访问者那里收集信息，脚本则对这些信息进行处理
+ 2. PHP、Django、Ruby on Rails、Asp.Net、JSP等
+ 3. 必须考虑将服务器端的验证加入表单处理脚本.
+***** 对表单元素进行组织
+ 1. fieldset元素：将相关的元素组合在一起
+ 2. legend元素：为每个fieldset提供一个标题（caption）
+ 3. 如果有的话，legend元素必须是fieldset里的地一个元素
+ 4. CSS对legend元素的样式修改能力有限，尤其是关于定位的样式
+ 5. 在样式不能达到良好效果是可以用h1～h6代替legend
+***** 创建文本框
+ 1. 用带有type="text"的input标签表现
+ 2. 为每个文本框设置name属性，name="dataname"
+ 3. value="default"，如没有输入别的内容，default将被发送到服务器
+ 4. placeholder="hinttext"，最初显示的提示文字，聚焦是消失
+ 5. required="required"，有值时才能提交
+ 6. autofocus="autofocus"/autofocus，默认获得焦点
+ 7. size="n"，设置文本框大小，n为以字符为单位的文本框宽度
+ 8. maxlength="n"，允许输入的最大字符数
+ 9. autocomplete="off"，关闭保存的补全
+ 10. label标签，为让访问者识别文本框的标签，可选
+***** 为表单组件添加说明标签
+ 1. label元素
+ 2. for属性，当for属性和标签的id值一致时就能使二者产生联系
+ 3. 让for、id和name属性值都一样是一种并非必要但很常见的做法
+ 4. 一定要保证for和id的值是一样的
+***** 创建密码框
+ 1. 密码框中输入的文本会使用圆点和星号进行隐藏
+ 2. type="password"创建密码框
+ 3. id,name,size,maxlength,required,autofocus等同上
+***** 创建email框、搜索框、电话框和URL框
+ 1. 此部分为HTML5新增的
+ 2. <input type="email/search/tel/url"
+ 3. id,name,value,placeholder,required,autofocus,size,maxlength等同上
+ 4. >或/>结束
+ 5. 支持autocomplete
+ 6. 正则表达式：http://html5pattern.com 可以找到很多有用的模式
+***** 创建单选按钮
+ 1. <input type="radio"
+ 2. id,name,value等同上
+ 3. checked="checked"/checked，处于默认激活状态
+***** 创建复选框
+ 1. <input type="checkbox"
+ 2. id,value,checked等同上
+ 3. label元素的for属性值与id值同
+***** 创建文本区域
+ 1. 给访问者填写问题或评论的空间
+ 2. textarea标签，如<textarea></textarea>
+ 3. rows/cols属性值，控制文本区域的高度和宽度，row="n"
+ 4. id,name,maxlength同上
+ 5. 添加预设值只要放在开始标签与结束标签之间即可
+ 6. maxlength为HTML5新增的
+***** 创建选择框
+ 1. 由两种元素组成：select和option，option为子标签，如下：
+    #+BEGIN_SRC html
+      <select id="state" name="state">
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="CA">California</option>
+        <option value="CO">Colorado</option>
+      </select>
+    #+END_SRC
+ 2. 在select中添加id,name,size="n"属性
+ 3. multiple/multiple="multiple"，允许选择多个
+ 4. 在option中添加value属性
+ 5. selected/selected="selected"，默认选中
+ 6. 选项较多时还可以在option上面加一层optgroup
+***** 让访问者上传文件
+ 1. 让访问者向服务器上传文件
+ 2. 在form开始标签中增加enctype="multipart/form-data"
+ 3. 输入：<input type="file"
+ 4. id,name,size等同上
+ 5. multiple="multiple"/multiple，允许上传一个以上的文件
+ 6. 允许上传的表单不能使用get方法
+***** 创建隐藏字段
+ 1. 用于存取先前的表单收集的信息，不可见
+ 2. <input type="hidden"
+ 3. value="data"
+ 4. 创建可见但不可修改的表单元素：disabled属性或readonly属性
+***** 创建提交按钮
+ 1. <input type="submit"
+ 2. value="submit message"
+ 3. 创建图像提交按钮：<input type="image" src="*.url" alt=""
+ 4. 创建结合文本和图像的提交按钮：button元素
+ 5. 如果包含一个以上的提交按钮，就应该避免使用button元素
+ 6. 重置按钮：<input type="reset" />或<button type="reset">Reset</button>
+ 7. 关闭email及url的自动验证：<input type="submit" formnovalidate />
+***** 禁用表单元素
+ 1. 开始标签中输入disabled/disabled="disabled"
+***** 根据状态为表单设置样式
+ 1. CSS新增的伪类：
+    | 序号 | 选择器    | 功能                          |
+    |------+-----------+-------------------------------|
+    |    1 | :focus    | 获得焦点的字段                |
+    |    2 | :checked  | 选中的焦点按钮或复选框        |
+    |    3 | :disabled | 具有disabled属性的字段        |
+    |    4 | :enable   | 与上相反                      |
+    |    5 | :required | 具有required属性的字段        |
+    |    6 | :optional | 与上相反                      |
+    |    7 | :invalid  | 与pattern属性不匹配或无效字段 |
+    |    8 | :valid    | 与上相反                      |
+    |------+-----------+-------------------------------|
+ 2. 格式为：
+    #+BEGIN_SRC css
+      textarea: disabled {
+          background-color: #ccc;
+          border-color: #999;
+          color: #666;
+      }
+    #+END_SRC
+**** DONE 视频、音频和其他多媒体
+     CLOSED: [2016-08-23 二 17:54] DEADLINE: <2016-08-23 二>
+***** 第三方插件和步入原生
+***** 视频文件格式
+ 1. HTML5支持三种视频文件格式：.ogg或.ogv，.mp4，.webm
+***** 在网页中添加单个视频
+ 1. video元素：<video src=""></video>
+ 2. src属性，指定视频文件的URL
+ 3. autoplay，自动播放
+ 4. controls，添加浏览器为视频设置的默认控件
+ 5. muted，静音
+ 6. loop，循环播放
+ 7. poster，制定视频加载时显示的图像
+ 8. width，视频宽度，默认300
+ 9. height，视频高度，默认150
+ 10. preload，预加载
+***** 为视频添加控件和自动播放
+ 1. 控件：controls属性
+ 2. 自动播放：autoplay属性
+***** 为视频添加循环播放和海报图像
+ 1. 循环播放：autoplay和loop属性
+ 2. 海报图像：poster属性，poster="url"
+***** 阻止视频预加载
+ 1. preload="none"
+ 2. 默认值为auto
+ 3. none与auto之间的中间值：metadata，只获取基本信息，如尺寸、时长等
+***** 使用多种来源的视频和备用文本
+ 1. 至少提供两种格式：MP4和WebM
+ 2. source元素：
+    #+BEGIN_SRC html
+      <source src="" type="video/mp4">
+      <source src="" type="video/webm">
+    #+END_SRC
+ 3. 备用链接放在video里面
+***** 提供可访问性
+***** 音频文件格式
+ 1. HTML5支持的文件格式：.ogg/.mp3/.wav/.aac/.mp4/.opus
+ 2. 最好的两种格式为.ogg或.mp3
+***** 在网页中添加带控件的单个音频文件
+ 1. 同视频类似，将video换成audio即可
+ 2. 属性有src,autoplay,controls,muted,loop及preload
+***** 自动播放、循环和预加载音频
+ 1. 自动播放：autoplay及controls
+ 2. 循环播放：loop及controls
+ 3. 预加载元数据：preload="metadata"及controls
+***** 提供带备用内容的多个音频源
+ 1. source元素：
+    #+BEGIN_SRC html
+      <source src="" type="audio/ogg">
+      <source src="" type="audio/mp3">
+    #+END_SRC
+ 2. 备用链接放在audio里面
+ 3. type属性可以帮助浏览器判断它是否能播放某个文件
+***** 添加具有备用Flash的视频和音频
+ 1. 使用MediaElement.js，后续查阅
+***** 高级多媒体
+ 1. 通过canvas操作视频
+ 2. 联合使用SVG和视频
+***** 更多资源
+ 1. 在线资源
+ 2. 图书
+**** DONE 表格
+     CLOSED: [2016-08-23 二 19:08] DEADLINE: <2016-08-23 二>
+***** 结构化表格
+ 1. table元素
+ 2. 每行（tr）都包含标题单元格（th）或数据单元格（td）
+ 3. thead元素：显式地将一行或多行标题标记为表格的头部
+ 4. tbody元素：包围所有的数据行
+ 5. tfoot元素：显式地将一行或多行标题标记为表格的尾部
+ 6. 如果有thead、tfoot则必须有tbody
+ 7. 位置关系如下：
+    #+BEGIN_SRC html
+      <table>
+        <caption>Quarterly Financials for 1962-1964<br /> (in Thousands)</caption>
+        <thead> <!-- table head -->
+          <tr>
+            <th scope="col">Quarter</th>
+            <th scope="col">1962</th>
+            <th scope="col">1963</th>
+            <th scope="col">1964</th>
+          </tr>
+          </thead>
+        <tbody> <!-- table body -->
+          <tr>
+            <th scope="row">Q1</th>
+            <td>$145</td>
+            <td>$167</td>
+            <td>$161</td>
+          </tr>
+          <tr>
+            <th scope="row">Q2</th>
+            <td>$140</td>
+            <td>$159</td>
+            <td>$164</td>
+          </tr>
+          <tr>
+            <th scope="row">Q3</th>
+            <td>$153</td>
+            <td>$162</td>
+            <td>$168</td>
+          </tr>
+          <tr>
+            <th scope="row">Q4</th>
+            <td>$157</td>
+            <td>$160</td>
+            <td>$171</td>
+          </tr>
+        </tbody>
+        <tfoot> <!-- table foot -->
+          <tr>
+            <th scope="row">TOTAL</th>
+            <td>$595</td>
+            <td>$648</td>
+            <td>$664</td>
+          </tr>
+        </tfoot>
+      </table>
+    #+END_SRC
+***** 让单元格跨越多列或多行
+ 1. colspan属性和rowspan属性，colspan="n"，用法如下：
+    #+BEGIN_SRC html
+      <thead> <!-- table head -->
+        <tr>
+          <th scope="rowgroup">Time</th>
+          <th scope="col">Mon</th>
+          <th scope="col">Tue</th>
+          <th scope="col">Wed</th>
+        </tr>
+      </thead>
+      <tbody> <!-- table body -->
+        <tr>
+          <th scope="row">8 pm</th>
+          <td>Staring Contest</td>
+          <td colspan="2">Celebrity Hoedown</td>
+        </tr>
+        <tr>
+          <th scope="row">9 pm</th>
+          <td>Hardy, Har, Har</td>
+          <td>What's for Lunch?</td>
+          <td rowspan="2">Screamfest Movie of the Weak</td>
+        </tr>
+        <tr>
+          <th scope="row">10 pm</th>
+          <td>Healers, Wheelers &amp; Dealers</td>
+          <td>It's a Crime</td>
+        </tr>
+      </tbody>
+    #+END_SRC
 *** CSS
 CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表。
 **** 构造规则
@@ -562,7 +895,8 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  1. 在其他条件相同的情况下，越晚出现的样式优先级越高。
  2. 不同的外部样式表中规则如有冲突，后出现的样式表中的规则优先。
  3. 避免使用!important
-**** 定义选择器
+**** TODO 定义选择器
+     DEADLINE: <2016-08-24 三>
      CLOCK: [2016-07-21 四 23:14]--[2016-07-22 五 00:15] =>  1:01
      CLOCK: [2016-07-20 三 21:45]--[2016-07-20 三 22:19] =>  0:34
 ***** 构造选择器
@@ -619,6 +953,16 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
  2. 按父元素选择要格式化的元素：parent>child {}
  3. 按相邻同胞元素选择要格式化的元素：sibling+element {}
  4. 按普通同胞元素选择要格式化的元素：h1~h2 {}
+**** TODO 为文本添加样式
+     DEADLINE: <2016-08-24 三>
+**** TODO 用CSS进行布局
+     DEADLINE: <2016-08-24 三>
+**** TODO 构建响应式网站
+     DEADLINE: <2016-08-25 四>
+**** TODO 使用Web字体
+     DEADLINE: <2016-08-25 四>
+**** TODO 使用CSS3进行增强
+     DEADLINE: <2016-08-25 四>
 ** 《DIV+CSS3网站布局：从入门到精通》
 *** 网页设计基础与网站开发流程
 **** 网页类型：
@@ -665,6 +1009,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
 ***** 承包网站开发流程
 承包网站的建设和开发与个人网站、网络项目的开发性质不同，它是开发者（或者网络公
 司）与客户（或者企业）之间的互动过程，这里面涉及双方多轮交流、沟通的过程和环节。
+** 复习
 * JavaScript
 ** 其他
 ** 《JavaScript基础教程》
@@ -1747,7 +2092,7 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
      CLOSED: [2016-08-15 一 18:24]
      - CLOSING NOTE [2016-08-15 一 18:24]
 ** 相关网站
- 1. www.w3school.com.cn
+ 1. www.w3school.com.cn[
 * jQuery
 * React
 * SQL/PHP
