@@ -144,6 +144,8 @@
 ;;当标记为done是自动加时间标签
 (setq org-log-done 'note)
 ;;标记为done是插入便签
+(setq org-startup-indented t)
+;;默认缩进显示
 ;;----------aggressive-indent-mode------------------------------>
 (global-aggressive-indent-mode 1)
 (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
@@ -173,5 +175,10 @@
 (global-set-key (kbd "<C-prior>")  'tabbar-backward)
 ;;----------git-emacs------------------------------------------->
 (require 'git-emacs)
-
-
+;;----------htmlize--------------------------------------------->
+(require 'htmlize)
+;;----------agenda---------------------------------------------->
+;;开机自动显示日程表
+(org-agenda-list t)
+;;关闭其它窗口
+(delete-other-windows)
