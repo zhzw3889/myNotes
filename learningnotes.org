@@ -239,8 +239,9 @@
     |       3 | C-c a    | Access to the dispatcher                           |
     |       4 | C-c a #  | List projects that are stuck.                      |
     |       5 | C-x C-w  | Write the agenda view to a file.                   |
-    |       6 | q        | Quit agenda, remove the agenda buffer.             |
-    |         |          |                                                    |
+    |       6 | v        | 查看各种高级功能，非常赞哦                         |
+    |       7 | q        | Quit agenda, remove the agenda buffer.             |
+    |---------+----------+----------------------------------------------------|
 *** 标签
  1. 快捷键如下：
     | 序号 | 快捷键如下 | 作用     |
@@ -1066,9 +1067,10 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
       }
     #+END_SRC
  4. 除非需要更高的特殊性，否则越简单越好
-**** TODO [#B] 为文本添加样式
-     DEADLINE: <2016-08-25 四>
+**** DONE [#B] 为文本添加样式
+     CLOSED: [2016-08-26 五 23:14] DEADLINE: <2016-08-25 四>
      :LOGBOOK:
+     CLOCK: [2016-08-26 五 22:07]--[2016-08-26 五 23:14] =>  1:07
      CLOCK: [2016-08-25 四 13:21]--[2016-08-25 四 14:45] =>  1:24
      :END:
 ***** 本章之前与本章之后
@@ -1268,14 +1270,49 @@ CSS全称为Cascading Style Sheets，中文称层叠样式表或级联样式表�
       }
     #+END_SRC
 ***** 设置颜色
+ 1. color: colorname/#rrggbb/rgb/hsl/rgba/hsla
+ 2. 开发人员必须显式设置color属性
 ***** 设置背景
+ 1. 几乎可以对所有元素应用背景样式，甚至是表单和图像
+ 2. 修改文本的背景颜色blackground: color/transparent(透过父元素的背景颜色)
+ 3. 使用图像作为背景blackground-image: url(image.png)/none(不使用，用于覆盖)
+ 4. 重复背景图像background-repeat: repeat(默认)/repeat-x/repeat-y/no-repeat
+ 5. 控制背景图像是否随页面滚动background-attachment: scroll(默认)/fixed/local
+ 6. 指定元素背景图像的位置background-position x y ，x及y为距离左上角的绝对距离
+    或百分数，x还可以用left(左对齐)/center(居中)/right(右对齐)表示，y可以用
+    top(顶端对齐)/center(居中)/bottom(底端对齐)表示，可以使用负数
+ 7. 在一条声明中设置所有背景属性background: 
+ 8. 尽量用background简记法，没有指定的都为默认值
+ 9. 对比度工具：http://contrastrebellion.com 
 ***** 控制间距
+ 1. 包括字间距(tracking，单词之间)和字偶距(kerning，字母之间)
+ 2. 字间距word-spacing: length，length为带单位的数字，如0.4em或5px
+ 3. 字偶距letter-spacing: length
+ 4. 设为默认值，使用normal或0
 ***** 添加缩进
+ 1. text-indent: length
 ***** 对齐文本
+ 1. 左对齐text-align: left
+ 2. 右对齐text-align: right
+ 3. 居中text-align: center
+ 4. 两端对齐text-align: justify
 ***** 修改文本的大小写
+ 1. 每个单词的首字母大写text-transform: capitalize
+ 2. 所有字母大写text-transform: uppercase
+ 3. 所有字母小写text-transform: lowercase
+ 4. 保持原来样子（取消继承的值）text-transform: none
 ***** 使用小型大写字母
+ 1. 使用font-variant: small-caps
+ 2. 取消font-variant: none
 ***** 装饰文本
+ 1. 下划线text-decoration: underline
+ 2. 上划线text-decoration: overline
+ 3. 删除线text-decoration: line-through
+ 4. 取消text-decoration: none
 ***** 设置空白属性
+ 1. white-space: pre，显示原文本中所有的空格和回车
+ 2. white-space: nowrap，确保所有空格不断行，即文本全部显示在一行
+ 3. white-space: normal，按正常方式处理空格
 **** TODO [#B] 用CSS进行布局
      DEADLINE: <2016-08-26 五>
 ***** 开始布局的注意事项
