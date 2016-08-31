@@ -40,7 +40,7 @@
   ;; we set the default file ~/.gnu-emacs-custom
   (setq custom-file "~/.gnu-emacs-custom")
   (load "~/.gnu-emacs-custom" t t)
-;;;[<0;45;23M]
+;;;
   )
 ;;;
 ;;-------------------------basic------------------------------>
@@ -75,6 +75,16 @@
 ;;以y/n代表yes/no
 (setq default-fill-column 80)
 ;; 默认显示80列就换行
+(global-set-key (kbd "RET") 'newline-and-indent)
+;;回车自动缩进
+(menu-bar-mode 0)
+;;去掉菜单栏,nil改为0才有效
+;;(tool-bar-mode 0)
+;;去掉工具栏，貌似没用
+;;(require 'session)
+;;(add-hook 'after-init-hook 'session-initialize)
+;;使用了这个扩展之后，你上次离开emacs 时的全局变量 (kill-ring，命令记录……
+;;局部变量，寄存器，打开的文件，改过的文件和最后修改的位置，…… 全部都会被记录下来。
 ;;------------------------auto-complete------------------------>
 (add-to-list 'load-path "~/.emacs.d")
 ;;设置加载路径
@@ -88,14 +98,14 @@
 ;-----------------------color-theme--------------------------->
 (require 'color-theme)
 ;;主题
-;------------------------------------------------------------->
+;;------------------------------------------------------------->
 ;;(require 'highlight-indent-guides)
-;(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
-;(setq highlight-indent-guides-method 'character)    
-;(set-face-background 'highlight-indent-guides-odd-face "red")
-;(set-face-background 'highlight-indent-guides-even-face "#EE00EE")
+;;(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+;;(setq highlight-indent-guides-method 'character)    
+;;(set-face-background 'highlight-indent-guides-odd-face "red")
+;;(set-face-background 'highlight-indent-guides-even-face "#EE00EE")
 ;;(setq highlight-indent-guides-character ?ξ)
-;(set-face-foreground 'highlight-indent-guides-character-face "#EE00EE")
+;;(set-face-foreground 'highlight-indent-guides-character-face "#EE00EE")
 ;;.....................................................................................
 ;;缩进线，经常出现输入及删除误操作，我估计是因为与自动补全相冲突，竖线很难找到对齐的基准
 ;;打开新文件是没有问题，编辑时会有问题，可能是由于代码中动态的处理不好
@@ -103,18 +113,7 @@
 ;;第二行设置线宽，fill为全部填充，column为字符宽度，character为可定制线，默认为细直线
 ;;第三四行为设置线的颜色
 ;;第五六行为设置character时，标志和颜色,"\|"可以替换为任何字符，如"ξ"，如果没有则为细直线
-;----------------------------------------------------->
-(global-set-key (kbd "RET") 'newline-and-indent)
-;;回车自动缩进
-(menu-bar-mode 0)
-;;去掉菜单栏,nil改为0才有效
-;;(tool-bar-mode 0)
-;;去掉工具栏，貌似没用
-;;(require 'session)
-;;(add-hook 'after-init-hook 'session-initialize)
-;;使用了这个扩展之后，你上次离开emacs 时的全局变量 (kill-ring，命令记录……
-;;局部变量，寄存器，打开的文件，改过的文件和最后修改的位置，…… 全部都会被记录下来。
-;;------------------------------------------------------------------>
+;;----------------------------------------------------->
 ;;(load "desktop")
 ;;(desktop-load-default)
 ;;(desktop-read)
@@ -162,11 +161,28 @@
 ;;只要输入此字母就会立刻跳到这个窗口
 ;;----------ido-mode-------------------------------------------->
 (require 'ido)
-;;(ido-mode t)
+(ido-mode t)
+;;----------ido-vertical-mode-------------------------------------------->
+(require 'ido-vertical-mode)
+(ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+;;Show the count of candidates
+(setq ido-vertical-show-count t)
+;;默认选项、唯一选项及其他备选项的背景前景色
+(setq ido-use-faces t)
+(set-face-attribute 'ido-vertical-first-match-face nil
+		    :background "#e5b7c0")
+(set-face-attribute 'ido-vertical-only-match-face nil
+		    :background "#e52b50"
+		    :foreground "white")
+(set-face-attribute 'ido-vertical-match-face nil
+		    :foreground "#b00000")
+(ido-vertical-mode 1)
 ;;----------anthing--------------------------------------------->
 (add-to-list 'load-path "~/.emacs.d/anything-config/")
 (require 'anything-config)
-(anything-completion-mode t)
+;;(anything-completion-mode t)
+;;功能比ido强大，但是输入时必须好输全，比较坑，可能因为没有设置的缘故                  
 ;;----------yasnippet------------------------------------------->
 (yas-global-mode 1)
 ;;----------zone-matrix----------------------------------------->
@@ -191,5 +207,20 @@
 (org-agenda-list t)
 ;;关闭其它窗口
 (delete-other-windows)
-
-
+;;----------powerline------------------------------------------->
+(add-to-list 'load-path "~/.emacs.d/emacs-powerline")
+(require 'powerline)
+;;修饰底部的mode-line
+;;----------org-bullets----------------------------------------->
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+;;美化org-mode中标题
+;;----------helm------------------------------------------------>
+;;将文件解压到helm中或在helm中git clone，而后在helm中用make命令
+;;不能正常使用，以后有时间再搞吧
+;;(add-to-list 'load-path "~/.emacs.d/helm/")
+;;(require 'helm-config)
+;;To bind to M-x
+;;(global-set-key (kbd "M-x") 'helm-M-x)
+;;To make helm-mode start with Emacs init file
+;;(helm-mode 1)
