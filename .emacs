@@ -47,19 +47,20 @@
 (setq column-number-mode t) 
 (setq line-number-mode t) 
 ;;在minibuffer 显示行号及列号
-;;(setq xterm-mouse-mode nil)
-;;默认关闭xterm-mouse-mode，关闭但不起作用
+(xterm-mouse-mode 0)
+;;默认关闭xterm-mouse-mode
 ;;(display-time)
 ;;显示时间
-(global-linum-mode 'linum-mode)
+;;(global-linum-mode 'linum-mode)
 ;;在左列添加行号
-;(setq linum-format "%d ")
+;;取消掉，当org文件嵌套太深时上下移动会产生卡顿
+;;(setq linum-format "%d ")
 ;;内容和行号之间加空格
 (setq linum-format "%4d\u2502")
 ;;内容和行号间加实线，默认最大9999行，超过此数时竖线就自动后移
-(setq global-font-lock-mode t) 
+(global-font-lock-mode t) 
 ;;进行语法加亮。貌似没有起作用!
-(setq-default make-backup-files nil) 
+(setq-default make-backup-files 0) 
 ;; 不生成临时文件
 (electric-pair-mode t) 
 ;;自动补全括号 
@@ -70,7 +71,11 @@
 (show-paren-mode t)
 (setq show-paren-style 'parentheses)
 ;;下面的这个设置可以让光标指到某个括号的时候显示与它匹配的括号
-;------------------------auto-complete------------------------>
+(fset 'yes-or-no-p 'y-or-n-p)
+;;以y/n代表yes/no
+(setq default-fill-column 80)
+;; 默认显示80列就换行
+;;------------------------auto-complete------------------------>
 (add-to-list 'load-path "~/.emacs.d")
 ;;设置加载路径
 ;;(require 'auto-complete-config)
@@ -101,27 +106,27 @@
 ;----------------------------------------------------->
 (global-set-key (kbd "RET") 'newline-and-indent)
 ;;回车自动缩进
-(setq menu-bar-mode nil)
-;;去掉菜单栏，貌似没作用
-(setq tool-bar-mode nil)
+(menu-bar-mode 0)
+;;去掉菜单栏,nil改为0才有效
+;;(tool-bar-mode 0)
 ;;去掉工具栏，貌似没用
 ;;(require 'session)
 ;;(add-hook 'after-init-hook 'session-initialize)
 ;;使用了这个扩展之后，你上次离开emacs 时的全局变量 (kill-ring，命令记录……
 ;;局部变量，寄存器，打开的文件，改过的文件和最后修改的位置，…… 全部都会被记录下来。
-;------------------------------------------------------------------------------------------------->
+;;------------------------------------------------------------------>
 ;;(load "desktop")
 ;;(desktop-load-default)
 ;;(desktop-read)
 ;;关闭emacs是键入M-x desktop-save就可把本次离开的buffer记录下来，下次打开emacs时还会保留这些buffer
-;-------------------------senior----------------------------------->
+;;-------------------------senior----------------------------------->
 (require 'ibuffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 ;;启用ibuffer，并绑定快捷键为C-x C-b
-;------------------------------------------------------------------>
+;;------------------------------------------------------------------>
 (require 'generic-x)
 ;;更加丰富的高亮
-;------------------------------------------------------------------>
+;;------------------------------------------------------------------>
 (require 'crosshairs)
 ;;高亮显示光标所在行和列可以通过M-x crosshairs-mode在当前buffer应用
 (require 'hl-line+)
@@ -144,7 +149,7 @@
 ;;当标记为done是自动加时间标签
 (setq org-log-done 'note)
 ;;标记为done是插入便签
-(setq org-startup-indented t)
+;;(setq org-startup-indented t)
 ;;默认缩进显示
 ;;----------aggressive-indent-mode------------------------------>
 (global-aggressive-indent-mode 1)
@@ -157,7 +162,11 @@
 ;;只要输入此字母就会立刻跳到这个窗口
 ;;----------ido-mode-------------------------------------------->
 (require 'ido)
-(ido-mode t)
+;;(ido-mode t)
+;;----------anthing--------------------------------------------->
+(add-to-list 'load-path "~/.emacs.d/anything-config/")
+(require 'anything-config)
+(anything-completion-mode t)
 ;;----------yasnippet------------------------------------------->
 (yas-global-mode 1)
 ;;----------zone-matrix----------------------------------------->
@@ -182,3 +191,5 @@
 (org-agenda-list t)
 ;;关闭其它窗口
 (delete-other-windows)
+
+
